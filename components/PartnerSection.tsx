@@ -17,7 +17,7 @@ export default function PartnerSection() {
             </p>
           </div>
         </div>
-        <Link href="/coming-soon">
+        <Link href="/new-home">
           <button className="bg-brand-navy hover:bg-brand-navy/90 text-white font-bold px-5 py-2 rounded-lg text-xs transition-colors shadow-md whitespace-nowrap cursor-pointer">
             Add your restaurant
           </button>
