@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Logo from "./Logo";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,10 +11,8 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50 bg-brand-bg-light/90 backdrop-blur-md border-b border-brand-navy/5">
       <div className="max-w-[1200px] mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         <Link href="/">
-          <div className="flex items-center gap-2 cursor-pointer">
-            <h1 className="text-2xl font-black tracking-tighter italic text-brand-navy">
-              USTART
-            </h1>
+          <div className="flex items-center gap-2 cursor-pointer. max-w-1/6 ">
+            <Logo color={`#0F2441`}/>
           </div>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-semibold text-brand-navy">
