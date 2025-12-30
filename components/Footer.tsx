@@ -51,17 +51,17 @@ export default function Footer() {
                     Who We Are
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="#"
                     className="hover:text-brand-orange transition-colors"
                   >
                     Blog
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
-                    href="#"
+                    href="/coming-soon"
                     className="hover:text-brand-orange transition-colors"
                   >
                     Work With Us
@@ -69,7 +69,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div>
+            {/* <div>
               <h4 className="font-bold text-white mb-3 text-xs uppercase tracking-wider text-opacity-50">
                 For Restaurants
               </h4>
@@ -91,8 +91,8 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
               <h4 className="font-bold text-white mb-3 text-xs uppercase tracking-wider text-opacity-50">
                 Learn More
               </h4>
@@ -122,7 +122,7 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="border-t border-white/10 pt-6 text-xs text-gray-400">

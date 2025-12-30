@@ -49,10 +49,9 @@ export default function About() {
                 Our Mission
               </h3>
               <p className="text-brand-text/80 leading-relaxed text-lg">
-                To revolutionize local food delivery by empowering neighborhood
-                restaurants and delivering authentic flavors with unmatched
-                speed and care. We exist to make every meal a moment of
-                connection.
+                To build India’s most ethical and transparent food-delivery
+                marketplace—where customers, restaurants, and delivery partners
+                grow together through fair economics and trust.
               </p>
             </div>
             <div className="bg-brand-navy p-8 rounded-3xl shadow-sm border border-brand-navy/5 hover:shadow-soft transition-shadow duration-300 relative overflow-hidden group">
@@ -66,9 +65,10 @@ export default function About() {
                 Our Vision
               </h3>
               <p className="text-white/80 leading-relaxed text-lg">
-                A world where quality food is accessible to everyone,
-                everywhere. We envision a future where USTART is synonymous with
-                trust, taste, and the thriving culinary culture of Gurugram.
+                To operate a technology-driven food-delivery marketplace that
+                empowers restaurants, delivery partners, and consumers through
+                transparent pricing, fair commissions, faster deliveries, and
+                value-creating partnerships.
               </p>
             </div>
           </div>
@@ -147,8 +147,8 @@ export default function About() {
                 </p>
                 <div className="bg-brand-bg-cream p-4 rounded-xl border-l-4 border-brand-orange">
                   <p className="italic text-brand-navy font-medium">
-                    "It started with a simple craving for midnight momos and no
-                    way to get them."
+                    "It started with a simple craving for midnight momos and
+                    expensive way to get them."
                   </p>
                   <p className="text-xs font-bold text-brand-text/50 mt-2 uppercase tracking-wide">
                     — Founder's Note
@@ -159,22 +159,28 @@ export default function About() {
                 <div className="absolute left-4 md:left-8 top-2 bottom-2 w-0.5 bg-brand-navy/10"></div>
                 {[
                   {
-                    year: "2020",
-                    title: "The Idea is Born",
+                    year: "2024",
+                    title: "The Idea Takes Shape",
                     color: "bg-brand-navy",
-                    desc: "USTART launched its beta version in DLF Cyber City with just 5 restaurant partners.",
+                    desc: "USTART was conceived during our university journey to address fairness and transparency gaps in food delivery.",
                   },
                   {
-                    year: "2021",
-                    title: "Expanding Horizons",
+                    year: "2025",
+                    title: "Company Incorporation",
                     color: "bg-brand-orange",
-                    desc: "Reached 10,000 active users and expanded delivery radius to 15km. Introduced 'Healthy Eats'.",
+                    desc: "USTART was formally incorporated to build a scalable and ethical food-delivery marketplace.",
                   },
                   {
-                    year: "2023",
-                    title: "Gurugram's Favorite",
+                    year: "2025",
+                    title: "Restaurant Market Research & Surveys",
                     color: "bg-brand-green",
-                    desc: "Celebrated 1 Million orders delivered. Partnered with 500+ local businesses.",
+                    desc: "On-ground restaurant surveys shaped USTART’s marketplace-first and fair-economics model.",
+                  },
+                  {
+                    year: "2026",
+                    title: "Beta Launch in Gurugram",
+                    color: "bg-brand-green",
+                    desc: "USTART begins beta testing with early partners to validate technology and operations.",
                   },
                 ].map((item, index) => (
                   <div
@@ -185,7 +191,9 @@ export default function About() {
                       className={`absolute left-[10px] md:left-[26px] top-1.5 w-4 h-4 rounded-full border-4 border-white ${item.color} shadow-sm z-10`}
                     ></div>
                     <span
-                      className={`inline-block px-2 py-1 ${item.color}/10 text-${item.color.replace(
+                      className={`inline-block px-2 py-1 ${
+                        item.color
+                      }/10 text-${item.color.replace(
                         "bg-",
                         ""
                       )} rounded text-xs font-bold mb-1`}
@@ -210,7 +218,7 @@ export default function About() {
             <h3 className="text-3xl font-black text-brand-navy tracking-tight">
               Meet the Minds
             </h3>
-            <a
+            {/* <a
               className="text-sm font-bold text-brand-orange hover:text-brand-navy transition-colors flex items-center gap-1 cursor-pointer"
               href="#"
             >
@@ -218,34 +226,34 @@ export default function About() {
               <span className="material-symbols-outlined text-sm">
                 arrow_forward
               </span>
-            </a>
+            </a> */}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
               {
-                name: "Aarav Sharma",
-                role: "Founder & CEO",
-                desc: "Foodie at heart, techie by profession.",
+                name: "Rishabh Goel",
+                role: "Co-Founder, CEO & Director",
+                desc: "Business strategy, growth, partnerships, and vision.",
                 color: "brand-navy",
               },
               {
-                name: "Priya Verma",
-                role: "Head of Operations",
-                desc: "Ensuring your food arrives hot, always.",
+                name: "Yash Gupta",
+                role: "Co-Founder, CTO & Director",
+                desc: "Technology, product, and platform scalability.",
                 color: "brand-orange",
               },
-              {
-                name: "Vikram Singh",
-                role: "Tech Lead",
-                desc: "Building the smoothest app experience.",
-                color: "brand-green",
-              },
-              {
-                name: "Neha Gupta",
-                role: "Marketing",
-                desc: "Spreading the joy of USTART.",
-                color: "brand-red",
-              },
+              // {
+              //   name: "Vikram Singh",
+              //   role: "Tech Lead",
+              //   desc: "Building the smoothest app experience.",
+              //   color: "brand-green",
+              // },
+              // {
+              //   name: "Neha Gupta",
+              //   role: "Marketing",
+              //   desc: "Spreading the joy of USTART.",
+              //   color: "brand-red",
+              // },
             ].map((item, index) => (
               <div
                 key={index}
@@ -296,7 +304,8 @@ export default function About() {
                         Zero Plastic Initiative
                       </h4>
                       <p className="text-sm text-white/60">
-                        Encouraging biodegradable packaging for all our partners.
+                        Encouraging biodegradable packaging for all our
+                        partners.
                       </p>
                     </div>
                   </div>
