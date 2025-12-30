@@ -22,7 +22,7 @@ export default function PromoSection() {
                   type="tel"
                 />
               </div>
-              <button className="bg-brand-orange hover:bg-brand-orange-light text-white font-bold px-6 py-2 rounded-lg text-sm transition-colors shadow-md whitespace-nowrap cursor-pointer">
+              <button className="bg-brand-navy hover:bg-brand-navy-light text-white font-bold px-6 py-2 rounded-lg text-sm transition-colors shadow-md whitespace-nowrap cursor-pointer">
                 Register
               </button>
             </div>
@@ -30,10 +30,10 @@ export default function PromoSection() {
           <div className="md:w-1/2 relative h-full min-h-[300px] flex items-end justify-center md:justify-end pr-8 overflow-hidden">
             <div className="relative w-[180px] h-[340px] bg-brand-navy rounded-[2rem] border-[6px] border-brand-navy shadow-2xl rotate-6 translate-y-12 md:translate-y-8 hover:rotate-0 transition-transform duration-500 z-10">
               <div className="w-full h-full bg-white rounded-[1.6rem] overflow-hidden relative">
-                <div className="bg-brand-orange h-24 p-4 flex flex-col justify-end">
+                <div className="bg-brand-navy h-24 p-4 flex flex-col justify-end">
                   <div className="w-8 h-8 rounded-full bg-white/30 mb-2"></div>
                   <div className="text-white font-bold text-lg">
-                    Hello, Tasty!
+                    Hello, Foodie!
                   </div>
                 </div>
                 <div className="p-3 space-y-2 bg-gray-50 h-full">

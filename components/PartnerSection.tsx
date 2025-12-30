@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function PartnerSection() {
   return (
     <section className="max-w-[1200px] mx-auto px-4 md:px-8 mb-8">
-      <div className="bg-white border-l-4 border-brand-orange rounded-lg shadow-sm p-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="bg-white border-l-4 border-brand-navy rounded-lg shadow-sm p-4 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-brand-bg-cream flex items-center justify-center text-brand-navy">
             <span className="material-symbols-outlined">storefront</span>

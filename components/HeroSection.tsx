@@ -13,9 +13,9 @@ export default function HeroSection() {
       </div>
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-8 w-full">
         <div className="max-w-2xl">
-          <div className="inline-block px-3 py-1 bg-brand-orange text-white text-xs font-bold rounded-full mb-4 tracking-wide uppercase">
+          {/* <div className="inline-block px-3 py-1 bg-brand-orange text-white text-xs font-bold rounded-full mb-4 tracking-wide uppercase">
             Gurugram Exclusive
-          </div>
+          </div> */}
           <h2 className="text-5xl md:text-7xl font-black text-white mb-4 tracking-tight leading-[0.95]">
             Gurugram's <br />
             <span className="text-brand-orange">Flavors,</span> Delivered.

@@ -13,7 +13,7 @@ export default function HowItWorks() {
           </div>
           <div className="md:w-3/4 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
             <div className="flex items-center gap-4 flex-1 bg-white p-3 rounded-xl shadow-sm border border-gray-50 w-full">
-              <div className="bg-brand-orange/10 p-2 rounded-lg text-brand-orange">
+              <div className="bg-brand-navy/10 p-2 rounded-lg text-brand-navy">
                 <span className="material-symbols-outlined">search</span>
               </div>
               <div>
@@ -23,11 +23,11 @@ export default function HowItWorks() {
                 </p>
               </div>
             </div>
-            <div className="hidden md:block text-brand-orange/30">
+            <div className="hidden md:block text-brand-navy/30">
               <span className="material-symbols-outlined">arrow_right_alt</span>
             </div>
             <div className="flex items-center gap-4 flex-1 bg-white p-3 rounded-xl shadow-sm border border-gray-50 w-full">
-              <div className="bg-brand-orange/10 p-2 rounded-lg text-brand-orange">
+              <div className="bg-brand-navy/10 p-2 rounded-lg text-brand-navy">
                 <span className="material-symbols-outlined">touch_app</span>
               </div>
               <div>
@@ -37,11 +37,11 @@ export default function HowItWorks() {
                 </p>
               </div>
             </div>
-            <div className="hidden md:block text-brand-orange/30">
+            <div className="hidden md:block text-brand-navy/30">
               <span className="material-symbols-outlined">arrow_right_alt</span>
             </div>
             <div className="flex items-center gap-4 flex-1 bg-white p-3 rounded-xl shadow-sm border border-gray-50 w-full">
-              <div className="bg-brand-orange/10 p-2 rounded-lg text-brand-orange">
+              <div className="bg-brand-navy/10 p-2 rounded-lg text-brand-navy">
                 <span className="material-symbols-outlined">delivery_dining</span>
               </div>
               <div>
