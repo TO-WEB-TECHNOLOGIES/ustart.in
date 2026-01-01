@@ -1,4 +1,5 @@
 'use client';
+import Logo from '@/components/Logo';
 import React, { useEffect } from 'react';
 
 const App = () => {
@@ -72,15 +73,13 @@ const App = () => {
                    style={{ animation: 'fadeIn 0.8s ease-out 1.2s forwards' }}>
 
                 {/* Logo */}
-                <div className="mb-10 text-4xl md:text-5xl font-black tracking-tighter italic text-white text-center">
-                    USTART<span style={{ color: colors.secondary }}>.</span>
-                </div>
+                <Logo color='#FFFFFF'/>
 
                 {/* Central Graphic: Chef Hat + Code */}
-                <div className="mb-10 relative group">
+                <div className="m-10 relative group">
                     <div className="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 flex items-center justify-center text-6xl bg-white/5 backdrop-blur-sm shadow-[0_0_50px_rgba(255,159,67,0.2)] transition-transform duration-700 hover:scale-110" style={{ borderColor: colors.secondary, color: colors.secondary }}>
                         <i className="fa-solid fa-helmet-safety"></i>
-                    </div>
+                    </div>  
                     {/* Floating badge */}
                     <div className="absolute -bottom-2 -right-2 bg-white p-3 rounded-full text-2xl shadow-lg animate-bounce" style={{ color: colors.primary }}>
                         <i className="fa-solid fa-utensils"></i>
