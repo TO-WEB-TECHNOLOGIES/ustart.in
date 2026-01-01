@@ -118,8 +118,8 @@ const App = () => {
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 -z-10 transform -translate-y-1/2 bg-gray-100"></div>
             
             {/* Feature 1 */}
-            <div className="p-8 bg-white rounded-2xl relative group hover:-translate-y-2 transition-all duration-300 shadow-xl border border-gray-100">
-               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl transition-colors bg-orange-50 text-orange-400 group-hover:bg-orange-400 group-hover:text-white" style={{ color: colors.primary }}>
+            <div>
+               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl transition-colors bg-orange-50 text-orange-400 group-hover:text-white" style={{ color: colors.primary }}>
                  <i className="fa-solid fa-bag-shopping"></i>
                </div>
                <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary }}>Pick-up</h3>
@@ -127,8 +127,8 @@ const App = () => {
             </div>
             
             {/* Feature 2 */}
-            <div className="p-8 bg-white rounded-2xl relative group hover:-translate-y-2 transition-all duration-300 shadow-xl border border-gray-100">
-               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl transition-colors bg-orange-50 text-orange-400 group-hover:bg-orange-400 group-hover:text-white" style={{ color: colors.primary }}>
+            <div>
+               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl transition-colors bg-orange-50 text-orange-400 group-hover:text-white" style={{ color: colors.primary }}>
                  <i className="fa-solid fa-bolt"></i>
                </div>
                <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary }}>Super Fast</h3>
@@ -136,8 +136,8 @@ const App = () => {
             </div>
 
             {/* Feature 3 */}
-            <div className="p-8 bg-white rounded-2xl relative group hover:-translate-y-2 transition-all duration-300 shadow-xl border border-gray-100">
-               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl transition-colors bg-orange-50 text-orange-400 group-hover:bg-orange-400 group-hover:text-white" style={{ color: colors.primary }}>
+            <div>
+               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl transition-colors bg-orange-50 text-orange-400 group-hover:text-white" style={{ color: colors.primary }}>
                  <i className="fa-solid fa-shield-halved"></i>
                </div>
                <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary }}>Safe Delivery</h3>
@@ -172,7 +172,7 @@ const App = () => {
                     className="w-full h-full object-cover"
                   />
                   {/* Floating Notification */}
-                  <div className="absolute top-12 right-[-10px] bg-white p-4 pr-6 rounded-l-xl shadow-xl animate-pulse flex items-center gap-3 border-l-4" style={{ borderColor: colors.primary }}>
+                  {/* <div className="absolute top-12 right-[-10px] bg-white p-4 pr-6 rounded-l-xl shadow-xl animate-pulse flex items-center gap-3 border-l-4" style={{ borderColor: colors.primary }}>
                      <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center text-navy-600">
                         <i className="fa-solid fa-motorcycle"></i>
                      </div>
@@ -180,7 +180,7 @@ const App = () => {
                         <span className="text-xs font-bold text-gray-400 block uppercase tracking-wider">Status</span>
                         <span className="text-sm font-bold text-gray-800">Arriving in 12 mins</span>
                      </div>
-                  </div>
+                  </div> */}
                </div>
             </div>
 
@@ -196,7 +196,7 @@ const App = () => {
               <div className="space-y-10">
                  {/* Feature 1 */}
                  <div className="flex gap-6 group">
-                    <div className="mt-1 w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl group-hover:bg-orange-400 group-hover:text-white transition-colors" style={{ color: colors.primary }}>
+                    <div className="mt-1 w-20 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl group-hover:text-white transition-colors" style={{ color: colors.primary }}>
                        <i className="fa-solid fa-stopwatch"></i>
                     </div>
                     <div>
@@ -207,7 +207,7 @@ const App = () => {
 
                  {/* Feature 2 */}
                  <div className="flex gap-6 group">
-                    <div className="mt-1 w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl group-hover:bg-orange-400 group-hover:text-white transition-colors" style={{ color: colors.primary }}>
+                    <div className="mt-1 w-20 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl group-hover:text-white transition-colors" style={{ color: colors.primary }}>
                        <i className="fa-solid fa-video"></i>
                     </div>
                     <div>
@@ -218,7 +218,7 @@ const App = () => {
 
                  {/* Feature 3 */}
                  <div className="flex gap-6 group">
-                    <div className="mt-1 w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl group-hover:bg-orange-400 group-hover:text-white transition-colors" style={{ color: colors.primary }}>
+                    <div className="mt-1 w-20 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl group-hover:text-white transition-colors" style={{ color: colors.primary }}>
                        <i className="fa-solid fa-tag"></i>
                     </div>
                     <div>
@@ -228,7 +228,7 @@ const App = () => {
                  </div>
               </div>
 
-              <button 
+              {/* <button 
                 className="mt-12 px-10 py-5 rounded-xl font-bold shadow-lg text-white flex items-center gap-3 text-lg transition-transform hover:scale-105 active:scale-95"
                 style={{ backgroundColor: colors.primary, boxShadow: '0 10px 25px -5px rgba(255, 159, 67, 0.4)' }}
               >
@@ -236,7 +236,7 @@ const App = () => {
                  <i className="fa-brands fa-google-play text-xl"></i>
                  <span className="ml-2">Download App</span> 
                  <i className="fa-solid fa-chevron-right text-sm ml-auto"></i>
-              </button>
+              </button> */}
             </div>
 
           </div>
