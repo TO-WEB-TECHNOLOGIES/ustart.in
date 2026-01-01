@@ -5,8 +5,8 @@ type LogoProps = {
 export default function Logo({ color = "#0F2441" }: LogoProps) {
   return (
     <svg
-      width="661"
-      height="155"
+      width="144"
+      height="40"
       viewBox="0 0 661 155"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
