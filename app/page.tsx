@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Logo from '@/components/Logo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 export default function Home() {
     const [scrolled, setScrolled] = useState(false);
   
@@ -86,9 +88,12 @@ export default function Home() {
           <div className="relative z-20 text-center px-6 max-w-5xl mx-auto text-white flex flex-col items-center">
             {/* Gurugram Badge */}
             <div className="mb-8 inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2 rounded-full text-sm font-bold tracking-widest uppercase shadow-lg">
-              <i className="fa-solid fa-location-dot" style={{ color: colors.secondary }}></i>
-              <span>Gurugram Edition</span>
-            </div>
+                   <span className="relative flex h-3 w-3">
+                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                     <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                   </span>
+                   <span>Gurugram Edition</span>
+                </div>
   
             <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
               Fueling the <span style={{ color: colors.secondary }}>Hustle</span> of Millennium City.
@@ -217,11 +222,11 @@ export default function Home() {
                   {/* Feature 2 */}
                   <div className="flex gap-6 group">
                     <div className="mt-1 w-20 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl group-hover:text-white transition-colors" style={{ color: colors.primary }}>
-                      <i className="fa-solid fa-video"></i>
+                      <FontAwesomeIcon icon={faMapLocationDot} />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold mb-2" style={{ color: colors.primary }}>Live Kitchen View</h4>
-                      <p className="text-gray-500 leading-relaxed">Watch your food being prepared in real-time. Full transparency from the wok to your door.</p>
+                      <h4 className="text-2xl font-bold mb-2" style={{ color: colors.primary }}>Live Delivery Tracking</h4>
+                      <p className="text-gray-500 leading-relaxed">Track your food being delivered in real-time. Full transparency from the wok to your door.</p>
                     </div>
                   </div>
   
