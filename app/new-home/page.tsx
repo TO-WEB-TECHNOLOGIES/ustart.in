@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -66,8 +67,15 @@ const App = () => {
       {/* --- SECTION 1: HERO (Parallax) --- */}
       <header className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         {/* Parallax Background */}
-        <div className="absolute inset-0 z-0 bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/home.jpeg')" }}>
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/home.jpeg"
+            alt="Hero Background"
+            fill
+            priority
+            className="object-cover"
+            quality={90}
+          />
         </div>
 
         {/* Overlay - Navy Tint */}
