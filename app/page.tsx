@@ -289,8 +289,8 @@ export default function Home() {
               <div className="relative p-10 rounded-3xl transform md:scale-110 shadow-2xl text-left border border-white/10"
                 style={{ background: `linear-gradient(135deg, ${colors.goldDark} 0%, #8E7008 100%)` }}>
                 <div className="absolute top-4 right-4 bg-black/20 px-3 py-1 rounded-full text-xs font-bold uppercase text-white/80">Most Popular</div>
-                <div className="text-white text-5xl font-black mb-4">40%</div>
-                <h4 className="text-xl font-bold mb-3 text-white">Flat Discount</h4>
+                <div className="text-white text-5xl font-black mb-4">Upto 40%</div>
+                <h4 className="text-xl font-bold mb-3 text-white">Discount</h4>
                 <p className="text-white/80 text-sm mb-8 leading-relaxed">Up to 40% off at top-tier partner restaurants throughout NCR.</p>
                 <button className="w-full py-4 bg-white font-bold rounded-xl text-sm uppercase tracking-wider hover:bg-gray-100 transition-colors" style={{ color: '#8E7008' }}>
                   Join Waitlist <i className="fa-solid fa-arrow-right ml-2"></i>
@@ -326,7 +326,7 @@ export default function Home() {
   
             <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
               <div>
-                Made with <i className="fa-solid fa-heart text-orange-500 mx-1"></i> in Gurugram. © {new Date().getFullYear()} Toweb Technology Pvt Ltd.
+                Made with <i className="fa-solid fa-heart text-orange-500 mx-1"></i> in Gurugram, for the world. © {new Date().getFullYear()} Toweb Technology Pvt Ltd.
               </div>
               <div className="flex gap-8">
                 <a href="#" className="hover:text-white transition-colors">Terms</a>
