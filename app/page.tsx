@@ -38,9 +38,7 @@ export default function Home() {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
-  
-
-    
+      
     return (
       <div className="font-sans antialiased selection:bg-orange-400 selection:text-white" style={{ backgroundColor: colors.white, color: colors.dark }}>
   
@@ -182,10 +180,12 @@ export default function Home() {
               {/* Phone Mockup Area */}
               <div className="w-full md:w-1/2 relative">
                 <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative border-8 border-white bg-white">
-                  <img
-                    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1974&auto=format&fit=crop"
+                  <Image
+                    src="/ustart_delivery.png"
                     alt="App Interface"
-                    className="w-full h-full object-cover"
+                    fill
+                    className='object-cover'
+                    quality={90}
                   />
                   {/* Floating Notification */}
                   {/* <div className="absolute top-12 right-[-10px] bg-white p-4 pr-6 rounded-l-xl shadow-xl animate-pulse flex items-center gap-3 border-l-4" style={{ borderColor: colors.primary }}>
