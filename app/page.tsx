@@ -39,6 +39,8 @@ export default function Home() {
       };
     }, []);
   
+
+    
     return (
       <div className="font-sans antialiased selection:bg-orange-400 selection:text-white" style={{ backgroundColor: colors.white, color: colors.dark }}>
   
@@ -51,7 +53,7 @@ export default function Home() {
           }}
         >
           <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div className='max-w-1/7 overflow-hidden'>
+            <div className='overflow-hidden'>
               <Logo color={scrolled ? colors.primary : colors.white} />
             </div>
             <div className="hidden md:flex gap-8 font-medium text-sm tracking-wide uppercase">
