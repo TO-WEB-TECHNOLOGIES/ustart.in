@@ -39,6 +39,8 @@ export default function Home() {
       };
     }, []);
   
+
+    
     return (
       <div className="font-sans antialiased selection:bg-orange-400 selection:text-white" style={{ backgroundColor: colors.white, color: colors.dark }}>
   
