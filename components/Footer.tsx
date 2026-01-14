@@ -14,9 +14,13 @@ export default function Footer() {
     white: '#FFFFFF',
     gold: '#D4AF37',        // Premium Gold (kept for Elite section)
     goldDark: '#B4941F',
+    dark2: '#050C16',
   };
   return (
-    <footer className="bg-black text-white py-16 border-t border-gray-900">
+    <footer
+      style={{ backgroundColor: colors.dark2 }}
+      className="text-white py-16 border-t border-gray-900"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
           <div className="text-4xl font-black tracking-tighter italic">
@@ -36,7 +40,7 @@ export default function Footer() {
           <div className="flex gap-8">
             <a href="/terms" className="hover:text-white transition-colors">Terms</a>
             <a href="/terms#privacy-data-protection" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Contact</a>
+            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
           </div>
         </div>
       </div>

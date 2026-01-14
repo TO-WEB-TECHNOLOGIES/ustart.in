@@ -18,6 +18,8 @@ import GoverningLaw from './users/GoverningLaw';
 import Miscellaneous from './users/Miscellaneous';
 import ContactDetails from './users/ContactDetails';
 import AmendmentsUpdates from './users/Amendments';
+import Link from "next/link";
+import Logo from '@/components/Logo';
 
 // Define the sections for the sidebar navigation
 interface Section {
@@ -93,21 +95,14 @@ const TermsPage: React.FC = () => {
       {/* --- HEADER --- */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            {/* Back Link */}
-            <button
-              onClick={() => window.history.back()}
-              className="text-gray-400 hover:text-[#0F2441] transition-colors"
-            >
-              <i className="fa-solid fa-arrow-left text-lg"></i>
-            </button>
-
-            <div className="h-6 w-px bg-gray-300 mx-2 hidden md:block"></div>
+          <div className="flex items-center gap-4">            
 
             {/* Logo */}
-            <div className="text-2xl font-black tracking-tighter italic text-[#0F2441]">
-              USTART<span className="text-[#FF9F43]">.</span>
-            </div>
+            <Link href="/">
+              <div className="flex items-center gap-2 cursor-pointer. max-w-6/6 ">
+                <Logo color={`#0F2441`} />
+              </div>
+            </Link>
 
             {/* Badge */}
             <span className="bg-gray-100 text-gray-500 text-[10px] md:text-xs font-bold px-2 py-1 rounded uppercase tracking-wider ml-1 border border-gray-200">

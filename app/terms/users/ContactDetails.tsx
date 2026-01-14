@@ -108,7 +108,7 @@ export default function ContactDetails() {
                             <strong>TOWEB TECHNOLOGY PRIVATE LIMITED</strong><br />
                             {/* CIN: –––––––––––<br /> */}
                             <strong>Registered Office Address:</strong> 2 FLR Gateway B Building, 67th Milestone NH8, Bhorakalan, Gurugram, Haryana - 122413<br />
-                            <strong>Corporate Address:</strong> Alt.f coworking - Orchid Business Park, Badshahpur Sohna Rd, Near Subhash Chowk, Central Park II, Sector 48, Gurugram, Haryana 122018<br />
+                            <strong>Corporate Address:</strong> Alt.f coworking - Orchid Business Park, Badshahpur Sohna Rd, Near Subhash Chowk, Central Park II, Sector 48, Gurugram, Haryana 122003.<br />
                             <strong>Email:</strong> contact@ustart.in<br />
                             <strong>Contact Number:</strong> +91 78272 34027
                         </p>
