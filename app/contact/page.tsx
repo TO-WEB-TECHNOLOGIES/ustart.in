@@ -62,7 +62,6 @@ const ContactPage: React.FC = () => {
                     </div>
 
                     <div className={`hidden md:flex gap-8 font-medium text-sm tracking-wide uppercase ${scrolled ? 'text-[#0F2441]' : 'text-white'}`}>
-                        <a href="#" className="hover:text-[#FF9F43] transition-colors">Help Center</a>
                         <a href="mailto:support@ustart.in" className="hover:text-[#FF9F43] transition-colors flex items-center gap-2">
                             <i className="fa-solid fa-envelope"></i> support@ustart.in
                         </a>
@@ -142,8 +141,8 @@ const ContactPage: React.FC = () => {
                                                         key={topic} type="button"
                                                         onClick={() => setFormData({ ...formData, topic: topic.toLowerCase() })}
                                                         className={`px-6 py-2 rounded-full text-sm font-medium border transition-all ${formData.topic === topic.toLowerCase()
-                                                                ? 'bg-[#0F2441] text-white border-[#0F2441]'
-                                                                : 'bg-transparent text-gray-500 border-gray-300 hover:border-[#0F2441] hover:text-[#0F2441]'
+                                                            ? 'bg-[#0F2441] text-white border-[#0F2441]'
+                                                            : 'bg-transparent text-gray-500 border-gray-300 hover:border-[#0F2441] hover:text-[#0F2441]'
                                                             }`}
                                                     >
                                                         {topic}
