@@ -4,132 +4,42 @@ import Link from "next/link";
 import Logo from "./Logo";
 
 export default function Footer() {
+  const colors = {
+      primary: '#0F2441',     // Deep Navy Blue (Brand Anchor)
+      secondary: '#FF9F43',   // Vibrant Orange (Accents/Buttons)
+      secondaryHover: '#e08935',
+      dark: '#0A182C',        // Darker Navy for Text
+      gray: '#4a5568',        // Cool Gray
+      light: '#F4F7FA',       // Light Blue-ish Gray Background
+      white: '#FFFFFF',
+      gold: '#D4AF37',        // Premium Gold (kept for Elite section)
+      goldDark: '#B4941F',
+    };
   return (
-    <footer className="bg-brand-navy text-white pt-10 pb-6 relative z-30">
-      <div className="max-w-[1200px] mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
-          <div className="md:w-1/4">
-            <div className="flex items-center gap-2 mb-4 text-white">
-              <Logo color="white"/>
+    <footer className="bg-black text-white py-16 border-t border-gray-900">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+              <div className="text-4xl font-black tracking-tighter italic">
+                <Logo color={colors.white} />
+              </div>
+              <div className="flex gap-6 text-2xl">
+                <a href="https://in.linkedin.com/company/ustartin" className="hover:text-orange-400 transition-colors"><i className="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/ustart.in" className="hover:text-orange-400 transition-colors"><i className="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61572376997840" className="hover:text-orange-400 transition-colors"><i className="fa-brands fa-facebook"></i></a>
+              </div>
             </div>
-            <div className="flex gap-3">
-              <a
-                className="w-8 h-8 rounded-full hover:bg-brand-orange flex items-center justify-center transition-colors"
-                href="https://www.instagram.com/ustart_rides/"
-              >
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-              <a
-                className="w-8 h-8 rounded-full hover:bg-brand-orange flex items-center justify-center transition-colors"
-                href="https://www.linkedin.com/company/ustartrg/"
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
-              <a
-                className="w-8 h-8 rounded-full hover:bg-brand-orange flex items-center justify-center transition-colors"
-                href="https://www.facebook.com/profile.php?id=61572376997840"
-              >
-                <FontAwesomeIcon icon={faFacebook} />
-              </a>
+  
+            <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+              <div>
+                Made with <i className="fa-solid fa-heart text-orange-500 mx-1"></i> in Gurugram, for the world. © {new Date().getFullYear()} Toweb Technology Pvt Ltd.
+              </div>
+              <div className="flex gap-8">
+                <a href="/terms" className="hover:text-white transition-colors">Terms</a>
+                <a href="/terms#privacy" className="hover:text-white transition-colors">Privacy</a>
+                <a href="#" className="hover:text-white transition-colors">Contact</a>
+              </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:flex-1">
-            <div>
-              <h4 className="font-bold text-white mb-3 text-xs uppercase tracking-wider text-opacity-50">
-                About USTART
-              </h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>
-                  <Link
-                    href="/about"
-                    className="hover:text-brand-orange transition-colors"
-                  >
-                    Who We Are
-                  </Link>
-                </li>
-                {/* <li>
-                  <a
-                    href="#"
-                    className="hover:text-brand-orange transition-colors"
-                  >
-                    Blog
-                  </a>
-                </li> */}
-                <li>
-                  <a
-                    href="/coming-soon"
-                    className="hover:text-brand-orange transition-colors"
-                  >
-                    Work With Us
-                  </a>
-                </li>
-              </ul>
-            </div>
-            {/* <div>
-              <h4 className="font-bold text-white mb-3 text-xs uppercase tracking-wider text-opacity-50">
-                For Restaurants
-              </h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-brand-orange transition-colors"
-                  >
-                    Partner with us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-brand-orange transition-colors"
-                  >
-                    Apps for you
-                  </a>
-                </li>
-              </ul>
-            </div> */}
-            {/* <div>
-              <h4 className="font-bold text-white mb-3 text-xs uppercase tracking-wider text-opacity-50">
-                Learn More
-              </h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-brand-orange transition-colors"
-                  >
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-brand-orange transition-colors"
-                  >
-                    Security
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-brand-orange transition-colors"
-                  >
-                    Terms
-                  </a>
-                </li>
-              </ul>
-            </div> */}
-          </div>
-        </div>
-        <div className="border-t border-white/10 pt-6 text-xs text-gray-400">
-          <p>
-            By continuing past this page, you agree to our Terms of Service,
-            Cookie Policy, Privacy Policy and Content Policies. All trademarks
-            are properties of their respective owners. 2025-2026 © Toweb
-            Technology Pvt. Ltd. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
+        </footer>
   );
 }

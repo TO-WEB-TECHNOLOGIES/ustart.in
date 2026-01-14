@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Logo from '@/components/Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
+import Footer from '@/components/Footer';
 export default function Home() {
     const [scrolled, setScrolled] = useState(false);
   
@@ -312,32 +313,7 @@ export default function Home() {
         </section>
   
         {/* --- FOOTER --- */}
-        <footer className="bg-black text-white py-16 border-t border-gray-900">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
-              <div className="text-4xl font-black tracking-tighter italic">
-                <Logo color={colors.white} />
-              </div>
-              <div className="flex gap-6 text-2xl">
-                <a href="#" className="hover:text-gray-400 transition-colors"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="#" className="hover:text-gray-400 transition-colors"><i className="fa-brands fa-instagram"></i></a>
-                <a href="#" className="hover:text-gray-400 transition-colors"><i className="fa-brands fa-twitter"></i></a>
-                <a href="#" className="hover:text-gray-400 transition-colors"><i className="fa-brands fa-youtube"></i></a>
-              </div>
-            </div>
-  
-            <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
-              <div>
-                Made with <i className="fa-solid fa-heart text-orange-500 mx-1"></i> in Gurugram, for the world. © {new Date().getFullYear()} Toweb Technology Pvt Ltd.
-              </div>
-              <div className="flex gap-8">
-                <a href="#" className="hover:text-white transition-colors">Terms</a>
-                <a href="#" className="hover:text-white transition-colors">Privacy</a>
-                <a href="#" className="hover:text-white transition-colors">Contact</a>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer />
   
       </div>)
     
