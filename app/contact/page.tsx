@@ -40,9 +40,9 @@ const ContactPage: React.FC = () => {
     };
 
     const faqs = [
-        { question: "What are your support hours?", answer: "Our Gurugram-based support team is available 24/7 for live order issues. For general business inquiries, we respond between 9 AM - 8 PM IST." },
-        { question: "How do I partner with USTART?", answer: "We are expanding rapidly in Sector 29 and Cyber Hub. If you own a restaurant, select 'Restaurant Partnership' in the form or email partners@ustart.in." },
-        { question: "Do you deliver to my location?", answer: "We currently operate exclusively in Gurugram (Sectors 1-115) and select areas of South Delhi. Check the app for real-time serviceability." },
+        { question: "What are your support hours?", answer: "Our Gurugram-based support team is available everyday from 9 AM - 10 PM IST for live order issues. For general business inquiries, we respond between 9 AM - 8 PM IST on all days except weekends and public holidays." },
+        { question: "How do I partner with USTART?", answer: "We are expanding rapidly in Gurugram. If you own a restaurant, select 'Restaurant Partnership' in the form or email partners@ustart.in." },
+        { question: "Do you deliver to my location?", answer: "We currently operate exclusively in areas around Sohna Road in Gurugram and expanding the reach rapidly. Check the app for real-time serviceability." },
     ];
 
     return (
@@ -110,14 +110,14 @@ const ContactPage: React.FC = () => {
                                     </div>
 
                                     <form onSubmit={handleSubmit} className="space-y-10">
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                             <div className="space-y-2">
                                                 <label className="text-xs font-bold text-[#0F2441]/60 uppercase tracking-widest">Your Name</label>
                                                 <input
                                                     type="text" required
                                                     value={formData.name}
                                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                                    className="w-full py-2 border-b border-gray-300 focus:border-[#FF9F43] outline-none transition-all bg-transparent text-xl font-medium text-[#0F2441] placeholder-gray-300"
+                                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#FF9F43] focus:ring-1 focus:ring-[#FF9F43] outline-none transition-all bg-transparent text-base font-medium text-[#0F2441] placeholder-gray-400"
                                                     placeholder="John Doe"
                                                 />
                                             </div>
@@ -127,7 +127,7 @@ const ContactPage: React.FC = () => {
                                                     type="email" required
                                                     value={formData.email}
                                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                                    className="w-full py-2 border-b border-gray-300 focus:border-[#FF9F43] outline-none transition-all bg-transparent text-xl font-medium text-[#0F2441] placeholder-gray-300"
+                                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#FF9F43] focus:ring-1 focus:ring-[#FF9F43] outline-none transition-all bg-transparent text-base font-medium text-[#0F2441] placeholder-gray-400"
                                                     placeholder="john@example.com"
                                                 />
                                             </div>
@@ -141,8 +141,8 @@ const ContactPage: React.FC = () => {
                                                         key={topic} type="button"
                                                         onClick={() => setFormData({ ...formData, topic: topic.toLowerCase() })}
                                                         className={`px-6 py-2 rounded-full text-sm font-medium border transition-all ${formData.topic === topic.toLowerCase()
-                                                            ? 'bg-[#0F2441] text-white border-[#0F2441]'
-                                                            : 'bg-transparent text-gray-500 border-gray-300 hover:border-[#0F2441] hover:text-[#0F2441]'
+                                                                ? 'bg-[#0F2441] text-white border-[#0F2441]'
+                                                                : 'bg-transparent text-gray-500 border-gray-300 hover:border-[#0F2441] hover:text-[#0F2441]'
                                                             }`}
                                                     >
                                                         {topic}
@@ -154,17 +154,17 @@ const ContactPage: React.FC = () => {
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-[#0F2441]/60 uppercase tracking-widest">Message</label>
                                             <textarea
-                                                rows={3} required
+                                                rows={4} required
                                                 value={formData.message}
                                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                                className="w-full py-2 border-b border-gray-300 focus:border-[#FF9F43] outline-none transition-all bg-transparent text-xl font-medium text-[#0F2441] placeholder-gray-300 resize-none"
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#FF9F43] focus:ring-1 focus:ring-[#FF9F43] outline-none transition-all bg-transparent text-base font-medium text-[#0F2441] placeholder-gray-400 resize-none"
                                                 placeholder="How can we help?"
                                             ></textarea>
                                         </div>
 
                                         <button
                                             type="submit"
-                                            className="group flex items-center gap-3 px-8 py-4 bg-[#FF9F43] hover:bg-[#e08935] text-white font-bold rounded-none transition-all"
+                                            className="group flex items-center gap-3 px-8 py-4 bg-[#FF9F43] hover:bg-[#e08935] text-white font-bold rounded-lg transition-all"
                                         >
                                             Send Message
                                             <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
@@ -214,7 +214,7 @@ const ContactPage: React.FC = () => {
                             {/* Location Map - Boxless style */}
                             <div>
                                 <h3 className="text-xs font-bold text-[#0F2441]/60 uppercase tracking-widest mb-6">Our Location</h3>
-                                <div className="w-full h-64 bg-gray-100 overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700">
+                                <div className="w-full h-64 bg-gray-100 overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700 rounded-lg">
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3509.227546377227!2d77.03391507616656!3d28.42621369403863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDI1JzM0LjQiTiA3N8KwMDInMTEuNyJF!5e0!3m2!1sen!2sin"
                                         width="100%"
