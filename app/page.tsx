@@ -6,10 +6,15 @@ import Logo from '@/components/Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 import Footer from '@/components/Footer';
+
 export default function Home() {
     const [scrolled, setScrolled] = useState(false);
-  
-    // --- BRAND COLORS (Updated) ---
+    // Initialize loading states
+    const [loading, setLoading] = useState(true);
+    const [progress, setProgress] = useState(0);
+    const [animationComplete, setAnimationComplete] = useState(false);
+
+    // --- BRAND COLORS ---
     const colors = {
       primary: '#0F2441',     // Deep Navy Blue (Brand Anchor)
       secondary: '#FF9F43',   // Vibrant Orange (Accents/Buttons)
@@ -18,18 +23,51 @@ export default function Home() {
       gray: '#4a5568',        // Cool Gray
       light: '#F4F7FA',       // Light Blue-ish Gray Background
       white: '#FFFFFF',
-      gold: '#D4AF37',        // Premium Gold (kept for Elite section)
+      gold: '#D4AF37',        // Premium Gold
       goldDark: '#B4941F',
     };
   
     useEffect(() => {
-      // 1. Handle Scroll for Navbar
+      // 1. Loading Animation Logic with Session Storage Check
+      const sessionKey = 'ustart_intro_shown';
+      const hasPlayed = sessionStorage.getItem(sessionKey);
+
+      let timer: NodeJS.Timeout;
+
+      if (hasPlayed) {
+        // CASE A: Returning User (in this session) -> Skip Animation
+        setLoading(false);
+        setAnimationComplete(true);
+        setProgress(100);
+      } else {
+        // CASE B: First Time or Refresh -> Play Animation
+        timer = setInterval(() => {
+            setProgress((prev) => {
+              if (prev >= 100) {
+                clearInterval(timer);
+                setTimeout(() => {
+                   setLoading(false);
+                   // Wait for transition to finish before unmounting overlay
+                   setTimeout(() => {
+                       setAnimationComplete(true);
+                       // Mark as shown for this session
+                       sessionStorage.setItem(sessionKey, 'true');
+                   }, 1000);
+                }, 500);
+                return 100;
+              }
+              return prev + Math.random() * 10;
+            });
+          }, 100);
+      }
+
+      // 2. Handle Scroll for Navbar
       const handleScroll = () => {
         setScrolled(window.scrollY > 50);
       };
       window.addEventListener('scroll', handleScroll);
   
-      // 2. Load Font Awesome (Dynamically injected)
+      // 3. Load Font Awesome
       const link = document.createElement('link');
       link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
       link.rel = 'stylesheet';
@@ -37,11 +75,59 @@ export default function Home() {
   
       return () => {
         window.removeEventListener('scroll', handleScroll);
+        if (timer) clearInterval(timer);
       };
     }, []);
       
     return (
       <div className="font-sans antialiased selection:bg-orange-400 selection:text-white" style={{ backgroundColor: colors.white, color: colors.dark }}>
+
+        {/* --- LOADING SCREEN & ANIMATION OVERLAY --- */}
+        {!animationComplete && (
+            <div className="fixed inset-0 z-[100] pointer-events-none">
+                
+                {/* Background Curtain */}
+                <div 
+                    className="absolute inset-0 bg-[#0F2441] transition-opacity duration-1000 ease-in-out"
+                    style={{ opacity: loading ? 1 : 0 }}
+                ></div>
+
+                {/* Animated Logo Container */}
+                <div 
+                    className="absolute transition-all duration-1000 ease-in-out flex flex-col items-center"
+                    style={{
+                        // Vertical: Center (50%) -> Navbar Top Padding (24px)
+                        top: loading ? '50%' : '24px',
+                        
+                        // Horizontal Calculation:
+                        // 1. Center of screen (50%)
+                        // 2. VS Navbar Position: The Navbar is max-w-7xl (1280px) and Centered (mx-auto).
+                        //    So the logo starts at: (WindowWidth - 1280px) / 2 + Padding(24px).
+                        //    We use calc/max to ensure it lands exactly where the static logo is, regardless of screen width.
+                        //    616px comes from: (1280px / 2) - 24px padding = 616px offset from center.
+                        left: loading ? '50%' : 'max(24px, calc(50vw - 616px))', 
+                        
+                        transform: loading ? 'translate(-50%, -50%)' : 'translate(0, 0)',
+                        width: loading ? 'min(60vw, 400px)' : '150px', // Matches the w-[150px] of the navbar logo
+                    }}
+                >
+                    {/* The Logo */}
+                    <div className="w-full transition-colors duration-1000" style={{ color: loading ? colors.white : (scrolled ? colors.primary : colors.white) }}>
+                        <Logo color="currentColor" />
+                    </div>
+
+                    {/* Progress Bar */}
+                    <div 
+                        className={`mt-4 w-full h-1 bg-white/20 rounded-full overflow-hidden transition-opacity duration-500 ${loading ? 'opacity-100' : 'opacity-0'}`}
+                    >
+                        <div 
+                            className="h-full bg-orange-400 transition-all duration-300 ease-out"
+                            style={{ width: `${progress}%` }}
+                        ></div>
+                    </div>
+                </div>
+            </div>
+        )}
   
         {/* --- NAVBAR --- */}
         <nav
@@ -52,19 +138,15 @@ export default function Home() {
           }}
         >
           <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div className='overflow-hidden'>
+            {/* Real Navbar Logo: Only visible AFTER animation is complete */}
+            <div className={`overflow-hidden w-[120px] md:w-[150px] transition-opacity duration-300 ${animationComplete ? 'opacity-100' : 'opacity-0'}`}>
               <Logo color={scrolled ? colors.primary : colors.white} />
             </div>
+
             <div className="hidden md:flex gap-8 font-medium text-sm tracking-wide uppercase">
               <a href="/coming-soon" className="hover:text-orange-400 transition-colors">Partner with us</a>
               <a href="/coming-soon" className="hover:text-orange-400 transition-colors">Ride with us</a>
             </div>
-            {/* <div className="flex gap-6 font-medium items-center">
-               <a href="#" className="hover:opacity-80 transition-opacity">Log in</a>
-               <button className="px-5 py-2 rounded-full font-bold text-white transition-transform hover:scale-105 active:scale-95" style={{ backgroundColor: colors.primary }}>
-                 Sign up
-               </button>
-            </div> */}
           </div>
         </nav>
   
@@ -188,16 +270,6 @@ export default function Home() {
                     className='object-cover'
                     quality={90}
                   />
-                  {/* Floating Notification */}
-                  {/* <div className="absolute top-12 right-[-10px] bg-white p-4 pr-6 rounded-l-xl shadow-xl animate-pulse flex items-center gap-3 border-l-4" style={{ borderColor: colors.primary }}>
-                       <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center text-navy-600">
-                          <i className="fa-solid fa-motorcycle"></i>
-                       </div>
-                       <div>
-                          <span className="text-xs font-bold text-gray-400 block uppercase tracking-wider">Status</span>
-                          <span className="text-sm font-bold text-gray-800">Arriving in 12 mins</span>
-                       </div>
-                    </div> */}
                 </div>
               </div>
   
@@ -244,18 +316,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-  
-                {/* <button 
-                  className="mt-12 px-10 py-5 rounded-xl font-bold shadow-lg text-white flex items-center gap-3 text-lg transition-transform hover:scale-105 active:scale-95"
-                  style={{ backgroundColor: colors.primary, boxShadow: '0 10px 25px -5px rgba(255, 159, 67, 0.4)' }}
-                >
-                   <i className="fa-brands fa-apple text-2xl"></i>
-                   <i className="fa-brands fa-google-play text-xl"></i>
-                   <span className="ml-2">Download App</span> 
-                   <i className="fa-solid fa-chevron-right text-sm ml-auto"></i>
-                </button> */}
               </div>
-  
             </div>
           </div>
         </section>
@@ -316,5 +377,4 @@ export default function Home() {
         <Footer />
   
       </div>)
-    
 }
