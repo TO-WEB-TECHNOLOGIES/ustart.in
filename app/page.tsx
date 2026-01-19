@@ -1,12 +1,26 @@
 // ustart.in/app/page.tsx
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Logo from '@/components/Logo';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faMapLocationDot,
+  faArrowDown,
+  faBagShopping,
+  faBolt,
+  faShieldHalved,
+  faStar,
+  faMobileScreen,
+  faStopwatch,
+  faTag,
+  faCrown,
+  faTruckFast,
+  faArrowRight,
+  faLockOpen
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,7 +45,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // 1. Session Check (Optional: Remove this block if you want the loader EVERY time)
+    // 1. Session Check
     const sessionKey = 'ustart_intro_shown';
     const hasPlayed = sessionStorage.getItem(sessionKey);
 
@@ -39,7 +53,6 @@ export default function Home() {
       setLoading(false);
       setAnimationComplete(true);
       setProgress(100);
-      // Still need scroll listener even if returning user
       const handleScroll = () => setScrolled(window.scrollY > 50);
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
@@ -50,25 +63,21 @@ export default function Home() {
     let isMinTimeElapsed = false;
     let progressInterval: NodeJS.Timeout;
 
-    // A. Start Progress Bar Simulation (Goes to 90% and waits)
+    // A. Start Progress Bar Simulation
     progressInterval = setInterval(() => {
       setProgress((prev) => {
-        // If we are waiting for image, stall at 90%
         if (prev >= 90 && !isImgLoaded) return 90;
-        // Otherwise increment
         return Math.min(prev + Math.random() * 15, 90);
       });
     }, 100);
 
     // Function to handle completion
     const finishLoading = () => {
-      // Only finish if BOTH minimum time passed AND (Image loaded OR Timeout reached)
       clearInterval(progressInterval);
-      setProgress(100); // Zip to 100%
+      setProgress(100);
 
       setTimeout(() => {
         setLoading(false);
-        // Wait for transition to finish before unmounting overlay
         setTimeout(() => {
           setAnimationComplete(true);
           sessionStorage.setItem(sessionKey, 'true');
@@ -76,33 +85,31 @@ export default function Home() {
       }, 500);
     };
 
-    // Check if we are ready to finish
     const checkConditions = () => {
       if (isMinTimeElapsed && isImgLoaded) {
         finishLoading();
       }
     };
 
-    // B. Minimum Time Enforcer (1 Second)
+    // B. Minimum Time Enforcer
     setTimeout(() => {
       isMinTimeElapsed = true;
       checkConditions();
     }, 1000);
 
-    // C. Maximum Time Enforcer (5 Seconds)
+    // C. Maximum Time Enforcer
     setTimeout(() => {
-      // If still loading after 5 seconds, force finish
       if (loading) {
         console.warn("Image load timed out, forcing display.");
-        isImgLoaded = true; // Pretend it loaded
-        isMinTimeElapsed = true; // Ensure time met
+        isImgLoaded = true;
+        isMinTimeElapsed = true;
         finishLoading();
       }
     }, 5000);
 
     // D. Real Image Loader
     const img = new window.Image();
-    img.src = '/home.jpeg'; // The image we are waiting for
+    img.src = '/home.jpeg';
 
     img.onload = () => {
       isImgLoaded = true;
@@ -110,22 +117,16 @@ export default function Home() {
     };
 
     img.onerror = () => {
-      // If image fails, don't hang the site. Treat as loaded.
       console.error("Failed to load hero image");
       isImgLoaded = true;
       checkConditions();
     };
 
-    // --- 3. Handle Scroll & External Scripts ---
+    // --- 3. Handle Scroll ---
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
-
-    const link = document.createElement('link');
-    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -231,7 +232,7 @@ export default function Home() {
           </p>
 
           <div className="mt-16 animate-bounce">
-            <i className="fa-solid fa-arrow-down text-4xl text-white/50"></i>
+            <FontAwesomeIcon icon={faArrowDown} className="text-4xl text-white/50" />
           </div>
         </div>
       </header>
@@ -262,7 +263,7 @@ export default function Home() {
             {/* Feature 1 */}
             <div>
               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl transition-colors bg-orange-50 text-orange-400 group-hover:text-white" style={{ color: colors.primary }}>
-                <i className="fa-solid fa-bag-shopping"></i>
+                <FontAwesomeIcon icon={faBagShopping} />
               </div>
               <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary }}>Pick-up</h3>
               <p className="text-sm text-gray-500">Skip the queue at top rated spots</p>
@@ -271,7 +272,7 @@ export default function Home() {
             {/* Feature 2 */}
             <div>
               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl transition-colors bg-orange-50 text-orange-400 group-hover:text-white" style={{ color: colors.primary }}>
-                <i className="fa-solid fa-bolt"></i>
+                <FontAwesomeIcon icon={faBolt} />
               </div>
               <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary }}>Super Fast</h3>
               <p className="text-sm text-gray-500">Beating Gurgaon traffic smartly</p>
@@ -280,7 +281,7 @@ export default function Home() {
             {/* Feature 3 */}
             <div>
               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl transition-colors bg-orange-50 text-orange-400 group-hover:text-white" style={{ color: colors.primary }}>
-                <i className="fa-solid fa-shield-halved"></i>
+                <FontAwesomeIcon icon={faShieldHalved} />
               </div>
               <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary }}>Safe Delivery</h3>
               <p className="text-sm text-gray-500">100% Sealed & Sanitized packs</p>
@@ -293,9 +294,9 @@ export default function Home() {
       <div className="w-full py-8 border-y" style={{ backgroundColor: '#F0F4F8', borderColor: '#E2E8F0' }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-4 bg-white px-8 py-4 rounded-full shadow-sm border text-lg font-bold tracking-wide" style={{ color: colors.primary, borderColor: '#E2E8F0' }}>
-            <i className="fa-solid fa-star" style={{ color: colors.primary }}></i>
+            <FontAwesomeIcon icon={faStar} style={{ color: colors.primary }} />
             <span>Serving Happily in Gurgaon</span>
-            <i className="fa-solid fa-star" style={{ color: colors.primary }}></i>
+            <FontAwesomeIcon icon={faStar} style={{ color: colors.primary }} />
           </div>
         </div>
       </div>
@@ -321,7 +322,7 @@ export default function Home() {
             {/* Features Content */}
             <div className="w-full md:w-1/2">
               <h3 className="font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2" style={{ color: colors.primary }}>
-                <i className="fa-solid fa-mobile-screen"></i> The USTART App
+                <FontAwesomeIcon icon={faMobileScreen} /> The USTART App
               </h3>
               <h2 className="text-4xl md:text-6xl font-extrabold mb-10" style={{ color: colors.primary }}>
                 Designed for the <br />Hungry.
@@ -331,7 +332,7 @@ export default function Home() {
                 {/* Feature 1 */}
                 <div className="flex gap-6 group">
                   <div className="mt-1 w-20 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl group-hover:text-white transition-colors" style={{ color: colors.primary }}>
-                    <i className="fa-solid fa-stopwatch"></i>
+                    <FontAwesomeIcon icon={faStopwatch} />
                   </div>
                   <div>
                     <h4 className="text-2xl font-bold mb-2" style={{ color: colors.primary }}>Priority Delivery</h4>
@@ -353,7 +354,7 @@ export default function Home() {
                 {/* Feature 3 */}
                 <div className="flex gap-6 group">
                   <div className="mt-1 w-20 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl group-hover:text-white transition-colors" style={{ color: colors.primary }}>
-                    <i className="fa-solid fa-tag"></i>
+                    <FontAwesomeIcon icon={faTag} />
                   </div>
                   <div>
                     <h4 className="text-2xl font-bold mb-2" style={{ color: colors.primary }}>No Surge Pricing</h4>
@@ -374,7 +375,7 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-3 font-bold tracking-[0.2em] border border-white/20 px-6 py-2 rounded-full text-xs uppercase mb-8" style={{ color: colors.gold, borderColor: colors.goldDark }}>
-            <i className="fa-solid fa-crown"></i> Invitation Only
+            <FontAwesomeIcon icon={faCrown} /> Invitation Only
           </div>
 
           <h2 className="text-5xl md:text-8xl font-serif italic mb-4">
@@ -389,7 +390,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 p-10 rounded-3xl hover:bg-white/10 transition-colors text-left group">
               <div className="text-5xl font-black mb-4" style={{ color: colors.gold }}>0%</div>
               <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
-                Delivery Fee <i className="fa-solid fa-truck-fast text-gray-600 group-hover:text-white transition-colors text-sm"></i>
+                Delivery Fee <FontAwesomeIcon icon={faTruckFast} className="text-gray-600 group-hover:text-white transition-colors text-sm" />
               </h4>
               <p className="text-gray-400 text-sm leading-relaxed">On all orders above ₹199. Unlimited free delivery, forever. No questions asked.</p>
             </div>
@@ -406,7 +407,7 @@ export default function Home() {
                 className="w-full py-4 bg-white font-bold rounded-xl text-sm uppercase tracking-wider hover:bg-gray-100 transition-colors"
                 style={{ color: '#8E7008' }}
               >
-                Join Waitlist <i className="fa-solid fa-arrow-right ml-2"></i>
+                Join Waitlist <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
               </button>
             </div>
 
@@ -414,7 +415,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 p-10 rounded-3xl hover:bg-white/10 transition-colors text-left group">
               <div className="text-5xl font-black mb-4" style={{ color: colors.gold }}>VIP</div>
               <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
-                Access <i className="fa-solid fa-lock-open text-gray-600 group-hover:text-white transition-colors text-sm"></i>
+                Access <FontAwesomeIcon icon={faLockOpen} className="text-gray-600 group-hover:text-white transition-colors text-sm" />
               </h4>
               <p className="text-gray-400 text-sm leading-relaxed">Priority reservations at the city's highly booked tables. You skip the line.</p>
             </div>
