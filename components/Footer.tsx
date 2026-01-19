@@ -23,8 +23,8 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
-          <div className="text-4xl font-black tracking-tighter italic mb-8">
-            <Logo color={colors.white} />
+          <div className="shrink-0 scale-50 md:scale-75 -ml-8">
+            <Logo color='#FFFFFF' />
           </div>
           <div className="flex gap-6 text-2xl">
             <a href="https://in.linkedin.com/company/ustartin" className="hover:text-orange-400 transition-colors"><i className="fa-brands fa-linkedin"></i></a>

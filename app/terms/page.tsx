@@ -94,12 +94,12 @@ const TermsPage: React.FC = () => {
 
       {/* --- HEADER --- */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto md:h-16 flex items-center justify-between">
           <div className="flex items-center gap-4">            
 
             {/* Logo */}
             <Link href="/">
-              <div className="flex items-center gap-2 cursor-pointer. max-w-6/6 ">
+              <div className="flex items-center gap-2 cursor-pointer. max-w-3/6 ">
                 <Logo color={`#0F2441`} />
               </div>
             </Link>

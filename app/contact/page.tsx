@@ -55,7 +55,7 @@ const ContactPage: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                     <div className="flex items-center gap-4">
                         <Link href="/">
-                            <div className="flex items-center gap-2 cursor-pointer. max-w-6/6 ">
+                            <div className="flex items-center gap-2 cursor-pointer. max-w-3/6 ">
                                 <Logo color={scrolled ? '#0F2441' : '#FFFFFF'} />
                             </div>
                         </Link>

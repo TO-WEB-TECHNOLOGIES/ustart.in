@@ -1,4 +1,3 @@
-// components/Logo.tsx
 import React from 'react';
 
 export default function Logo({ className = "w-full h-full", color = "currentColor" }: { className?: string; color?: string }) {
