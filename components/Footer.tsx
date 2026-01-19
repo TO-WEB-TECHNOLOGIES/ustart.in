@@ -35,7 +35,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
           <div>
-            Made with <i className="fa-solid fa-heart text-orange-500 mx-1"></i> in Gurugram, for the world. © {new Date().getFullYear()} Toweb Technology Pvt Ltd.
+            Made with 🧡 in Gurugram, for the world. © {new Date().getFullYear()} Toweb Technology Pvt Ltd.
           </div>
           <div className="flex gap-8">
             <a href="/terms" className="hover:text-white transition-colors">Terms</a>
