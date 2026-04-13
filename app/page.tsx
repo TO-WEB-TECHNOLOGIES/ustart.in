@@ -190,7 +190,7 @@ export default function Home() {
           </div>
 
           <div className="hidden md:flex gap-8 font-medium text-sm tracking-wide uppercase">
-            <a href="/coming-soon" className="hover:text-orange-400 transition-colors">Partner with us</a>
+            <a href="https://partners.ustart.in" className="hover:text-orange-400 transition-colors">Partner with us</a>
             <a href="/coming-soon" className="hover:text-orange-400 transition-colors">Ride with us</a>
           </div>
         </div>
