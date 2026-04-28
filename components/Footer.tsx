@@ -41,6 +41,7 @@ export default function Footer() {
             <a href="/terms" className="hover:text-white transition-colors">Terms</a>
             <a href="/terms#privacy-data-protection" className="hover:text-white transition-colors">Privacy</a>
             <a href="/contact" className="hover:text-white transition-colors">Contact</a>
+            <a href="/delete-account" className="hover:text-white transition-colors">Account Deletion</a>
           </div>
         </div>
       </div>
