@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "in.toweb.ustart.users",
+      "sha256_cert_fingerprints": [
+        "0D:24:31:83:4D:76:D6:A9:97:B6:D9:38:56:A6:11:A8:DD:1F:6D:EB:05:59:66:D8:9F:A9:AD:51:EE:EC:E3:2C"
+      ]
+    }
+  }
+]
