@@ -16,6 +16,17 @@ export default function DeleteAccount() {
     aware: false,
   });
 
+  // --- OTP VERIFICATION STATE ---
+  const [otp, setOtp] = useState('');
+  const [otpSent, setOtpSent] = useState(false);
+  const [otpVerified, setOtpVerified] = useState(false);
+  const [otpError, setOtpError] = useState('');
+  const [sending, setSending] = useState(false);
+  const [verifying, setVerifying] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
+
+  const isValidMobile = /^[0-9]{10}$/.test(formData.mobile);
+
   // --- BRAND COLORS ---
   const colors = {
     primary: '#0F2441',
@@ -40,17 +51,92 @@ export default function DeleteAccount() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Resend cooldown countdown
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const timer = setTimeout(() => setCooldown(c => c - 1), 1000);
+    return () => clearTimeout(timer);
+  }, [cooldown]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
+
+    // If the mobile number changes, any prior OTP send/verify no longer applies
+    if (name === 'mobile') {
+      setOtpSent(false);
+      setOtpVerified(false);
+      setOtp('');
+      setOtpError('');
+    }
+
     setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
   };
 
+  const handleSendOtp = async () => {
+    if (!isValidMobile || sending || cooldown > 0) return;
+    setSending(true);
+    setOtpError('');
+    try {
+      const response = await fetch('/api/auth/send-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mobileNumber: formData.mobile, channel: 'SMS' }),
+      });
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok) {
+        setOtpSent(true);
+        setOtp('');
+        setCooldown(30);
+      } else if (response.status === 429 && data.blocked) {
+        alert(data.message || 'Too many attempts. Your number is temporarily blocked.');
+      } else if (response.status === 429) {
+        setOtpError(data.error || 'Please wait before requesting another OTP.');
+        setCooldown(30);
+      } else {
+        setOtpError(data.error || 'Could not send OTP. Please try again.');
+      }
+    } catch {
+      setOtpError('Could not send OTP. Please try again.');
+    } finally {
+      setSending(false);
+    }
+  };
+
+  const handleVerifyOtp = async () => {
+    if (otp.length !== 4 || verifying) return;
+    setVerifying(true);
+    setOtpError('');
+    try {
+      const response = await fetch('/api/auth/verify-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mobileNumber: formData.mobile, otp }),
+      });
+
+      // Per spec: ignore the response body, rely only on the status.
+      if (response.ok) {
+        setOtpVerified(true);
+      } else {
+        setOtpError('Incorrect OTP. Please try again.');
+      }
+    } catch {
+      setOtpError('Incorrect OTP. Please try again.');
+    } finally {
+      setVerifying(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!otpVerified) {
+      alert("Please verify your mobile number with the OTP before proceeding.");
+      return;
+    }
     if (!formData.aware) {
       alert("Please confirm you understand the consequences before proceeding.");
       return;
@@ -203,6 +289,80 @@ export default function DeleteAccount() {
                     placeholder="Enter 10-digit number"
                   />
                 </div>
+
+                {/* OTP Verification */}
+                {!otpVerified ? (
+                  <div className="mt-3">
+                    {!otpSent ? (
+                      <button
+                        type="button"
+                        onClick={handleSendOtp}
+                        disabled={!isValidMobile || sending || cooldown > 0}
+                        className={`text-sm font-bold transition-colors flex items-center gap-2
+                          ${(!isValidMobile || sending || cooldown > 0)
+                            ? 'text-gray-400 cursor-not-allowed'
+                            : 'text-orange-500 hover:text-orange-600'
+                          }`}
+                      >
+                        <i className="fa-solid fa-paper-plane"></i>
+                        {sending ? 'Sending OTP...' : cooldown > 0 ? `Resend in ${cooldown}s` : 'Send OTP to verify'}
+                      </button>
+                    ) : (
+                      <div className="space-y-3">
+                        <p className="text-xs text-gray-500">
+                          Enter the 4-digit code sent to +91 {formData.mobile}.
+                        </p>
+                        <div className="flex items-center gap-3">
+                          <input
+                            type="text"
+                            inputMode="numeric"
+                            maxLength={4}
+                            value={otp}
+                            onChange={(e) => {
+                              setOtp(e.target.value.replace(/\D/g, '').slice(0, 4));
+                              setOtpError('');
+                            }}
+                            className="w-32 px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl tracking-[0.5em] text-center font-bold focus:ring-2 focus:ring-orange-400 focus:border-transparent outline-none transition-all"
+                            placeholder="••••"
+                          />
+                          <button
+                            type="button"
+                            onClick={handleVerifyOtp}
+                            disabled={otp.length !== 4 || verifying}
+                            className={`px-5 py-3 rounded-xl font-bold text-sm transition-colors
+                              ${(otp.length !== 4 || verifying)
+                                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                                : 'bg-orange-500 text-white hover:bg-orange-600'
+                              }`}
+                          >
+                            {verifying ? 'Verifying...' : 'Verify'}
+                          </button>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={handleSendOtp}
+                          disabled={sending || cooldown > 0}
+                          className={`text-xs font-bold transition-colors
+                            ${(sending || cooldown > 0)
+                              ? 'text-gray-400 cursor-not-allowed'
+                              : 'text-orange-500 hover:text-orange-600'
+                            }`}
+                        >
+                          {cooldown > 0 ? `Resend OTP in ${cooldown}s` : 'Resend OTP'}
+                        </button>
+                      </div>
+                    )}
+                    {otpError && (
+                      <p className="text-xs text-red-500 mt-2 flex items-center gap-1">
+                        <i className="fa-solid fa-circle-exclamation"></i> {otpError}
+                      </p>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-sm font-bold text-green-600 mt-3 flex items-center gap-2">
+                    <i className="fa-solid fa-circle-check"></i> Mobile number verified
+                  </p>
+                )}
               </div>
 
               {/* Reason Field */}
@@ -247,9 +407,9 @@ export default function DeleteAccount() {
               {/* Submit Button (Destructive Styling) */}
               <button
                 type="submit"
-                disabled={!formData.aware}
+                disabled={!formData.aware || !otpVerified}
                 className={`w-full py-4 rounded-xl font-bold text-center transition-all duration-300 border-2 flex items-center justify-center gap-2
-                  ${formData.aware
+                  ${formData.aware && otpVerified
                     ? 'border-red-500 text-red-500 hover:bg-red-50'
                     : 'border-gray-200 text-gray-400 cursor-not-allowed bg-gray-50'
                   }`}
