@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from '../router';
 import { Footer } from '../components/Footer';
+import { PLAY_STORE_URL, APP_STORE_URL } from '../constants';
 
 export const HomePage: React.FC = () => {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useEffect(() => {
     // 1. Scroll Reveal (IntersectionObserver)
@@ -154,9 +155,9 @@ export const HomePage: React.FC = () => {
           if (!start) start = ts;
           const progress = Math.min((ts - start) / duration, 1);
           const val = Math.floor(easeOut(progress) * target);
-          el.textContent = (val >= 1000 ? '10,000' : String(val)) + (target === 10000 ? '+' : '+');
+          el.textContent = val.toLocaleString() + '+';
           if (progress < 1) requestAnimationFrame(step);
-          else el.textContent = target === 10000 ? '10,000+' : '100+';
+          else el.textContent = target.toLocaleString() + '+';
         };
         requestAnimationFrame(step);
       });
@@ -713,8 +714,8 @@ export const HomePage: React.FC = () => {
       </div>
     </div>
     <div className="stats-strip reveal">
-      <div className="stat"><span className="n" data-target="100">0</span><span className="l">+ RESTAURANT PARTNERS</span></div>
-      <div className="stat"><span className="n" data-target="10000">0</span><span className="l">+ ORDERS DELIVERED</span></div>
+      <div className="stat"><span className="n" data-target="6000">0</span><span className="l">+ RESTAURANT PARTNERS</span></div>
+      <div className="stat"><span className="n" data-target="100">0</span><span className="l">+ ORDERS DELIVERED</span></div>
       <div className="stat"><span className="n">4.8★</span><span className="l">RATING</span></div>
     </div>
     <p className="bottom-line reveal">Join the ones who already <span className="hl">made the switch.</span></p>
@@ -787,30 +788,30 @@ export const HomePage: React.FC = () => {
       <span className="sec-kicker">🕵️ INTERROGATION ROOM</span>
       <h2 className="font-display">Everything You<br />Wanted to <span className="hl">Know.</span></h2>
     </div>
-    <div className="faq-list" id="faqList">
-      <div className="faq-item reveal d1">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}><span><span className="qtag">Q1.</span>Is USTART really more affordable than other apps?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">There's no hidden platform fee and no surprise charge waiting at checkout. The price you see on the menu is <strong>the exact price you pay</strong>. No plot twists, no "convenience" tax, no math you didn't agree to.</div></div>
+    <div className="faq-list reveal" id="faqList">
+      <div className={`faq-item ${openFaq === 0 ? 'open' : ''}`}>
+        <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}><span><span className="qtag">Q1.</span>Is USTART really more affordable than other apps?</span><span className="chev">{openFaq === 0 ? '−' : '+'}</span></button>
+        <div className="faq-a" hidden={openFaq !== 0}><div className="faq-a-inner">There's no hidden platform fee and no surprise charge waiting at checkout. The price you see on the menu is <strong>the exact price you pay</strong>. No plot twists, no "convenience" tax, no math you didn't agree to.</div></div>
       </div>
-      <div className="faq-item reveal d2">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}><span><span className="qtag">Q2.</span>Which areas do you deliver to?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">Right now, we're serving all of <strong>Gurugram</strong>, and we're adding new areas as fast as we can. Just drop your location into the app, and it'll tell you instantly whether we're already at your doorstep or on the way soon.</div></div>
+      <div className={`faq-item ${openFaq === 1 ? 'open' : ''}`}>
+        <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}><span><span className="qtag">Q2.</span>Which areas do you deliver to?</span><span className="chev">{openFaq === 1 ? '−' : '+'}</span></button>
+        <div className="faq-a" hidden={openFaq !== 1}><div className="faq-a-inner">Right now, we're serving all of <strong>Gurugram and Delhi NCR</strong>, and we're adding new areas as fast as we can. Just drop your location into the app, and it'll tell you instantly whether we're already at your doorstep or on the way soon.</div></div>
       </div>
-      <div className="faq-item reveal d3">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}><span><span className="qtag">Q3.</span>How is USTART better for restaurants?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">We charge <strong>lower commissions</strong> than the big apps, so restaurants keep more of what they actually earn. That means they don't have to inflate their menu prices just to survive, which keeps food affordable for you and margins healthy for them.</div></div>
+      <div className={`faq-item ${openFaq === 2 ? 'open' : ''}`}>
+        <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}><span><span className="qtag">Q3.</span>How is USTART better for restaurants?</span><span className="chev">{openFaq === 2 ? '−' : '+'}</span></button>
+        <div className="faq-a" hidden={openFaq !== 2}><div className="faq-a-inner">We charge <strong>lower commissions (under 10%)</strong> than the big apps, so restaurants keep more of what they actually earn. That means they don't have to inflate their menu prices just to survive, which keeps food affordable for you and margins healthy for them.</div></div>
       </div>
-      <div className="faq-item reveal d4">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}><span><span className="qtag">Q4.</span>What is USTART Elite and is it worth it?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">It's our membership for regulars: free delivery on eligible orders, <strong>up to 15% extra off</strong> at select restaurants, priority handling, and early access to deals. If you order even semi-regularly, the savings stack up, and it pays for itself pretty fast.</div></div>
+      <div className={`faq-item ${openFaq === 3 ? 'open' : ''}`}>
+        <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}><span><span className="qtag">Q4.</span>What is USTART Elite and is it worth it?</span><span className="chev">{openFaq === 3 ? '−' : '+'}</span></button>
+        <div className="faq-a" hidden={openFaq !== 3}><div className="faq-a-inner">It's our membership for regulars: free delivery on eligible orders, <strong>up to 15% extra off</strong> at select restaurants, priority handling, and early access to deals. If you order even semi-regularly, the savings stack up, and it pays for itself pretty fast.</div></div>
       </div>
-      <div className="faq-item reveal d5">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}><span><span className="qtag">Q5.</span>Do you actually have no surge pricing?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">For real. Rain, rush hour, or a midnight craving: <strong>the price stays the same</strong>. We don't do "high demand" markups, ever. The whole point of USTART is that you never get punished for ordering at the wrong time.</div></div>
+      <div className={`faq-item ${openFaq === 4 ? 'open' : ''}`}>
+        <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}><span><span className="qtag">Q5.</span>Do you actually have no surge pricing?</span><span className="chev">{openFaq === 4 ? '−' : '+'}</span></button>
+        <div className="faq-a" hidden={openFaq !== 4}><div className="faq-a-inner">For real. Rain, rush hour, or a midnight craving: <strong>the price stays the same</strong>. We don't do "high demand" markups, ever. The whole point of USTART is that you never get punished for ordering at the wrong time.</div></div>
       </div>
-      <div className="faq-item reveal d6">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 5 ? null : 5)}><span><span className="qtag">Q6.</span>How do I become a restaurant or delivery partner?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">Easy — just tap "Put Us on the Menu" at the top of the page, or head to the Partner section in the footer. Fill in a few details, and our team will reach out to get you onboarded and set up fast.</div></div>
+      <div className={`faq-item ${openFaq === 5 ? 'open' : ''}`}>
+        <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 5 ? null : 5)}><span><span className="qtag">Q6.</span>How do I become a restaurant or delivery partner?</span><span className="chev">{openFaq === 5 ? '−' : '+'}</span></button>
+        <div className="faq-a" hidden={openFaq !== 5}><div className="faq-a-inner">Easy — just tap "Put Us on the Menu" at the top of the page, or head to the Partner section in the footer. Fill in a few details, and our team will reach out to get you onboarded and set up fast.</div></div>
       </div>
     </div>
     <div className="reveal d6" style={{'text-align': 'center', 'margin-top': '36px'} as React.CSSProperties}>
@@ -886,11 +887,11 @@ export const HomePage: React.FC = () => {
                 <p className="dlx-screen-heading">Fair food.<br /><span className="dlx-accent">Zero fees.</span></p>
                 <p className="dlx-screen-sub">Tap below, we'll take it from here</p>
 
-                <a href="#" className="dlx-screen-store-btn apple">
+                <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="dlx-screen-store-btn apple">
                   <svg viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
                   <span className="dlx-badge-txt"><span className="dlx-small">Download on the</span><span className="dlx-big">App Store</span></span>
                 </a>
-                <a href="#" className="dlx-screen-store-btn dlx-google">
+                <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="dlx-screen-store-btn dlx-google">
                   <svg viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
                   <span className="dlx-badge-txt"><span className="dlx-small">Get it on</span><span className="dlx-big">Google Play</span></span>
                 </a>

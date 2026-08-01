@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '../router';
+import { PLAY_STORE_URL, APP_STORE_URL } from '../constants';
 
 const SEO_LINE = 'Food delivery in Gurugram · No hidden charges food delivery · Late night food delivery Gurugram · Affordable food delivery · Best food delivery app Gurugram';
 
@@ -52,11 +53,11 @@ export const Footer: React.FC = () => {
       <hr className="footer-divider" />
       <div className="footer-apps-social">
         <div className="footer-store-btns">
-          <a href="#" className="footer-store-btn">
+          <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="footer-store-btn">
             <span className="fi">▶</span>
             <span className="ft"><small>GET IT ON</small><strong>Google Play</strong></span>
           </a>
-          <a href="#" className="footer-store-btn">
+          <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="footer-store-btn">
             <span className="fi"> </span>
             <span className="ft"><small>DOWNLOAD ON THE</small><strong>App Store</strong></span>
           </a>
