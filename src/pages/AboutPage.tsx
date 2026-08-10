@@ -314,8 +314,8 @@ export const AboutPage: React.FC = () => {
       <span className="pc-kicker">🛵 For Foodies</span>
       <h3>Ride With <span>USTART.</span></h3>
       <div className="pc-stats">
-        <div className="pc-stat"><b>30k+</b><span>ORDERS DELIVERED</span></div>
-        <div className="pc-stat"><b>0</b><span>HIDDEN CHARGES</span></div>
+        <div className="pc-stat"><b>100+</b><span>ORDERS DELIVERED</span></div>
+        <div className="pc-stat"><b>6,000+</b><span>RESTAURANT PARTNERS</span></div>
       </div>
       <p>Order your favourite thalis, pizzas, and burgers with transparent pricing and lightning-fast delivery — every single time.</p>
       <a href="ustart_final.html#download" className="btn btn-gold btn-lg">🛵 Ride With Us</a>
