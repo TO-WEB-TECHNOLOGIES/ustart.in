@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { ReceiptText, Handshake, Zap, Leaf, UserCheck, ChefHat, MapPin } from 'lucide-react';
 import { Header } from '../components/Header';
+import { PageHero } from '../components/PageHero';
 import { Footer } from '../components/Footer';
 
 export const AboutPage: React.FC = () => {
@@ -43,18 +45,16 @@ export const AboutPage: React.FC = () => {
 
   return (
     <div className="about-page-wrapper">
-      <Header />
+      <Header variant="overlay" />
 
 {/* ===== ABOUT HERO ===== */}
-<header className="subhero">
-  <div className="subhero-orb subhero-orb-1"></div>
-  <div className="subhero-orb subhero-orb-2"></div>
-  <div className="subhero-inner">
-    <span className="case-number reveal"><span className="pulse-dot">●</span>🍽️ FRESH FROM GURUGRAM · ABOUT US</span>
-    <h1 className="reveal d1">The People Behind <span>Your Next Meal.</span></h1>
-    <p className="reveal d2">Born from one idea: fair food delivery for everyone.</p>
-  </div>
-</header>
+<PageHero
+  kicker="🍽️ FRESH FROM GURUGRAM · ABOUT US"
+  title={<>The People Behind <span>Your Next Meal.</span></>}
+  subtitle="Born from one idea: fair food delivery for everyone."
+  focal="center 68%"
+  tint="rgba(255,159,67,0.18)"
+/>
 {/* ===== OUR STORY ===== */}
 
 <section className="story-section">
@@ -75,17 +75,23 @@ export const AboutPage: React.FC = () => {
     </div>
     <div className="story-cards-wrap">
       <div className="story-card reveal-right d1">
-        <div className="num">🍕</div>
+        <div className="num">
+          <UserCheck size={22} strokeWidth={2.2} />
+        </div>
         <h4>For You, The Customer</h4>
         <p>Every fee is visible upfront. No checkout surprises, ever.</p>
       </div>
       <div className="story-card reveal-right d2">
-        <div className="num">🍜</div>
+        <div className="num">
+          <ChefHat size={22} strokeWidth={2.2} />
+        </div>
         <h4>Fair to Restaurants</h4>
         <p>Lower commissions so local kitchens actually keep what they earn.</p>
       </div>
       <div className="story-card reveal-right d3">
-        <div className="num">🛵</div>
+        <div className="num">
+          <MapPin size={22} strokeWidth={2.2} />
+        </div>
         <h4>Made in Gurugram</h4>
         <p>Built for this city first — by people who order from here too.</p>
       </div>
@@ -274,25 +280,33 @@ export const AboutPage: React.FC = () => {
   <div className="values-grid">
     <div className="value-item reveal-pop d1">
       <span className="num-tag">01</span>
-      <div className="icon-badge">🧾</div>
+      <div className="icon-badge">
+        <ReceiptText size={26} strokeWidth={2.2} />
+      </div>
       <h4>Transparency</h4>
       <p>The price you see is the price you pay. Always. No checkout surprises.</p>
     </div>
     <div className="value-item reveal-pop d2">
       <span className="num-tag">02</span>
-      <div className="icon-badge">🤝</div>
+      <div className="icon-badge">
+        <Handshake size={26} strokeWidth={2.2} />
+      </div>
       <h4>Fairness</h4>
       <p>For customers, restaurants, and delivery partners alike — built on trust.</p>
     </div>
     <div className="value-item reveal-pop d3">
       <span className="num-tag">03</span>
-      <div className="icon-badge">⚡</div>
+      <div className="icon-badge">
+        <Zap size={26} strokeWidth={2.2} />
+      </div>
       <h4>Speed</h4>
       <p>Fast delivery without cutting corners on fairness or quality.</p>
     </div>
     <div className="value-item reveal-pop d4">
       <span className="num-tag">04</span>
-      <div className="icon-badge">🌱</div>
+      <div className="icon-badge">
+        <Leaf size={26} strokeWidth={2.2} />
+      </div>
       <h4>Responsibility</h4>
       <p>Eco packaging and green last-mile delivery, by design.</p>
     </div>
@@ -300,6 +314,8 @@ export const AboutPage: React.FC = () => {
 </section>
 
 
+{/* ===== CTA SECTION ===== */}
+{/*
 <section className="premium-cta-section" id="download">
   <div className="premium-cta-head reveal">
     <span className="stamp" style={{ position: "static", display: "inline-block" }}>🔥 FRESH & READY</span>
@@ -335,6 +351,7 @@ export const AboutPage: React.FC = () => {
     </div>
   </div>
 </section>
+*/}
 {/* ===== FOOTER ===== */}
 <Footer />
 

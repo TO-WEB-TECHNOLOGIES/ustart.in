@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Header } from '../components/Header';
+import { PageHero } from '../components/PageHero';
 import { Footer } from '../components/Footer';
 
 export const CareersPage: React.FC = () => {
@@ -42,18 +43,18 @@ export const CareersPage: React.FC = () => {
 
   return (
     <div className="about-page-wrapper">
-      <Header />
+      <Header variant="overlay" />
 
-{/* ===== CAREERS HERO (Rapido-inspired) ===== */}
-
-<header className="careers-hero">
-  <div className="careers-hero-orb"></div>
-  <div className="careers-hero-inner">
-    <h1 className="reveal d1">Be a part of <span style={{ color: "var(--orange)" }}>our team.</span></h1>
-    <p className="reveal d2">We are so glad you want to join us in exploring a world of endless opportunities at USTART. Let's find a spot for you.</p>
-    <a href="jobs.html" className="btn btn-solid reveal d3">View Jobs</a>
-  </div>
-</header>
+{/* ===== CAREERS HERO ===== */}
+<PageHero
+  kicker="🚀 FRESH FROM GURUGRAM · CAREERS"
+  title={<>Be a part of <span>our team.</span></>}
+  subtitle="We are so glad you want to join us in exploring a world of endless opportunities at USTART. Let's find a spot for you."
+  focal="30% 55%"
+  tint="rgba(232,194,106,0.18)"
+>
+  <a href="jobs.html" className="btn btn-solid btn-lg">View Jobs</a>
+</PageHero>
 
 {/* ===== WHY WORK WITH US ===== */}
 <section className="why-work-section">
@@ -169,6 +170,8 @@ export const CareersPage: React.FC = () => {
 
 {/* ===== STUDENT AMBASSADOR PROGRAM ===== */}
 
+{/* ===== CTA SECTION ===== */}
+{/*
 <section className="premium-cta-section" id="partner-ride">
   <div className="premium-cta-head reveal">
     <span className="sec-kicker">🧭 WAYS TO WORK WITH US</span>
@@ -204,6 +207,7 @@ export const CareersPage: React.FC = () => {
     </div>
   </div>
 </section>
+*/}
 
 {/* ===== FOOTER ===== */}
 <Footer />

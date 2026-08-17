@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from '../components/Header';
+import { PageHero } from '../components/PageHero';
 import { Footer } from '../components/Footer';
 
 export const ContactPage: React.FC = () => {
@@ -57,18 +58,16 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="about-page-wrapper">
-      <Header />
+      <Header variant="overlay" />
 
 {/* ===== CONTACT HERO ===== */}
-<header className="subhero">
-  <div className="subhero-orb subhero-orb-1"></div>
-  <div className="subhero-orb subhero-orb-2"></div>
-  <div className="subhero-inner">
-    <span className="case-number reveal"><span className="pulse-dot">●</span>🍽️ FRESH FROM GURUGRAM · GET IN TOUCH</span>
-    <h1 className="reveal d1">Got A Question? <span>We're Listening.</span></h1>
-    <p className="reveal d2">Real humans, real fast — no chatbot loop. Reach out about orders, partnerships, or just to say hi.</p>
-  </div>
-</header>
+<PageHero
+  kicker="🍽️ FRESH FROM GURUGRAM · GET IN TOUCH"
+  title={<>Got A Question? <span>We're Listening.</span></>}
+  subtitle="Real humans, real fast — no chatbot loop. Reach out about orders, partnerships, or just to say hi."
+  focal="70% 45%"
+  tint="rgba(244,183,111,0.20)"
+/>
 {/* ===== CONTACT INFO + FORM ===== */}
 
 <section className="contact-section">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from '../components/Header';
+import { PageHero } from '../components/PageHero';
 import { Footer } from '../components/Footer';
 
 const articles: Record<string, { tag: string; paragraphs: string[] }> = {
@@ -208,18 +209,16 @@ export const BlogPage: React.FC = () => {
 
   return (
     <div className="about-page-wrapper">
-      <Header />
+      <Header variant="overlay" />
 
 {/* ===== BLOG HERO ===== */}
-<header className="subhero">
-  <div className="subhero-orb subhero-orb-1"></div>
-  <div className="subhero-orb subhero-orb-2"></div>
-  <div className="subhero-inner">
-    <span className="case-number reveal"><span className="pulse-dot">●</span>🍽️ FRESH FROM GURUGRAM · THE USTART BLOG</span>
-    <h1 className="reveal d1">Food, Fairness & <span>Everything In Between.</span></h1>
-    <p className="reveal d2">Straight answers on delivery fees, restaurant economics, and the fair way to order food — no fine print, no fluff.</p>
-  </div>
-</header>
+<PageHero
+  kicker="🍽️ FRESH FROM GURUGRAM · THE USTART BLOG"
+  title={<>Food, Fairness & <span>Everything In Between.</span></>}
+  subtitle="Straight answers on delivery fees, restaurant economics, and the fair way to order food — no fine print, no fluff."
+  focal="center 25%"
+  tint="rgba(83,153,135,0.20)"
+/>
 {/* ===== FEATURED ARTICLE ===== */}
 
 <section className="blog-listing-section">

@@ -1,9 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from '../router';
+import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { QRCodeSVG } from 'qrcode.react';
 
 export const HomePage: React.FC = () => {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     // 1. Scroll Reveal (IntersectionObserver)
@@ -154,9 +163,9 @@ export const HomePage: React.FC = () => {
           if (!start) start = ts;
           const progress = Math.min((ts - start) / duration, 1);
           const val = Math.floor(easeOut(progress) * target);
-          el.textContent = (val >= 1000 ? '10,000' : String(val)) + (target === 10000 ? '+' : '+');
+          el.textContent = val.toLocaleString() + '+';
           if (progress < 1) requestAnimationFrame(step);
-          else el.textContent = target === 10000 ? '10,000+' : '100+';
+          else el.textContent = target.toLocaleString() + '+';
         };
         requestAnimationFrame(step);
       });
@@ -215,18 +224,9 @@ export const HomePage: React.FC = () => {
 
 
 
+<Header variant="overlay" />
+
 <header className="hero">
-  <nav className="nav nav-on-hero">
-    <Link to="/" className="logo">
-      <img src="Logo_White_Text.png" alt="USTART" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
-    </Link>
-    <div className="nav-links nav-links-hero">
-      <Link to="/about">About Us</Link>
-      <Link to="/careers">Careers</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/contact">Contact</Link>
-    </div>
-  </nav>
   <div className="hero-grain"></div>
   <div className="hero-orb hero-orb-1"></div>
   <div className="hero-orb hero-orb-2"></div>
@@ -693,8 +693,8 @@ export const HomePage: React.FC = () => {
       </div>
     </div>
     <div className="stats-strip reveal">
-      <div className="stat"><span className="n" data-target="100">0</span><span className="l">+ RESTAURANT PARTNERS</span></div>
-      <div className="stat"><span className="n" data-target="10000">0</span><span className="l">+ ORDERS DELIVERED</span></div>
+      <div className="stat"><span className="n" data-target="6000">0</span><span className="l">RESTAURANT PARTNERS</span></div>
+      <div className="stat"><span className="n" data-target="200">0</span><span className="l">DOWNLOADS</span></div>
       <div className="stat"><span className="n">4.8★</span><span className="l">RATING</span></div>
     </div>
     <p className="bottom-line reveal">Join the ones who already <span className="hl">made the switch.</span></p>
@@ -764,37 +764,51 @@ export const HomePage: React.FC = () => {
   <span className="float-food" style={{'bottom': '16%', 'left': '6%', '--rot': '-7deg', '--rot2': '5deg', 'font-size': '22px', 'animation-delay': '1.4s'} as React.CSSProperties}>🥗</span>
   <div className="wrap">
     <div className="sec-head reveal">
-      <span className="sec-kicker">🕵️ INTERROGATION ROOM</span>
+      <Badge variant="default" className="mb-4 rotate-[-1.5deg]">🕵️ INTERROGATION ROOM</Badge>
       <h2 className="font-display">Everything You<br />Wanted to <span className="hl">Know.</span></h2>
     </div>
-    <div className="faq-list" id="faqList">
-      <div className="faq-item reveal d1">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}><span><span className="qtag">Q1.</span>Is USTART really more affordable than other apps?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">There's no hidden platform fee and no surprise charge waiting at checkout. The price you see on the menu is <strong>the exact price you pay</strong>. No plot twists, no "convenience" tax, no math you didn't agree to.</div></div>
-      </div>
-      <div className="faq-item reveal d2">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}><span><span className="qtag">Q2.</span>Which areas do you deliver to?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">Right now, we're serving all of <strong>Gurugram</strong>, and we're adding new areas as fast as we can. Just drop your location into the app, and it'll tell you instantly whether we're already at your doorstep or on the way soon.</div></div>
-      </div>
-      <div className="faq-item reveal d3">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}><span><span className="qtag">Q3.</span>How is USTART better for restaurants?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">We charge <strong>lower commissions</strong> than the big apps, so restaurants keep more of what they actually earn. That means they don't have to inflate their menu prices just to survive, which keeps food affordable for you and margins healthy for them.</div></div>
-      </div>
-      <div className="faq-item reveal d4">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}><span><span className="qtag">Q4.</span>What is USTART Elite and is it worth it?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">It's our membership for regulars: free delivery on eligible orders, <strong>up to 15% extra off</strong> at select restaurants, priority handling, and early access to deals. If you order even semi-regularly, the savings stack up, and it pays for itself pretty fast.</div></div>
-      </div>
-      <div className="faq-item reveal d5">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}><span><span className="qtag">Q5.</span>Do you actually have no surge pricing?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">For real. Rain, rush hour, or a midnight craving: <strong>the price stays the same</strong>. We don't do "high demand" markups, ever. The whole point of USTART is that you never get punished for ordering at the wrong time.</div></div>
-      </div>
-      <div className="faq-item reveal d6">
-        <button className="faq-q" onClick={() => setOpenFaq(openFaq === 5 ? null : 5)}><span><span className="qtag">Q6.</span>How do I become a restaurant or delivery partner?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">Easy — just tap "Put Us on the Menu" at the top of the page, or head to the Partner section in the footer. Fill in a few details, and our team will reach out to get you onboarded and set up fast.</div></div>
-      </div>
-    </div>
+    <Accordion type="single" collapsible className="faq-list reveal d1 space-y-3.5 max-w-[720px] mx-auto" id="faqList">
+      <AccordionItem value="faq-1">
+        <AccordionTrigger qTag="Q1.">Is USTART really more affordable than other apps?</AccordionTrigger>
+        <AccordionContent>
+          There's no hidden platform fee and no surprise charge waiting at checkout. The price you see on the menu is <strong>the exact price you pay</strong>. No plot twists, no "convenience" tax, no math you didn't agree to.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="faq-2">
+        <AccordionTrigger qTag="Q2.">Which areas do you deliver to?</AccordionTrigger>
+        <AccordionContent>
+          Right now, we're serving all of <strong>Gurugram</strong>, and we're adding new areas as fast as we can. Just drop your location into the app, and it'll tell you instantly whether we're already at your doorstep or on the way soon.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="faq-3">
+        <AccordionTrigger qTag="Q3.">How is USTART better for restaurants?</AccordionTrigger>
+        <AccordionContent>
+          We charge <strong>lower commissions</strong> than the big apps, so restaurants keep more of what they actually earn. That means they don't have to inflate their menu prices just to survive, which keeps food affordable for you and margins healthy for them.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="faq-4">
+        <AccordionTrigger qTag="Q4.">What is USTART Elite and is it worth it?</AccordionTrigger>
+        <AccordionContent>
+          It's our membership for regulars: free delivery on eligible orders, <strong>up to 15% extra off</strong> at select restaurants, priority handling, and early access to deals. If you order even semi-regularly, the savings stack up, and it pays for itself pretty fast.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="faq-5">
+        <AccordionTrigger qTag="Q5.">Do you actually have no surge pricing?</AccordionTrigger>
+        <AccordionContent>
+          For real. Rain, rush hour, or a midnight craving: <strong>the price stays the same</strong>. We don't do "high demand" markups, ever. The whole point of USTART is that you never get punished for ordering at the wrong time.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="faq-6">
+        <AccordionTrigger qTag="Q6.">How do I become a restaurant or delivery partner?</AccordionTrigger>
+        <AccordionContent>
+          Easy — just tap "Put Us on the Menu" at the top of the page, or head to the Partner section in the footer. Fill in a few details, and our team will reach out to get you onboarded and set up fast.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
     <div className="reveal d6" style={{'text-align': 'center', 'margin-top': '36px'} as React.CSSProperties}>
-      <Link to="/contact" className="btn btn-outline">🕵️ View All FAQs →</Link>
+      <Button asChild variant="outline" size="lg" className="rounded-md">
+        <Link to="/contact">🕵️ View All FAQs →</Link>
+      </Button>
     </div>
   </div>
 </section>
@@ -852,7 +866,15 @@ export const HomePage: React.FC = () => {
         <div className="dlx-phone-cutoff dlx-reveal" id="phoneCutoff">
           <div id="phoneFrame">
             <div className="dlx-phone-shell dlx-phone-bob">
-              <div className="dlx-fresh-stamp">FAIR<br />PROMISE</div>
+              <div className="dlx-fresh-stamp">
+                <div className="stamp-inner">
+                  <svg className="stamp-star-ic" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l2.9 6.2 6.8.8-5 4.7 1.4 6.7L12 17.1l-6.1 3.3 1.4-6.7-5-4.7 6.8-.8L12 2z"/>
+                  </svg>
+                  <span className="stamp-word">FAIR</span>
+                  <span className="stamp-word-sub">PROMISE</span>
+                </div>
+              </div>
               <div className="dlx-phone-notch"></div>
               <div className="dlx-phone-screen">
                 <div className="dlx-status-bar">
@@ -864,15 +886,26 @@ export const HomePage: React.FC = () => {
                 </div>
                 <span className="dlx-screen-badge">Get Started</span>
                 <p className="dlx-screen-heading">Fair food.<br /><span className="dlx-accent">Zero fees.</span></p>
-                <p className="dlx-screen-sub">Tap below, we'll take it from here</p>
+                <p className="dlx-screen-sub">Scan to install the app</p>
 
-                <a href="#" className="dlx-screen-store-btn apple">
-                  <svg viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                  <span className="dlx-badge-txt"><span className="dlx-small">Download on the</span><span className="dlx-big">App Store</span></span>
-                </a>
-                <a href="#" className="dlx-screen-store-btn dlx-google">
-                  <svg viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
-                  <span className="dlx-badge-txt"><span className="dlx-small">Get it on</span><span className="dlx-big">Google Play</span></span>
+                <a
+                  href="https://store.ustart.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="dlx-qr-card"
+                  aria-label="Scan or open store.ustart.in"
+                >
+                  <div className="dlx-qr-code-box">
+                    <QRCodeSVG
+                      value="https://store.ustart.in"
+                      size={128}
+                      fgColor="#0F2441"
+                      bgColor="#FFFFFF"
+                      level="M"
+                    />
+                  </div>
+                  <span className="dlx-qr-url">store.ustart.in ↗</span>
+                  <span className="dlx-qr-sub">iOS &amp; Android</span>
                 </a>
 
                 <div className="dlx-screen-footnote"><span className="dlx-dot dlx-pulse-dot"></span>Live in Gurugram</div>
@@ -905,6 +938,7 @@ export const HomePage: React.FC = () => {
 
 
 
+{/*
 <section className="ambx-banner" id="campus-leaders">
   <div className="ambx-orb ambx-orb-1"></div>
   <div className="ambx-orb ambx-orb-2"></div>
@@ -923,7 +957,7 @@ export const HomePage: React.FC = () => {
           <p>Become a Creator. Build a Community. Lead from your campus.</p>
         </div>
         <div className="ambx-perks">
-          <span className="ambx-perk"><span className="ambx-tick">✓</span>0₹ to join</span>
+          <span className="ambx-perk"><span className="ambx-tick">✓</span>₹0 to join</span>
           <span className="ambx-perk"><span className="ambx-tick">✓</span>Verified certificates</span>
           <span className="ambx-perk"><span className="ambx-tick">✓</span>Founder mentorship</span>
         </div>
@@ -942,6 +976,7 @@ export const HomePage: React.FC = () => {
     </div>
   </div>
 </section>
+*/}
 
 {/* ===== FOOTER ===== */}
 <Footer />
