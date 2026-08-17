@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { Header } from '../components/Header';
 import { PageHero } from '../components/PageHero';
@@ -72,9 +74,9 @@ export const ContactPage: React.FC = () => {
 
 <section className="contact-section">
   <svg className="doodle" style={{ top: "5%", left: "3%", width: "50px", opacity: "0.14" }} viewBox="0 0 64 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 18 Q6 6 32 6 Q58 6 58 18 Z" stroke="var(--navy)" stroke-width="2" fill="none"/>
-    <path d="M6 24 L58 24" stroke="var(--terracotta)" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M6 38 L58 38 Q58 46 32 46 Q6 46 6 38Z" stroke="var(--navy)" stroke-width="2" fill="none"/>
+    <path d="M6 18 Q6 6 32 6 Q58 6 58 18 Z" stroke="var(--navy)" strokeWidth="2" fill="none"/>
+    <path d="M6 24 L58 24" stroke="var(--terracotta)" strokeWidth="2.4" strokeLinecap="round"/>
+    <path d="M6 38 L58 38 Q58 46 32 46 Q6 46 6 38Z" stroke="var(--navy)" strokeWidth="2" fill="none"/>
   </svg>
   <div className="contact-grid">
     <div className="contact-cards reveal-left">

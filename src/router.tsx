@@ -1,64 +1,40 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+'use client';
 
-const RouterContext = createContext<{
-  pathname: string;
-  navigate: (to: string) => void;
-}>({
-  pathname: window.location.pathname,
-  navigate: () => {}
-});
+import React from 'react';
+import NextLink from 'next/link';
+import { usePathname, useRouter as useNextRouter } from 'next/navigation';
 
 export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [pathname, setPathname] = useState(window.location.pathname);
-
-  const navigate = (to: string) => {
-    window.history.pushState(null, '', to);
-    setPathname(to);
-    window.scrollTo(0, 0);
-  };
-
-  useEffect(() => {
-    const handlePopState = () => {
-      setPathname(window.location.pathname);
-    };
-
-    window.addEventListener('popstate', handlePopState);
-    
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, []);
-
-  return (
-    <RouterContext.Provider value={{ pathname, navigate }}>
-      {children}
-    </RouterContext.Provider>
-  );
+  return <>{children}</>;
 };
 
-export const useRouter = () => useContext(RouterContext);
+export const useRouter = () => {
+  const pathname = usePathname();
+  const router = useNextRouter();
 
-export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  to: string;
-}
-
-export const Link: React.FC<LinkProps> = ({ to, children, onClick, ...props }) => {
-  const { navigate } = useRouter();
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (e.metaKey || e.ctrlKey || e.shiftKey) {
-      return;
+  const navigate = (to: string) => {
+    router.push(to);
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
     }
-    e.preventDefault();
-    if (onClick) {
-      onClick(e);
-    }
-    navigate(to);
   };
 
+  return {
+    pathname: pathname || '/',
+    navigate,
+  };
+};
+
+export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  to?: string;
+  href?: string;
+}
+
+export const Link: React.FC<LinkProps> = ({ to, href, children, ...props }) => {
+  const target = to || href || '/';
   return (
-    <a href={to} onClick={handleClick} {...props}>
+    <NextLink href={target} {...props}>
       {children}
-    </a>
+    </NextLink>
   );
 };

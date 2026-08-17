@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect } from 'react';
 import { Link } from '../router';
 import { Header } from '../components/Header';
@@ -236,7 +238,7 @@ export const HomePage: React.FC = () => {
 
   {/* 1. Curved arrow top-left (draw-on) */}
   <svg className="doodle-arrow" style={{'top': '20%', 'left': '10%', 'width': '88px', 'transform': 'rotate(-28deg)', 'opacity': '0.22'} as React.CSSProperties} viewBox="0 0 80 40" fill="none">
-    <path d="M4 20 C20 8, 56 8, 72 20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="5 4" fill="none" style={{'stroke-dasharray': '200', 'stroke-dashoffset': '200', 'animation': 'doodleDraw 1.2s ease .3s forwards'} as React.CSSProperties}/>
+    <path d="M4 20 C20 8, 56 8, 72 20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="5 4" fill="none" style={{strokeDasharray: '200', strokeDashoffset: '200', animation: 'doodleDraw 1.2s ease .3s forwards'} as React.CSSProperties}/>
     <path d="M64 14 L72 20 L64 26" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
   </svg>
 
@@ -247,7 +249,7 @@ export const HomePage: React.FC = () => {
   </svg>
 
   {/* 3. 8-point asterisk star (wobbles) */}
-  <svg className="doodle-arrow" style={{'top': '28%', 'right': '20%', 'width': '40px', 'opacity': '0.2', 'animation': 'doodleWobble 5.5s ease-in-out infinite', '--dr': '0deg'} as React.CSSProperties} viewBox="0 0 40 40" fill="none">
+  <svg className="doodle-arrow" style={{'top': '28%', 'right': '20%', 'width': '40px', 'opacity': '0.2', animation: 'doodleWobble 5.5s ease-in-out infinite', '--dr': '0deg'} as React.CSSProperties} viewBox="0 0 40 40" fill="none">
     <line x1="20" y1="2" x2="20" y2="38" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
     <line x1="2" y1="20" x2="38" y2="20" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
     <line x1="7" y1="7" x2="33" y2="33" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
@@ -279,18 +281,18 @@ export const HomePage: React.FC = () => {
   </svg>
 
   {/* 9. Tiny hand-drawn heart left-center */}
-  <svg className="doodle-arrow" style={{'top': '48%', 'left': '4%', 'width': '32px', 'opacity': '0.18', 'animation': 'doodleFlicker 4s ease-in-out infinite', '--do': '0.18'} as React.CSSProperties} viewBox="0 0 32 30" fill="none">
+  <svg className="doodle-arrow" style={{'top': '48%', 'left': '4%', 'width': '32px', 'opacity': '0.18', animation: 'doodleFlicker 4s ease-in-out infinite', '--do': '0.18'} as React.CSSProperties} viewBox="0 0 32 30" fill="none">
     <path d="M16 26 C 6 18, 2 10, 8 6 C 12 4, 16 8, 16 8 C 16 8, 20 4, 24 6 C 30 10, 26 18, 16 26Z" stroke="var(--orange)" strokeWidth="2" fill="none" strokeLinejoin="round"/>
   </svg>
 
   {/* 10. Small star polygon top-center */}
-  <svg className="doodle-arrow" style={{'top': '8%', 'left': '44%', 'width': '28px', 'opacity': '0.15', 'animation': 'doodleWobble 7s ease-in-out infinite', '--dr': '-3deg'} as React.CSSProperties} viewBox="0 0 28 28" fill="none">
+  <svg className="doodle-arrow" style={{'top': '8%', 'left': '44%', 'width': '28px', 'opacity': '0.15', animation: 'doodleWobble 7s ease-in-out infinite', '--dr': '-3deg'} as React.CSSProperties} viewBox="0 0 28 28" fill="none">
     <path d="M14 2 L16.2 10.2 L24 10.2 L17.8 15.2 L20 23 L14 18 L8 23 L10.2 15.2 L4 10.2 L11.8 10.2 Z" stroke="var(--peach)" strokeWidth="1.8" fill="none" strokeLinejoin="round"/>
   </svg>
 
   {/* 11. Spiral (top-left corner) */}
   <svg className="doodle-arrow" style={{'top': '4%', 'left': '3%', 'width': '52px', 'opacity': '0.16'} as React.CSSProperties} viewBox="0 0 52 52" fill="none">
-    <path d="M26 26 C 26 19, 33 13, 39 17 C 45 21, 45 31, 37 35 C 29 39, 17 35, 15 25 C 13 15, 21 7, 33 7" stroke="rgba(255,255,255,0.7)" strokeWidth="2" fill="none" strokeLinecap="round" style={{'stroke-dasharray': '240', 'stroke-dashoffset': '240', 'animation': 'doodleDraw 2s ease .8s forwards', '--dl': '240'} as React.CSSProperties}/>
+    <path d="M26 26 C 26 19, 33 13, 39 17 C 45 21, 45 31, 37 35 C 29 39, 17 35, 15 25 C 13 15, 21 7, 33 7" stroke="rgba(255,255,255,0.7)" strokeWidth="2" fill="none" strokeLinecap="round" style={{strokeDasharray: '240', strokeDashoffset: '240', animation: 'doodleDraw 2s ease .8s forwards', '--dl': '240'} as React.CSSProperties}/>
   </svg>
 
   {/* 12. Dashed angle bracket right */}
@@ -357,15 +359,15 @@ export const HomePage: React.FC = () => {
   <img className="sv-brand-mark" src="/assets/brands/ustart_logo.png" alt="" />
 
   {/* floating street-food doodles */}
-  <span className="sv-float-food" style={{'top': '9%', 'left': '2%', '--rot': '-8deg', '--rot2': '6deg', 'animation-delay': '.5s'} as React.CSSProperties}>🍔</span>
-  <span className="sv-float-food" style={{'top': '70%', 'left': '3.5%', '--rot': '6deg', '--rot2': '-5deg', 'font-size': '20px', 'animation-delay': '1.3s'} as React.CSSProperties}>🥡</span>
-  <span className="sv-float-food" style={{'top': '16%', 'right': '3%', '--rot': '7deg', '--rot2': '-4deg', 'animation-delay': '.9s'} as React.CSSProperties}>🛵</span>
+  <span className="sv-float-food" style={{'top': '9%', 'left': '2%', '--rot': '-8deg', '--rot2': '6deg', animationDelay: '.5s'} as React.CSSProperties}>🍔</span>
+  <span className="sv-float-food" style={{'top': '70%', 'left': '3.5%', '--rot': '6deg', '--rot2': '-5deg', fontSize: '20px', animationDelay: '1.3s'} as React.CSSProperties}>🥡</span>
+  <span className="sv-float-food" style={{'top': '16%', 'right': '3%', '--rot': '7deg', '--rot2': '-4deg', animationDelay: '.9s'} as React.CSSProperties}>🛵</span>
 
   {/* hand-drawn doodle icons, styled after the hero graphic (crown / bolt / sparkle) */}
-  <svg className="sv-doodle" style={{'top': '4%', 'left': '44%', 'width': '34px', 'height': '26px', 'animation-delay': '.2s'} as React.CSSProperties} viewBox="0 0 40 30" fill="none">
+  <svg className="sv-doodle" style={{'top': '4%', 'left': '44%', 'width': '34px', 'height': '26px', animationDelay: '.2s'} as React.CSSProperties} viewBox="0 0 40 30" fill="none">
     <path d="M3 26L6 8l7 9 7-13 7 13 7-9 3 18H3z" stroke="#FF9F43" strokeWidth="2.2" strokeLinejoin="round" strokeLinecap="round"/>
   </svg>
-  <svg className="sv-doodle" style={{'top': '34%', 'right': '5%', 'width': '26px', 'height': '26px', 'animation-delay': '.7s'} as React.CSSProperties} viewBox="0 0 30 30" fill="none">
+  <svg className="sv-doodle" style={{'top': '34%', 'right': '5%', 'width': '26px', 'height': '26px', animationDelay: '.7s'} as React.CSSProperties} viewBox="0 0 30 30" fill="none">
     <path d="M15 1c1 6 2 8 8 9-6 1-7 3-8 9-1-6-2-8-8-9 6-1 7-3 8-9z" stroke="#F4B76F" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round"/>
   </svg>
 
@@ -550,7 +552,7 @@ export const HomePage: React.FC = () => {
       <path d="M8 28h48" />
       <path d="M9 34h46c1.5 0 2 1.7 1 2.7-2 2-6 2.3-9 2.3H17c-3 0-7-.3-9-2.3-1-1-.5-2.7 1-2.7z" fill="#F4B76F" fillOpacity="0.22"/>
       <path d="M11 40c1 3 4 5 8 5h26c4 0 7-2 8-5" />
-      <path d="M14 30.5c2-1 4-1 6 0M26 30.5c2-1 4-1 6 0M38 30.5c2-1 4-1 6 0" stroke-opacity="0.6"/>
+      <path d="M14 30.5c2-1 4-1 6 0M26 30.5c2-1 4-1 6 0M38 30.5c2-1 4-1 6 0" strokeOpacity="0.6"/>
       <path d="M8 42h48v2c0 3-2.5 5-5.5 5h-37C10.5 49 8 47 8 44z" fill="#9C6B1F" fillOpacity="0.25"/>
     </svg>
   </div>
@@ -562,7 +564,7 @@ export const HomePage: React.FC = () => {
       <circle cx="36" cy="40" r="2.6" fill="#C0563F" stroke="none"/>
       <circle cx="30" cy="46" r="2.6" fill="#C0563F" stroke="none"/>
       <circle cx="40" cy="30" r="2.6" fill="#C0563F" stroke="none"/>
-      <path d="M14 46c6 2 10 2 18 2s12 0 18-2" stroke-opacity="0.55"/>
+      <path d="M14 46c6 2 10 2 18 2s12 0 18-2" strokeOpacity="0.55"/>
     </svg>
   </div>
 
@@ -571,7 +573,7 @@ export const HomePage: React.FC = () => {
       <path d="M8 14h24l-3 40a5 5 0 0 1-5 4.5H16a5 5 0 0 1-5-4.5z" fill="#F4B76F" fillOpacity="0.2"/>
       <path d="M6 14h28" />
       <path d="M13 8c1-3 4-5 7-5s6 2 7 5" />
-      <path d="M12 26h16M11 36h18M12 46h16" stroke-opacity="0.5"/>
+      <path d="M12 26h16M11 36h18M12 46h16" strokeOpacity="0.5"/>
       <path d="M22 2v10" />
     </svg>
   </div>
@@ -580,7 +582,7 @@ export const HomePage: React.FC = () => {
     <svg viewBox="0 0 64 64" fill="none" stroke="#FCEBB6" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="32" cy="32" r="24" fill="#C0563F" fillOpacity="0.22"/>
       <circle cx="32" cy="32" r="9" fill="#081527" fillOpacity="0.35"/>
-      <path d="M18 20c2 3 1 6-1 7M46 22c-2 2-2 5 0 7M20 46c3-1 6 0 7 2M42 47c-2-2-2-5 0-7" stroke-opacity="0.55"/>
+      <path d="M18 20c2 3 1 6-1 7M46 22c-2 2-2 5 0 7M20 46c3-1 6 0 7 2M42 47c-2-2-2-5 0-7" strokeOpacity="0.55"/>
     </svg>
   </div>
 
@@ -588,14 +590,14 @@ export const HomePage: React.FC = () => {
     <svg viewBox="0 0 64 64" fill="none" stroke="#F2C464" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
       <path d="M10 30c8-6 36-6 44 0l-4 24a6 6 0 0 1-6 5H20a6 6 0 0 1-6-5z" fill="#FF9F43" fillOpacity="0.18"/>
       <path d="M10 30c8-6 36-6 44 0" />
-      <path d="M20 30c2-8 4-14 2-22M32 30c0-8 0-14-2-22M44 30c-2-8-4-14-2-22" stroke-opacity="0.6"/>
+      <path d="M20 30c2-8 4-14 2-22M32 30c0-8 0-14-2-22M44 30c-2-8-4-14-2-22" strokeOpacity="0.6"/>
     </svg>
   </div>
 
   <div className="el-food-doodle el-doodle-fries el-coin-float">
     <svg viewBox="0 0 48 64" fill="none" stroke="#FCEBB6" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
       <path d="M10 28h28l-4 30a4 4 0 0 1-4 3.5H18a4 4 0 0 1-4-3.5z" fill="#F4B76F" fillOpacity="0.22"/>
-      <path d="M14 28 12 6h6l1 22M22 28l-1-26h6l1 26M30 28l2-22h6l-2 22" stroke-opacity="0.65"/>
+      <path d="M14 28 12 6h6l1 22M22 28l-1-26h6l1 26M30 28l2-22h6l-2 22" strokeOpacity="0.65"/>
     </svg>
   </div>
 
@@ -669,7 +671,7 @@ export const HomePage: React.FC = () => {
     <line x1="38" y1="6" x2="50" y2="30" stroke="var(--terracotta)" strokeWidth="1.8" strokeLinecap="round"/>
     <line x1="44" y1="4" x2="56" y2="28" stroke="var(--terracotta)" strokeWidth="1.8" strokeLinecap="round"/>
   </svg>
-  <span className="float-food" style={{'bottom': '4%', 'right': '2%', '--rot': '-6deg', '--rot2': '8deg', 'font-size': '22px', 'animation-delay': '.3s'} as React.CSSProperties}>🍱</span>
+  <span className="float-food" style={{'bottom': '4%', 'right': '2%', '--rot': '-6deg', '--rot2': '8deg', fontSize: '22px', animationDelay: '.3s'} as React.CSSProperties}>🍱</span>
   <div className="wrap">
     <div className="sec-head reveal">
       <span className="sec-kicker">📼 INTERVIEW TRANSCRIPTS</span>
@@ -760,8 +762,8 @@ export const HomePage: React.FC = () => {
     <line x1="38" y1="22" x2="42" y2="20" stroke="var(--teal)" strokeWidth="2" strokeLinecap="round"/>
     <line x1="14" y1="34" x2="10" y2="36" stroke="var(--teal)" strokeWidth="2" strokeLinecap="round"/>
   </svg>
-  <span className="float-food" style={{'top': '14%', 'right': '6%', '--rot': '8deg', '--rot2': '-6deg', 'font-size': '22px', 'animation-delay': '.5s'} as React.CSSProperties}>🍿</span>
-  <span className="float-food" style={{'bottom': '16%', 'left': '6%', '--rot': '-7deg', '--rot2': '5deg', 'font-size': '22px', 'animation-delay': '1.4s'} as React.CSSProperties}>🥗</span>
+  <span className="float-food" style={{'top': '14%', 'right': '6%', '--rot': '8deg', '--rot2': '-6deg', fontSize: '22px', animationDelay: '.5s'} as React.CSSProperties}>🍿</span>
+  <span className="float-food" style={{'bottom': '16%', 'left': '6%', '--rot': '-7deg', '--rot2': '5deg', fontSize: '22px', animationDelay: '1.4s'} as React.CSSProperties}>🥗</span>
   <div className="wrap">
     <div className="sec-head reveal">
       <Badge variant="default" className="mb-4 rotate-[-1.5deg]">🕵️ INTERROGATION ROOM</Badge>
@@ -805,7 +807,7 @@ export const HomePage: React.FC = () => {
         </AccordionContent>
       </AccordionItem>
     </Accordion>
-    <div className="reveal d6" style={{'text-align': 'center', 'margin-top': '36px'} as React.CSSProperties}>
+    <div className="reveal d6" style={{textAlign: 'center', marginTop: '36px'} as React.CSSProperties}>
       <Button asChild variant="outline" size="lg" className="rounded-md">
         <Link to="/contact">🕵️ View All FAQs →</Link>
       </Button>
@@ -834,13 +836,13 @@ export const HomePage: React.FC = () => {
   <div className="dlx-glow dlx-g3"></div>
 
   {/* extra floating doodles for a livelier stage */}
-  <span className="dlx-float-food" style={{'top': '10%', 'left': '8%', '--rot': '-8deg', '--rot2': '6deg', 'animation-delay': '.2s'} as React.CSSProperties}>🍕</span>
-  <span className="dlx-float-food" style={{'top': '18%', 'right': '10%', '--rot': '6deg', '--rot2': '-5deg', 'animation-delay': '1s', 'font-size': '26px'} as React.CSSProperties}>🥤</span>
-  <span className="dlx-float-food" style={{'bottom': '14%', 'left': '6%', '--rot': '7deg', '--rot2': '-6deg', 'animation-delay': '1.6s', 'font-size': '22px'} as React.CSSProperties}>🍟</span>
-  <span className="dlx-float-food" style={{'bottom': '20%', 'right': '7%', '--rot': '-6deg', '--rot2': '8deg', 'animation-delay': '.7s', 'font-size': '24px'} as React.CSSProperties}>🍰</span>
-  <span className="dlx-spark" style={{'top': '24%', 'left': '22%', 'font-size': '20px'} as React.CSSProperties}>✦</span>
-  <span className="dlx-spark" style={{'bottom': '26%', 'right': '20%', 'font-size': '16px', 'animation-delay': '.8s'} as React.CSSProperties}>✦</span>
-  <span className="dlx-spark" style={{'top': '14%', 'right': '32%', 'font-size': '14px', 'animation-delay': '1.4s'} as React.CSSProperties}>✧</span>
+  <span className="dlx-float-food" style={{'top': '10%', 'left': '8%', '--rot': '-8deg', '--rot2': '6deg', animationDelay: '.2s'} as React.CSSProperties}>🍕</span>
+  <span className="dlx-float-food" style={{'top': '18%', 'right': '10%', '--rot': '6deg', '--rot2': '-5deg', animationDelay: '1s', fontSize: '26px'} as React.CSSProperties}>🥤</span>
+  <span className="dlx-float-food" style={{'bottom': '14%', 'left': '6%', '--rot': '7deg', '--rot2': '-6deg', animationDelay: '1.6s', fontSize: '22px'} as React.CSSProperties}>🍟</span>
+  <span className="dlx-float-food" style={{'bottom': '20%', 'right': '7%', '--rot': '-6deg', '--rot2': '8deg', animationDelay: '.7s', fontSize: '24px'} as React.CSSProperties}>🍰</span>
+  <span className="dlx-spark" style={{'top': '24%', 'left': '22%', fontSize: '20px'} as React.CSSProperties}>✦</span>
+  <span className="dlx-spark" style={{'bottom': '26%', 'right': '20%', fontSize: '16px', animationDelay: '.8s'} as React.CSSProperties}>✦</span>
+  <span className="dlx-spark" style={{'top': '14%', 'right': '32%', fontSize: '14px', animationDelay: '1.4s'} as React.CSSProperties}>✧</span>
 
   <div className="dlx-download-inner">
 

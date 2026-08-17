@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { ReceiptText, Handshake, Zap, Leaf, UserCheck, ChefHat, MapPin } from 'lucide-react';
 import { Header } from '../components/Header';
@@ -59,8 +61,8 @@ export const AboutPage: React.FC = () => {
 
 <section className="story-section">
   <svg className="doodle-animated" style={{ top: "8%", right: "4%", width: "64px", opacity: "0.16" }} viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="35" cy="35" r="26" stroke="var(--terracotta)" stroke-width="2" stroke-dasharray="5 6"/>
-    <path d="M35 16 L35 26 M35 44 L35 54 M16 35 L26 35 M44 35 L54 35" stroke="var(--orange)" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="35" cy="35" r="26" stroke="var(--terracotta)" strokeWidth="2" strokeDasharray="5 6"/>
+    <path d="M35 16 L35 26 M35 44 L35 54 M16 35 L26 35 M44 35 L54 35" stroke="var(--orange)" strokeWidth="2.4" strokeLinecap="round"/>
   </svg>
   <span className="float-food" style={{ top: "4%", left: "2%", "--rot": "-8deg", "--rot2": "5deg", fontSize: "30px" } as React.CSSProperties}>🥗</span>
   <div className="story-grid">
@@ -136,12 +138,12 @@ export const AboutPage: React.FC = () => {
 
 <section className="trust-gallery">
   <svg className="doodle" style={{ width: "60px", top: "4%", left: "2%", opacity: "0.18" }} viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M30 8 C36 8 40 14 40 20 C40 28 30 40 30 40 C30 40 20 28 20 20 C20 14 24 8 30 8Z" stroke="var(--orange)" stroke-width="2"/>
-    <circle cx="30" cy="20" r="4" stroke="var(--orange)" stroke-width="2"/>
+    <path d="M30 8 C36 8 40 14 40 20 C40 28 30 40 30 40 C30 40 20 28 20 20 C20 14 24 8 30 8Z" stroke="var(--orange)" strokeWidth="2"/>
+    <circle cx="30" cy="20" r="4" stroke="var(--orange)" strokeWidth="2"/>
   </svg>
   <svg className="doodle" style={{ width: "70px", top: "6%", right: "3%", opacity: "0.16" }} viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 35 Q10 10 35 10 Q60 10 60 35" stroke="var(--teal)" stroke-width="2" stroke-dasharray="5 6" stroke-linecap="round"/>
-    <path d="M15 35 L55 35" stroke="var(--terracotta)" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M10 35 Q10 10 35 10 Q60 10 60 35" stroke="var(--teal)" strokeWidth="2" strokeDasharray="5 6" strokeLinecap="round"/>
+    <path d="M15 35 L55 35" stroke="var(--terracotta)" strokeWidth="2.2" strokeLinecap="round"/>
   </svg>
   <div className="sec-head reveal">
     <span className="sec-kicker">🍛 TASTE THE TRUST</span>
@@ -264,11 +266,11 @@ export const AboutPage: React.FC = () => {
 
 <section className="values-section">
   <svg className="doodle" style={{ width: "120px", top: "-20px", left: "-30px", opacity: "0.12" }} viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="60" cy="60" r="42" stroke="var(--gold)" stroke-width="2" stroke-dasharray="6 7"/>
-    <path d="M60 30 L60 42 M60 78 L60 90 M30 60 L42 60 M78 60 L90 60" stroke="var(--gold-bright)" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="60" cy="60" r="42" stroke="var(--gold)" strokeWidth="2" strokeDasharray="6 7"/>
+    <path d="M60 30 L60 42 M60 78 L60 90 M30 60 L42 60 M78 60 L90 60" stroke="var(--gold-bright)" strokeWidth="2.4" strokeLinecap="round"/>
   </svg>
   <svg className="doodle" style={{ width: "90px", bottom: "-10px", right: "-20px", opacity: "0.12" }} viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 45 Q10 15 45 15 Q80 15 80 45 Q80 75 45 75 Q10 75 10 45Z" stroke="var(--gold)" stroke-width="2" stroke-dasharray="4 6"/>
+    <path d="M10 45 Q10 15 45 15 Q80 15 80 45 Q80 75 45 75 Q10 75 10 45Z" stroke="var(--gold)" strokeWidth="2" strokeDasharray="4 6"/>
   </svg>
   <span className="float-food" style={{ top: "6%", left: "3%", "--rot": "-10deg", "--rot2": "6deg", fontSize: "26px", opacity: "0.35" } as React.CSSProperties}>🍴</span>
   <span className="float-food" style={{ bottom: "8%", right: "4%", "--rot": "8deg", "--rot2": "-6deg", fontSize: "24px", opacity: "0.35", animationDelay: "1s" } as React.CSSProperties}>🌿</span>

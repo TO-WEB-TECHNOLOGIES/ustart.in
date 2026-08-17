@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Link } from '../router';
 import { PLAY_STORE_URL, APP_STORE_URL } from '../constants';

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
@@ -38,35 +40,35 @@ export const CampusPage: React.FC = () => {
   <div className="ng-pathway reveal">
     <div className="ng-pathway-glow"></div>
     <svg className="ng-path-svg" viewBox="0 0 1040 150" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <path className="ng-path-line" d="M90 75 H950" stroke="rgba(255,159,67,0.4)" stroke-width="2"/>
+      <path className="ng-path-line" d="M90 75 H950" stroke="rgba(255,159,67,0.4)" strokeWidth="2"/>
       <circle r="4" fill="#FF9F43"><animateMotion dur="3.2s" repeatCount="indefinite" path="M90 75 H950"/></circle>
       <g>
-        <circle className="ng-path-node-ring" cx="90" cy="75" r="13" fill="none" stroke="#FF9F43" stroke-width="1.5"/>
-        <circle cx="90" cy="75" r="13" fill="#0a1426" stroke="#FF9F43" stroke-width="2"/>
-        <text x="90" y="80" text-anchor="middle" font-size="14">🎓</text>
-        <text className="ng-path-label" x="90" y="112" text-anchor="middle">Apply</text>
-        <text className="ng-path-sub" x="90" y="126" text-anchor="middle">2-min form</text>
+        <circle className="ng-path-node-ring" cx="90" cy="75" r="13" fill="none" stroke="#FF9F43" strokeWidth="1.5"/>
+        <circle cx="90" cy="75" r="13" fill="#0a1426" stroke="#FF9F43" strokeWidth="2"/>
+        <text x="90" y="80" textAnchor="middle" fontSize="14">🎓</text>
+        <text className="ng-path-label" x="90" y="112" textAnchor="middle">Apply</text>
+        <text className="ng-path-sub" x="90" y="126" textAnchor="middle">2-min form</text>
       </g>
       <g>
-        <circle className="ng-path-node-ring" cx="376" cy="75" r="13" fill="none" stroke="#5eead4" stroke-width="1.5" style={{ animationDelay: ".5s" }}/>
-        <circle cx="376" cy="75" r="13" fill="#0a1426" stroke="#5eead4" stroke-width="2"/>
-        <text x="376" y="80" text-anchor="middle" font-size="14">🎟️</text>
-        <text className="ng-path-label" x="376" y="112" text-anchor="middle">Activate</text>
-        <text className="ng-path-sub" x="376" y="126" text-anchor="middle">Get your code</text>
+        <circle className="ng-path-node-ring" cx="376" cy="75" r="13" fill="none" stroke="#5eead4" strokeWidth="1.5" style={{ animationDelay: ".5s" }}/>
+        <circle cx="376" cy="75" r="13" fill="#0a1426" stroke="#5eead4" strokeWidth="2"/>
+        <text x="376" y="80" textAnchor="middle" fontSize="14">🎟️</text>
+        <text className="ng-path-label" x="376" y="112" textAnchor="middle">Activate</text>
+        <text className="ng-path-sub" x="376" y="126" textAnchor="middle">Get your code</text>
       </g>
       <g>
-        <circle className="ng-path-node-ring" cx="664" cy="75" r="13" fill="none" stroke="#93c5fd" stroke-width="1.5" style={{ animationDelay: "1s" }}/>
-        <circle cx="664" cy="75" r="13" fill="#0a1426" stroke="#93c5fd" stroke-width="2"/>
-        <text x="664" y="80" text-anchor="middle" font-size="14">📈</text>
-        <text className="ng-path-label" x="664" y="112" text-anchor="middle">Grow</text>
-        <text className="ng-path-sub" x="664" y="126" text-anchor="middle">Build your campus</text>
+        <circle className="ng-path-node-ring" cx="664" cy="75" r="13" fill="none" stroke="#93c5fd" strokeWidth="1.5" style={{ animationDelay: "1s" }}/>
+        <circle cx="664" cy="75" r="13" fill="#0a1426" stroke="#93c5fd" strokeWidth="2"/>
+        <text x="664" y="80" textAnchor="middle" fontSize="14">📈</text>
+        <text className="ng-path-label" x="664" y="112" textAnchor="middle">Grow</text>
+        <text className="ng-path-sub" x="664" y="126" textAnchor="middle">Build your campus</text>
       </g>
       <g>
-        <circle className="ng-path-node-ring" cx="950" cy="75" r="13" fill="none" stroke="#fde047" stroke-width="1.5" style={{ animationDelay: "1.5s" }}/>
-        <circle cx="950" cy="75" r="13" fill="#0a1426" stroke="#fde047" stroke-width="2"/>
-        <text x="950" y="80" text-anchor="middle" font-size="14">🏅</text>
-        <text className="ng-path-label" x="950" y="112" text-anchor="middle">Lead</text>
-        <text className="ng-path-sub" x="950" y="126" text-anchor="middle">Founding badge</text>
+        <circle className="ng-path-node-ring" cx="950" cy="75" r="13" fill="none" stroke="#fde047" strokeWidth="1.5" style={{ animationDelay: "1.5s" }}/>
+        <circle cx="950" cy="75" r="13" fill="#0a1426" stroke="#fde047" strokeWidth="2"/>
+        <text x="950" y="80" textAnchor="middle" fontSize="14">🏅</text>
+        <text className="ng-path-label" x="950" y="112" textAnchor="middle">Lead</text>
+        <text className="ng-path-sub" x="950" y="126" textAnchor="middle">Founding badge</text>
       </g>
     </svg>
   </div>

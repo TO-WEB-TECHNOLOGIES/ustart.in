@@ -20,14 +20,14 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--paper);color:var(--navy);font-family:'Manrope',sans-serif;overflow-x:hidden;position:relative;}
+body{background:var(--paper);color:var(--navy);font-family:var(--font-manrope),'Manrope',sans-serif;overflow-x:hidden;position:relative;}
 body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(15,36,65,0.045) 1px,transparent 0);background-size:18px 18px;pointer-events:none;z-index:1;opacity:0.7;}
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
 button{font-family:inherit;cursor:pointer;border:none;background:none;}
-.font-display{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-0.01em;}
-.font-type{font-family:'Manrope',sans-serif;font-weight:400;}
-.font-mono{font-family:'Manrope',sans-serif;font-weight:600;}
+.font-display{font-family:var(--font-manrope),'Manrope',sans-serif;font-weight:800;letter-spacing:-0.01em;}
+.font-type{font-family:var(--font-manrope),'Manrope',sans-serif;font-weight:400;}
+.font-mono{font-family:var(--font-manrope),'Manrope',sans-serif;font-weight:600;}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
 section{position:relative;z-index:2;}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
@@ -58,23 +58,37 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-off
 
 /* ===== SCROLL REVEAL ===== */
 .reveal{opacity:0;transform:translateY(36px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
-.reveal.is-in{opacity:1;transform:translateY(0);}
+.reveal.is-in, .reveal.dlx-is-in, .reveal.sv-is-in, .reveal.el-is-in{opacity:1 !important;transform:translateY(0) !important;}
 .reveal-tilt{opacity:0;transform:translateY(30px) rotate(var(--r,-2deg));transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
-.reveal-tilt.is-in{opacity:1;transform:translateY(0) rotate(var(--r,-2deg));}
+.reveal-tilt.is-in{opacity:1 !important;transform:translateY(0) rotate(var(--r,-2deg)) !important;}
 .reveal-scale{opacity:0;transform:scale(.85);transition:opacity .6s ease,transform .6s cubic-bezier(.34,1.56,.64,1);}
-.reveal-scale.is-in{opacity:1;transform:scale(1);}
+.reveal-scale.is-in{opacity:1 !important;transform:scale(1) !important;}
 .reveal-stamp{opacity:0;transform:scale(2.4) rotate(-18deg);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.9,.3,1.2);}
-.reveal-stamp.is-in{opacity:1;transform:scale(1) rotate(-8deg);}
+.reveal-stamp.is-in{opacity:1 !important;transform:scale(1) rotate(-8deg) !important;}
 .reveal-left{opacity:0;transform:translateX(-56px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
-.reveal-left.is-in{opacity:1;transform:translateX(0);}
+.reveal-left.is-in, .reveal-left.dlx-is-in{opacity:1 !important;transform:translateX(0) !important;}
 .reveal-right{opacity:0;transform:translateX(56px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
-.reveal-right.is-in{opacity:1;transform:translateX(0);}
+.reveal-right.is-in, .reveal-right.dlx-is-in{opacity:1 !important;transform:translateX(0) !important;}
 .reveal-pop{opacity:0;transform:scale(0.6) rotate(-4deg);transition:opacity .5s ease,transform .6s cubic-bezier(.34,1.56,.64,1);}
-.reveal-pop.is-in{opacity:1;transform:scale(1) rotate(0deg);}
-.reveal-flip{opacity:0;transform:rotateX(-40deg) translateY(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);}
-.reveal-flip.is-in{opacity:1;transform:rotateX(0) translateY(0);}
+.reveal-pop.is-in{opacity:1 !important;transform:scale(1) rotate(0deg) !important;}
+.reveal-flip{opacity:0;transform:rotateX(-40deg) translateY(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);;}
+.reveal-flip.is-in{opacity:1 !important;transform:rotateX(0) translateY(0) !important;}
+
+/* Fallback: if intersection observer is delayed or JS chunk blocked, auto-reveal after 0.5s */
+.reveal, .reveal-tilt, .reveal-scale, .reveal-stamp, .reveal-left, .reveal-right, .reveal-pop, .reveal-flip,
+.sv-reveal, .sv-reveal-tilt, .sv-reveal-pop, .el-reveal, .dlx-reveal, .dlx-reveal-left, .dlx-reveal-right {
+  animation: initialReveal 0.4s ease-out 0.5s forwards;
+}
+@keyframes initialReveal {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media(prefers-reduced-motion:reduce){
-  .reveal,.reveal-tilt,.reveal-scale,.reveal-stamp,.reveal-left,.reveal-right,.reveal-pop,.reveal-flip{opacity:1!important;transform:none!important;transition:none!important;}
+  .reveal,.reveal-tilt,.reveal-scale,.reveal-stamp,.reveal-left,.reveal-right,.reveal-pop,.reveal-flip,
+  .sv-reveal,.sv-reveal-tilt,.sv-reveal-pop,.el-reveal,.dlx-reveal,.dlx-reveal-left,.dlx-reveal-right{opacity:1!important;transform:none!important;transition:none!important;animation:none!important;}
   .float-food,.steam span,.pulse-dot{animation:none!important;}
 }
 .d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}

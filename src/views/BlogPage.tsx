@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { Header } from '../components/Header';
 import { PageHero } from '../components/PageHero';
@@ -223,8 +225,8 @@ export const BlogPage: React.FC = () => {
 
 <section className="blog-listing-section">
   <svg className="doodle" style={{ top: "4%", right: "3%", width: "42px", opacity: "0.16" }} viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="25" cy="25" r="19" stroke="var(--terracotta)" stroke-width="2" fill="none"/>
-    <circle cx="25" cy="25" r="8" stroke="var(--terracotta)" stroke-width="2" fill="none"/>
+    <circle cx="25" cy="25" r="19" stroke="var(--terracotta)" strokeWidth="2" fill="none"/>
+    <circle cx="25" cy="25" r="8" stroke="var(--terracotta)" strokeWidth="2" fill="none"/>
   </svg>
 
   <div className="featured-post reveal-scale">
