@@ -433,7 +433,7 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
         <div className="sv-bill-footer">
-          <div className="sv-bill-total"><span>TOTAL BS CHARGED</span><span className="sv-zero sv-zero-b1"><span className="sv-zero-ic">🚫</span>₹0.00</span></div>
+          <div className="sv-bill-total"><span>TOTAL CHARGED</span><span className="sv-zero sv-zero-b1"><span className="sv-zero-ic">🚫</span>₹0.00</span></div>
           <div className="sv-barcode" aria-hidden="true"></div>
         </div>
       </div>

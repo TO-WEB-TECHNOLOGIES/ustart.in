@@ -110,24 +110,20 @@ export const AboutPage: React.FC = () => {
   </div>
   <div className="founders-grid">
     <div className="founder-card reveal-left">
-      <div className="founder-file-tag">🍽️ AT THE HELM</div>
-      <div className="founder-avatar">RG</div>
+      <div className="founder-avatar">
+        <img src="/assets/images/rishabh-goel.png" alt="Rishabh Goel" />
+      </div>
       <h3>Rishabh Goel</h3>
       <span className="founder-role">Co-Founder & CEO</span>
       <p>Driven by a vision to make food delivery fairer for everyone, Rishabh Goel founded USTART to challenge industry norms and create a platform built on transparency, trust, and innovation. An MBA graduate from BML Munjal University, he combines entrepreneurial ambition with customer-centric thinking, leading USTART's mission to empower restaurants, delight customers, and create meaningful opportunities across India's food ecosystem.</p>
-      <div className="founder-tags">
-        <span className="alt">Strategy & Vision</span>
-      </div>
     </div>
     <div className="founder-card reveal-right">
-      <div className="founder-file-tag">⚙️ BUILDING THE STACK</div>
-      <div className="founder-avatar">YG</div>
+      <div className="founder-avatar">
+        <img src="/assets/images/yash-gupta.png" alt="Yash Gupta" />
+      </div>
       <h3>Yash Gupta</h3>
       <span className="founder-role">Co-Founder & CTO</span>
       <p>Yash Gupta is the technology force behind USTART, transforming ambitious ideas into scalable digital solutions. A Computer Science Engineer from BML Munjal University, he is passionate about building technology that solves real-world problems. With a focus on innovation, AI-driven systems, and seamless user experiences, Yash is helping shape the future of food-tech through technology that empowers businesses and simplifies lives.</p>
-      <div className="founder-tags">
-        <span className="alt">Engineering & AI</span>
-      </div>
     </div>
   </div>
   {/*

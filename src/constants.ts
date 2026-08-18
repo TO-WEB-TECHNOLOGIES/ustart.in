@@ -15,8 +15,8 @@ export const SITE_URL = 'https://ustart.in';
 export const SITE_NAME = 'USTART';
 export const LEGAL_ENTITY = 'Toweb Technology Private Limited';
 
-export const SUPPORT_EMAIL = 'support@ustart.app';
-export const PARTNERS_EMAIL = 'partners@ustart.app';
+export const SUPPORT_EMAIL = 'support@ustart.in';
+export const PARTNERS_EMAIL = 'partners@ustart.in';
 
 export const PARTNER_URL = 'https://partners.ustart.in/';
 export const APP_DOWNLOAD_URL = 'https://store.ustart.in';

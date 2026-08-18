@@ -85,7 +85,7 @@ export const ContactPage: React.FC = () => {
         <div className="cic-body">
           <span className="icon">💬</span>
           <h4>Chat With Support</h4>
-          <p>Real humans, real fast. Available daily, 8 AM – midnight.<br /><a href="mailto:support@ustart.app">support@ustart.app</a></p>
+          <p>Real humans, real fast. Available daily, 8:00 AM – 7:00 PM.<br /><a href="mailto:support@ustart.in">support@ustart.in</a></p>
         </div>
       </div>
       <div className="contact-info-card">
@@ -93,7 +93,7 @@ export const ContactPage: React.FC = () => {
         <div className="cic-body">
           <span className="icon">🤝</span>
           <h4>Restaurant Partnerships</h4>
-          <p>Want to list your restaurant on USTART?<br /><a href="mailto:partners@ustart.app">partners@ustart.app</a></p>
+          <p>Want to list your restaurant on USTART?<br /><a href="mailto:partners@ustart.in">partners@ustart.in</a></p>
         </div>
       </div>
       <div className="contact-info-card">
