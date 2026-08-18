@@ -319,7 +319,7 @@ export const HomePage: React.FC = () => {
 
   {/* 16. Tiny orbiting dot around asterisk (top-right) */}
   <svg className="doodle-arrow" style={{'top': '35%', 'right': '16%', 'width': '20px', 'opacity': '0.22'} as React.CSSProperties} viewBox="0 0 20 20" fill="none">
-    <circle cx="10" cy="10" r="3" fill="var(--orange)" style={{'animation': 'doodleOrbit 3s linear infinite', 'transform-origin': '10px 10px'} as React.CSSProperties}/>
+    <circle cx="10" cy="10" r="3" fill="var(--orange)" style={{'animation': 'doodleOrbit 3s linear infinite', transformOrigin: '10px 10px'} as React.CSSProperties}/>
   </svg>
 
 
@@ -392,11 +392,11 @@ export const HomePage: React.FC = () => {
           <circle cx="52" cy="52" r="45" stroke="#539987" strokeWidth="3.5" fill="rgba(83,153,135,0.10)" filter="url(#roughv)" opacity="0.95"/>
           <circle cx="52" cy="52" r="38.5" stroke="#539987" strokeWidth="1.4" fill="none" filter="url(#roughv)" opacity="0.8"/>
           <path id="topArcV" d="M 14 52 A 38 38 0 0 1 90 52" fill="none"/>
-          <text fontFamily="'Manrope',sans-serif" font-weight="900" fontSize="10" fill="var(--navy)" letterSpacing="2">
+          <text fontFamily="'Manrope',sans-serif" fontWeight="900" fontSize="10" fill="var(--navy)" letterSpacing="2">
             <textPath href="#topArcV" startOffset="6%">USTART VERIFIED</textPath>
           </text>
           <path id="botArcV" d="M 14 52 A 38 38 0 0 0 90 52" fill="none"/>
-          <text fontFamily="'Manrope',sans-serif" font-weight="800" fontSize="8.5" fill="var(--navy)" letterSpacing="2">
+          <text fontFamily="'Manrope',sans-serif" fontWeight="800" fontSize="8.5" fill="var(--navy)" letterSpacing="2">
             <textPath href="#botArcV" startOffset="16%">✦ FAIR • FRESH • FAST ✦</textPath>
           </text>
           <circle cx="52" cy="50" r="17" fill="none" stroke="#539987" strokeWidth="2" filter="url(#roughv)" opacity="0.9"/>
@@ -608,7 +608,9 @@ export const HomePage: React.FC = () => {
       <div className="el-rule"></div>
       <div className="el-mark">
         <svg className="el-crown-icon el-crown-pulse" viewBox="0 0 24 24" fill="none"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z" fill="url(#cg)"/><defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#FDFBF7"/><stop offset="100%" stopColor="#FF9F43"/></linearGradient></defs></svg>
-        <h1 className="el-font-display">ELITE</h1>
+        {/* Demoted from <h1>: the hero already owns this page's single H1, and a
+            second one splits the topical signal. Styling is unchanged. */}
+        <p className="el-font-display">ELITE</p>
       </div>
     </div>
 
@@ -779,7 +781,7 @@ export const HomePage: React.FC = () => {
       <AccordionItem value="faq-2">
         <AccordionTrigger qTag="Q2.">Which areas do you deliver to?</AccordionTrigger>
         <AccordionContent>
-          Right now, we're serving all of <strong>Gurugram</strong>, and we're adding new areas as fast as we can. Just drop your location into the app, and it'll tell you instantly whether we're already at your doorstep or on the way soon.
+          We're serving all of <strong>Gurugram</strong> and are live across <strong>Delhi</strong>, and we're adding new areas as fast as we can. Just drop your location into the app, and it'll tell you instantly whether we're already at your doorstep or on the way soon.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="faq-3">
@@ -849,7 +851,7 @@ export const HomePage: React.FC = () => {
     {/* HEADING — together at the top */}
     <div className="dlx-dl-heading dlx-reveal">
       <h2 className="dlx-font-display">STOP FEEDING THE <span className="dlx-hl">FEES.</span><span className="dlx-line2">START FEEDING <span className="dlx-hl">YOURSELF.</span></span></h2>
-      <p className="dlx-sub">Gurugram's fairest food delivery is one tap away. What are you waiting for?</p>
+      <p className="dlx-sub">Gurgaon and Delhi's fairest food delivery is one tap away. What are you waiting for?</p>
     </div>
 
     {/* STRUCTURED ROW: copy left · phone center · copy right, none overlapping */}
@@ -910,7 +912,7 @@ export const HomePage: React.FC = () => {
                   <span className="dlx-qr-sub">iOS &amp; Android</span>
                 </a>
 
-                <div className="dlx-screen-footnote"><span className="dlx-dot dlx-pulse-dot"></span>Live in Gurugram</div>
+                <div className="dlx-screen-footnote"><span className="dlx-dot dlx-pulse-dot"></span>Live in Gurgaon &amp; Delhi</div>
               </div>
             </div>
           </div>
@@ -933,7 +935,7 @@ export const HomePage: React.FC = () => {
   </div>
 
   <div className="dlx-dl-bottom-strip dlx-reveal dlx-d4">
-    <p>Available on iOS &amp; Android · Gurugram, India</p>
+    <p>Available on iOS &amp; Android · Gurgaon &amp; Delhi, India</p>
   </div>
 </section>
 
@@ -946,8 +948,8 @@ export const HomePage: React.FC = () => {
   <div className="ambx-orb ambx-orb-2"></div>
   <div className="ambx-orb ambx-orb-3"></div>
   <span className="ambx-float" style={{'top': '14%', 'left': '6%', '--r': '-8deg', '--r2': '5deg'} as React.CSSProperties}>🎓</span>
-  <span className="ambx-float" style={{'bottom': '16%', 'left': '16%', '--r': '6deg', '--r2': '-4deg', 'animation-delay': '.8s'} as React.CSSProperties}>🏅</span>
-  <span className="ambx-float" style={{'top': '20%', 'right': '22%', '--r': '5deg', '--r2': '-6deg', 'animation-delay': '1.4s'} as React.CSSProperties}>🚀</span>
+  <span className="ambx-float" style={{'bottom': '16%', 'left': '16%', '--r': '6deg', '--r2': '-4deg', animationDelay: '.8s'} as React.CSSProperties}>🏅</span>
+  <span className="ambx-float" style={{'top': '20%', 'right': '22%', '--r': '5deg', '--r2': '-6deg', animationDelay: '1.4s'} as React.CSSProperties}>🚀</span>
 
   <div className="ambx-inner">
     <div className="ambx-left">

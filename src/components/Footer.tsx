@@ -2,9 +2,26 @@
 
 import React from 'react';
 import { Link } from '../router';
-import { PLAY_STORE_URL, APP_STORE_URL } from '../constants';
+import { PLAY_STORE_URL, APP_STORE_URL, PARTNER_URL, SOCIAL_LINKS } from '../constants';
+import { FacebookIcon, InstagramIcon, LinkedInIcon, GooglePlayIcon, AppleIcon } from './Icons';
 
-const SEO_LINE = 'Food delivery in Gurugram · No hidden charges food delivery · Late night food delivery Gurugram · Affordable food delivery · Best food delivery app Gurugram';
+/**
+ * This used to be a single run-on string of keywords ("Food delivery in Gurugram ·
+ * No hidden charges food delivery · ..."). Keyword-stuffed prose with no links is a
+ * spam signal and passes no equity. Now that each of those terms has a real page,
+ * they are links — which both helps users and distributes crawl depth to the
+ * locality and intent pages that have few other inbound links.
+ */
+const FOOTER_SEO_LINKS: Array<{ label: string; to: string }> = [
+  { label: 'Food delivery in Gurgaon', to: '/food-delivery/gurgaon' },
+  { label: 'Food delivery in Delhi', to: '/food-delivery/delhi' },
+  { label: 'Food delivery in Cyber City', to: '/food-delivery/gurgaon/cyber-city' },
+  { label: 'No hidden charges food delivery', to: '/food-delivery-without-hidden-charges' },
+  { label: 'Late night food delivery', to: '/late-night-food-delivery' },
+  { label: 'Office lunch delivery', to: '/office-lunch-delivery' },
+  { label: 'Biryani delivery', to: '/order/biryani' },
+  { label: 'Pizza delivery', to: '/order/pizza' },
+];
 
 export const Footer: React.FC = () => {
   return (
@@ -18,7 +35,6 @@ export const Footer: React.FC = () => {
       <div className="footer-row">
         <div className="footer-brand">
           <img src="/Logo_White_Text.png" alt="USTART" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-          <div style={{ fontFamily: "'Manrope',sans-serif", fontWeight: 800, color: 'var(--paper)', fontSize: '1.8rem', letterSpacing: '-0.02em', marginBottom: '4px' }}>USTART</div>
           <div className="tag">Fairness That Never Tasted <span>Better.</span></div>
           <p>Made for food lovers. Built for local restaurants.</p>
         </div>
@@ -27,28 +43,39 @@ export const Footer: React.FC = () => {
             <h5>COMPANY</h5>
             <Link to="/about">About</Link>
             <Link to="/careers">Careers</Link>
-            <a href="influencer.html">Influencer Program</a>
             <Link to="/blog">Blog</Link>
             <Link to="/contact">Contact</Link>
+            <Link to="/nextgen-campus-leaders">Campus Leaders</Link>
           </div>
           <div className="col">
             <h5>FOR PARTNERS</h5>
-            {/* Cross-route hash links must be plain anchors: the router treats
-                "http://partners.ustart.in/" as a pathname and would fall through to the 404 case. */}
-            <a href="http://partners.ustart.in/">Partner Your Restaurant</a>
+            {/* Cross-origin links must be plain anchors: the router treats
+                the partner URL as a pathname and would fall through to the 404 case. */}
+            <a href={PARTNER_URL}>Partner Your Restaurant</a>
             <Link to="/careers">Become a Delivery Partner</Link>
+          </div>
+          <div className="col">
+            <h5>ORDER</h5>
+            <Link to="/food-delivery/gurgaon">Food Delivery in Gurgaon</Link>
+            <Link to="/food-delivery/delhi">Food Delivery in Delhi</Link>
+            <Link to="/late-night-food-delivery">Late Night Delivery</Link>
+            <Link to="/office-lunch-delivery">Office Lunch Delivery</Link>
+            <Link to="/elite">USTART Elite</Link>
           </div>
           <div className="col">
             <h5>SUPPORT</h5>
             <Link to="/contact">Help Centre</Link>
-            <a href="#">Refunds &amp; Cancellations</a>
+            {/* <Link to="/food-delivery-without-hidden-charges">Our Pricing</Link> */}
             <a href="/#faq">FAQs</a>
           </div>
           <div className="col">
             <h5>LEGAL</h5>
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Cookie Policy</a>
+            {/* All three are sections of the single /terms document — the anchor ids
+                come from src/app/terms/users/*.tsx. Deep-linking beats three separate
+                thin pages, and it matches how the live site linked privacy. */}
+            <Link to="/terms">Terms of Service</Link>
+            <Link to="/terms#privacy-data-protection">Privacy Policy</Link>
+            <Link to="/terms#cancellations-refunds">Refunds &amp; Cancellations</Link>
           </div>
         </div>
       </div>
@@ -56,24 +83,39 @@ export const Footer: React.FC = () => {
       <div className="footer-apps-social">
         <div className="footer-store-btns">
           <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="footer-store-btn">
-            <span className="fi">▶</span>
+            <span className="fi"><GooglePlayIcon /></span>
             <span className="ft"><small>GET IT ON</small><strong>Google Play</strong></span>
           </a>
           <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="footer-store-btn">
-            <span className="fi"> </span>
+            <span className="fi"><AppleIcon /></span>
             <span className="ft"><small>DOWNLOAD ON THE</small><strong>App Store</strong></span>
           </a>
         </div>
+        {/* These must stay in sync with Organization.sameAs in src/lib/schema.ts —
+            Google cross-checks the profiles a site links to against the ones it
+            claims in structured data. No X/Twitter link: there is no live profile. */}
         <div className="footer-social">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Twitter / X">𝕏</a>
-          <a href="#" aria-label="Instagram">◎</a>
-          <a href="#" aria-label="LinkedIn">in</a>
+          <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="USTART on Facebook">
+            <FacebookIcon />
+          </a>
+          <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="USTART on Instagram">
+            <InstagramIcon />
+          </a>
+          <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="USTART on LinkedIn">
+            <LinkedInIcon />
+          </a>
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© 2026 USTART. All rights reserved. · Proudly serving Gurugram.</span>
-        <span className="seo-line">{SEO_LINE}</span>
+        <span>© 2026 USTART. All rights reserved. · Proudly serving Gurugram &amp; Delhi.</span>
+        <span className="seo-line">
+          {FOOTER_SEO_LINKS.map(({ label, to }, idx) => (
+            <React.Fragment key={to}>
+              {idx > 0 && ' · '}
+              <Link to={to}>{label}</Link>
+            </React.Fragment>
+          ))}
+        </span>
       </div>
     </footer>
   );

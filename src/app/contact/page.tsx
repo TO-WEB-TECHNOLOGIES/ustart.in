@@ -1,10 +1,12 @@
-import type { Metadata } from 'next';
 import { ContactPage } from '@/views/ContactPage';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with the USTART team. We are here to help customers, restaurant partners, and riders.',
-};
+export const metadata = buildMetadata({
+  title: 'Contact Us — Customer, Restaurant & Rider Support',
+  description:
+    'Get in touch with USTART. Customer support, restaurant partnership enquiries and rider questions, plus answers to the questions we get asked most.',
+  path: '/contact',
+});
 
 export default function Page() {
   return <ContactPage />;

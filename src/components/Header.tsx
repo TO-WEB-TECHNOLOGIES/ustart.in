@@ -2,7 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import { Link, useRouter } from '../router';
+import { PARTNER_URL } from '../constants';
 
+// The /food-delivery/gurgaon and /food-delivery/delhi city hubs are intentionally
+// not in the header. They stay linked from the footer's ORDER column, which is what
+// keeps them (and the 20 locality pages hanging off them) crawlable — don't remove
+// those footer links without putting the hubs back somewhere in the nav.
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About Us' },
@@ -11,8 +16,6 @@ const NAV_LINKS = [
   { to: '/contact', label: 'Contact' }
 ];
 
-const PARTNER_URL = 'http://partners.ustart.in/';
-
 export interface HeaderProps {
   variant?: 'light' | 'dark' | 'overlay';
 }
@@ -20,14 +23,15 @@ export interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ variant = 'light' }) => {
   const { pathname } = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [stuck, setStuck] = useState(false);
 
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Overlay variant only: transparent over the hero photo, condensing into the
-  // solid bar once the hero has scrolled past.
+  // Overlay variant only: transparent over the hero photo, glassmorphic on scroll start,
+  // condensing into the solid bar once the hero has scrolled past.
   useEffect(() => {
     if (variant !== 'overlay') return;
 
@@ -38,15 +42,15 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'light' }) => {
       // .page-hero on sub-pages, .hero on the homepage — no page renders both.
       const hero = document.querySelector('.page-hero, .hero') as HTMLElement | null;
       const heroHeight = hero?.offsetHeight ?? window.innerHeight * 0.6;
-      // Go solid well before the hero clears the bar. Otherwise the .3s
-      // background fade plays out over the light content below it, leaving
-      // white links briefly unreadable on cream.
-      threshold = Math.max(heroHeight - 180, 60);
+      // Change to solid white when the header passes the hero image segment (heroHeight - navbar height)
+      threshold = Math.max(heroHeight - 75, 60);
     };
 
     const update = () => {
       frame = 0;
-      setStuck(window.scrollY > threshold);
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 15);
+      setStuck(scrollY > threshold);
     };
 
     const onScroll = () => {
@@ -77,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'light' }) => {
   const solid = stuck || menuOpen;
 
   const navClass = isOverlay
-    ? `subnav subnav-overlay${solid ? ' is-stuck' : ''}`
+    ? `subnav subnav-overlay${scrolled ? ' is-scrolled' : ''}${solid ? ' is-stuck' : ''}`
     : variant === 'dark'
       ? 'subnav subnav-dark'
       : 'subnav';

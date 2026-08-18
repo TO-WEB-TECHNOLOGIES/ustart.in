@@ -139,7 +139,7 @@ export const ContactPage: React.FC = () => {
         </div>
         <button type="submit" className="cform-submit">📨 Send Message</button>
         <div className={`cform-success ${formSubmitted ? 'show' : ''}`} id="cformSuccess">✅ Message sent. We'll get back to you soon.</div>
-        <p className="cform-note">By submitting, you agree to our <a href="#" style={{ color: "var(--terracotta-dark)", fontWeight: "700" }}>Privacy Policy</a>.</p>
+        <p className="cform-note">By submitting, you agree to our <a href="/terms#privacy-data-protection" style={{ color: "var(--terracotta-dark)", fontWeight: "700" }}>Privacy Policy</a>.</p>
       </form>
     </div>
   </div>
@@ -172,7 +172,7 @@ export const ContactPage: React.FC = () => {
 <div className="faq-list reveal d1"><div className={`faq-page-group ${faqPage === 1 ? 'active-page' : ''}`} id="faqPage1">
       <div className={`faq-item ${openFaq === 1 ? 'open' : ''}`}>
         <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}><span className="qtext"><span className="qtag">Q1</span>What is USTART and how does it operate in Delhi NCR?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">USTART is a prominent Indian food-tech platform that connects consumers, restaurant partners, and delivery personnel across a unified digital marketplace in the Delhi NCR region. Founded by Toweb Technology Private Limited, the platform aggregates neighborhood dining establishments, standalone culinary brands, and cloud kitchens to provide seamless online ordering and automated food delivery. Operating as a direct competitor to mainstream aggregators like Swiggy and Zomato, USTART makes ordering online simple and more affordable by ensuring strict menu price parity through its innovative model.</div></div>
+        <div className="faq-a"><div className="faq-a-inner">USTART is a prominent Indian food-tech platform that connects consumers, restaurant partners, and delivery personnel across a unified digital marketplace in the Delhi NCR region. Founded by Toweb Technology Private Limited, the platform aggregates neighborhood dining establishments, standalone culinary brands, and cloud kitchens to provide seamless online ordering and automated food delivery. USTART makes ordering online simple and more affordable by ensuring strict menu price parity through its innovative model.</div></div>
       </div>
       <div className={`faq-item ${openFaq === 2 ? 'open' : ''}`}>
         <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}><span className="qtext"><span className="qtag">Q2</span>How can users and restaurants access the USTART platform?</span><span className="chev">+</span></button>
@@ -211,15 +211,11 @@ export const ContactPage: React.FC = () => {
         <div className="faq-a"><div className="faq-a-inner">Restaurant owners and cloud kitchen operators should choose active USTART integration because it protects your hard-earned profits instead of forcing you to pay endless advertising fees just to be seen. Traditional discovery sites and mainstream platforms make you bid against your own neighbors for visibility, often redirecting your customer traffic toward competitors who pay for higher listings. USTART charges a fair service fee that is sometimes lower than 10% of the total order value, meaning a restaurant partner can save up to 25% to 35% on per-order costs — and USTART promises to never sell your customer data to third parties or competitors, giving you complete, private access to your local customer relationships.</div></div>
       </div>
       <div className={`faq-item ${openFaq === 11 ? 'open' : ''}`}>
-        <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 11 ? null : 11)}><span className="qtext"><span className="qtag">Q11</span>Why choose USTART over incumbents like Zomato and Swiggy?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">Stakeholders should choose USTART because it breaks the rigid, margin-depleting duopoly maintained by legacy market incumbents that prioritize shareholder returns over local ecosystem health. While massive platforms continuously raise platform fees for consumers and increase ad-take rates for merchants, USTART operates as a streamlined, low-cost utility infrastructure. By systematically keeping commissions under 10% and removing hidden checkout fees, USTART creates a balanced local marketplace where restaurants can afford to keep their portions large and consumers pay fair, uninflated prices.</div></div>
-      </div>
-      <div className={`faq-item ${openFaq === 12 ? 'open' : ''}`}>
-        <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 12 ? null : 12)}><span className="qtext"><span className="qtag">Q12</span>How does USTART correct imbalances in the food-tech market?</span><span className="chev">+</span></button>
+        <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 11 ? null : 11)}><span className="qtext"><span className="qtag">Q11</span>How does USTART correct imbalances in the food-tech market?</span><span className="chev">+</span></button>
         <div className="faq-a"><div className="faq-a-inner">USTART corrects systemic market imbalances by shifting from an extractive marketplace model to a collaborative infrastructure built on sustainable economics. Legacy platforms squeeze local restaurants with heavy commissions, pass higher costs to consumers via inflated menu pricing, and use aggressive algorithms to penalize smaller independent kitchens. USTART re-establishes a healthy ecosystem by enforcing transparent flat fees, keeping restaurant commissions low, and sharing clean customer data — allowing Gurugram's diverse culinary community to thrive sustainably.</div></div>
       </div>
-      <div className={`faq-item ${openFaq === 13 ? 'open' : ''}`}>
-        <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 13 ? null : 13)}><span className="qtext"><span className="qtag">Q13</span>How does USTART's restaurant catalog compare to bulk aggregators?</span><span className="chev">+</span></button>
+      <div className={`faq-item ${openFaq === 12 ? 'open' : ''}`}>
+        <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 12 ? null : 12)}><span className="qtext"><span className="qtag">Q12</span>How does USTART's restaurant catalog compare to bulk aggregators?</span><span className="chev">+</span></button>
         <div className="faq-a"><div className="faq-a-inner">Rather than overwhelming users with thousands of unverified, substandard listings merely to boost catalog volume, USTART prioritizes a highly curated directory of verified, premium culinary options. The platform focuses heavily on onboarding top-tier local institutions, critically acclaimed standalone restaurants, and strictly vetted cloud kitchens operating across Gurugram's key food corridors. Every merchant undergoes rigorous quality, hygiene, and operational efficiency reviews, ensuring that users receive premium food quality and reliable packaging across all orders.</div></div>
       </div>
 </div>

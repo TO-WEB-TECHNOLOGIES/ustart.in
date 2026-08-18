@@ -55,34 +55,133 @@ export const CareersPage: React.FC = () => {
   focal="30% 55%"
   tint="rgba(232,194,106,0.18)"
 >
-  <a href="jobs.html" className="btn btn-solid btn-lg">View Jobs</a>
+  {/* <a href="/contact" className="btn btn-solid btn-lg">View Jobs</a> */}
 </PageHero>
 
 {/* ===== WHY WORK WITH US ===== */}
 <section className="why-work-section">
   <div className="why-work-inner">
-    <h2 className="reveal">Why work with us</h2>
-    <div className="why-work-underline reveal"></div>
+    <div className="why-work-header reveal">
+      <span className="sec-kicker">✨ PERKS & CULTURE</span>
+      <h2 className="font-display" style={{ fontSize: "clamp(1.8rem,3.6vw,2.5rem)", color: "var(--navy)", margin: "14px 0 10px" }}>
+        Why work with <span style={{ color: "var(--orange)" }}>USTART.</span>
+      </h2>
+      <p style={{ color: "var(--slate)", fontSize: "16px", maxWidth: "560px", lineHeight: "1.6" }}>
+        We're building a high-trust, high-velocity team where your craft is valued, your schedule is respected, and your growth is real.
+      </p>
+    </div>
+
     <div className="why-work-grid">
-      <div className="why-work-item reveal d1">
-        <div className="why-work-icon">💸</div>
-        <p>We pride ourselves on rewarding great work with great compensation.</p>
+      {/* CARD 1: COMPENSATION */}
+      <div className="why-work-card why-work-amber reveal d1">
+        <div className="why-work-card-top">
+          <div className="why-work-icon-box icon-amber">
+            <svg className="why-work-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="11" width="40" height="26" rx="7" fill="url(#amber-bg)" fillOpacity="0.2" />
+              <rect x="4" y="11" width="40" height="26" rx="7" stroke="url(#amber-stroke)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+              <rect x="9" y="16" width="30" height="16" rx="4" stroke="url(#amber-stroke)" strokeWidth="1.4" strokeDasharray="3 3" strokeOpacity="0.6" />
+              <circle cx="24" cy="24" r="5.5" fill="url(#amber-glow)" fillOpacity="0.35" stroke="url(#amber-stroke)" strokeWidth="2" />
+              <circle cx="24" cy="24" r="2.2" fill="url(#amber-stroke)" />
+              <circle cx="12" cy="18.5" r="1.4" fill="url(#amber-stroke)" />
+              <circle cx="36" cy="18.5" r="1.4" fill="url(#amber-stroke)" />
+              <circle cx="12" cy="29.5" r="1.4" fill="url(#amber-stroke)" />
+              <circle cx="36" cy="29.5" r="1.4" fill="url(#amber-stroke)" />
+              <path d="M38 5L39.3 8.7L43 10L39.3 11.3L38 15L36.7 11.3L33 10L36.7 8.7L38 5Z" fill="#FF9F43" />
+              <defs>
+                <linearGradient id="amber-bg" x1="4" y1="11" x2="44" y2="37" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#FF9F43" />
+                  <stop offset="1" stopColor="#E8841F" />
+                </linearGradient>
+                <linearGradient id="amber-stroke" x1="4" y1="11" x2="44" y2="37" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#FF9F43" />
+                  <stop offset="1" stopColor="#D97706" />
+                </linearGradient>
+                <linearGradient id="amber-glow" x1="18.5" y1="18.5" x2="29.5" y2="29.5" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#FDE68A" />
+                  <stop offset="1" stopColor="#F59E0B" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span className="why-work-tag tag-amber">01 · REWARDS</span>
+        </div>
+        <h3>Top-Tier Rewards</h3>
+        <p>We pride ourselves on rewarding great work with great compensation, equity, and performance incentives.</p>
       </div>
-      <div className="why-work-item reveal d2">
-        <div className="why-work-icon">🕒</div>
-        <p>Flexible hours and vacation. Night owls welcome.</p>
+
+      {/* CARD 2: FLEXIBILITY */}
+      <div className="why-work-card why-work-teal reveal d2">
+        <div className="why-work-card-top">
+          <div className="why-work-icon-box icon-teal">
+            <svg className="why-work-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" fill="url(#teal-bg)" fillOpacity="0.18" />
+              <circle cx="24" cy="24" r="18" stroke="url(#teal-stroke)" strokeWidth="2.4" strokeLinecap="round" />
+              <circle cx="24" cy="24" r="13.5" stroke="url(#teal-stroke)" strokeWidth="1.2" strokeDasharray="3 3" strokeOpacity="0.5" />
+              <path d="M24 24L17.5 16.5" stroke="url(#teal-stroke)" strokeWidth="2.4" strokeLinecap="round" />
+              <path d="M24 24L31 20" stroke="url(#teal-stroke)" strokeWidth="2.4" strokeLinecap="round" />
+              <circle cx="24" cy="24" r="3" fill="#10B981" stroke="url(#teal-stroke)" strokeWidth="1.5" />
+              <line x1="24" y1="8.5" x2="24" y2="10.5" stroke="url(#teal-stroke)" strokeWidth="2" strokeLinecap="round" />
+              <line x1="39.5" y1="24" x2="37.5" y2="24" stroke="url(#teal-stroke)" strokeWidth="2" strokeLinecap="round" />
+              <line x1="24" y1="39.5" x2="24" y2="37.5" stroke="url(#teal-stroke)" strokeWidth="2" strokeLinecap="round" />
+              <line x1="8.5" y1="24" x2="10.5" y2="24" stroke="url(#teal-stroke)" strokeWidth="2" strokeLinecap="round" />
+              <path d="M38 6L39.2 9L42 10.2L39.2 11.4L38 14.5L36.8 11.4L34 10.2L36.8 9L38 6Z" fill="#10B981" />
+              <defs>
+                <linearGradient id="teal-bg" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#539987" />
+                  <stop offset="1" stopColor="#10B981" />
+                </linearGradient>
+                <linearGradient id="teal-stroke" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#539987" />
+                  <stop offset="1" stopColor="#0D9488" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span className="why-work-tag tag-teal">02 · AUTONOMY</span>
+        </div>
+        <h3>True Flexibility</h3>
+        <p>Flexible hours, hybrid freedom, and unlimited trust. Night owls, early birds, and creators all welcome.</p>
       </div>
-      <div className="why-work-item reveal d3">
-        <div className="why-work-icon">🤝</div>
-        <p>Meet new cultures and enjoy our crew from all over the world.</p>
+
+      {/* CARD 3: GLOBAL CULTURE */}
+      <div className="why-work-card why-work-coral reveal d3">
+        <div className="why-work-card-top">
+          <div className="why-work-icon-box icon-coral">
+            <svg className="why-work-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" fill="url(#coral-bg)" fillOpacity="0.18" />
+              <circle cx="24" cy="24" r="18" stroke="url(#coral-stroke)" strokeWidth="2.4" strokeLinecap="round" />
+              <line x1="6.5" y1="24" x2="41.5" y2="24" stroke="url(#coral-stroke)" strokeWidth="2" strokeLinecap="round" />
+              <ellipse cx="24" cy="24" rx="8.5" ry="18" stroke="url(#coral-stroke)" strokeWidth="2" strokeLinecap="round" />
+              <path d="M9.5 14.5C14 17 34 17 38.5 14.5" stroke="url(#coral-stroke)" strokeWidth="1.4" strokeDasharray="3 3" strokeOpacity="0.65" />
+              <path d="M9.5 33.5C14 31 34 31 38.5 33.5" stroke="url(#coral-stroke)" strokeWidth="1.4" strokeDasharray="3 3" strokeOpacity="0.65" />
+              <circle cx="15.5" cy="24" r="2.2" fill="#E11D48" />
+              <circle cx="24" cy="17.5" r="2.2" fill="#EA580C" />
+              <circle cx="32.5" cy="24" r="2.2" fill="#C0563F" />
+              <circle cx="24" cy="30.5" r="2.2" fill="#E11D48" />
+              <path d="M39 6L40.2 9.2L43.4 10.4L40.2 11.6L39 14.8L37.8 11.6L34.6 10.4L37.8 9.2L39 6Z" fill="#EA580C" />
+              <defs>
+                <linearGradient id="coral-bg" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#C0563F" />
+                  <stop offset="1" stopColor="#E11D48" />
+                </linearGradient>
+                <linearGradient id="coral-stroke" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#C0563F" />
+                  <stop offset="1" stopColor="#9C4330" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span className="why-work-tag tag-coral">03 · COMMUNITY</span>
+        </div>
+        <h3>Global Culture</h3>
+        <p>Meet diverse cultures and collaborate with a bold, forward-thinking team solving hard challenges daily.</p>
       </div>
     </div>
   </div>
 </section>
 
-{/* ===== RIDE WITH US / PARTNER WITH US ===== */}
-
-
+{/* ===== STUDENT AMBASSADOR / PROGRAM STATS SECTION (COMMENTED OUT) ===== */}
+{/*
 <section className="sap-section" id="student">
   <section className="ambx-banner">
     <div className="ambx-orb ambx-orb-1"></div>
@@ -150,7 +249,7 @@ export const CareersPage: React.FC = () => {
           <div className="n">4+</div>
           <div className="l">Perks & Rewards</div>
         </div>
-        <a href="influencer.html" className="ambx-cta">
+        <a href="/nextgen-campus-leaders" className="ambx-cta">
           <span>Apply Now</span>
           <span className="arrow">→</span>
         </a>
@@ -169,8 +268,7 @@ export const CareersPage: React.FC = () => {
     </div>
   </div>
 </section>
-
-{/* ===== STUDENT AMBASSADOR PROGRAM ===== */}
+*/}
 
 {/* ===== CTA SECTION ===== */}
 {/*
@@ -192,7 +290,7 @@ export const CareersPage: React.FC = () => {
         <div className="pc-stat"><b>6,000+</b><span>RESTAURANT PARTNERS</span></div>
       </div>
       <p>Earn on your own schedule with transparent payouts, fair incentives, and zero hidden deductions — every single trip.</p>
-      <a href="ustart_final.html#download" className="btn btn-gold btn-lg">🛵 Ride With Us</a>
+      <a href="/contact" className="btn btn-gold btn-lg">🛵 Ride With Us</a>
     </div>
     <div className="premium-card reveal-right">
       <div className="pc-corner tl"></div><div className="pc-corner tr"></div>
@@ -210,6 +308,25 @@ export const CareersPage: React.FC = () => {
   </div>
 </section>
 */}
+
+{/* ===== CAREERS DIRECT APPLICATION CALLOUT ===== */}
+<section className="careers-apply-section reveal-scale">
+  <div className="careers-apply-card">
+    <div className="careers-apply-badge">
+      <span>🚀</span> CAREERS AT USTART
+    </div>
+    <h3 className="careers-apply-heading">
+      Feel fit to join <span className="highlight">USTART?</span>
+    </h3>
+    <p className="careers-apply-desc">
+      Mail your resume to{' '}
+      <a href="mailto:hr@ustart.in" className="careers-apply-email">
+        hr@ustart.in
+      </a>
+      {' '}. We like innovative application emails.
+    </p>
+  </div>
+</section>
 
 {/* ===== FOOTER ===== */}
 <Footer />

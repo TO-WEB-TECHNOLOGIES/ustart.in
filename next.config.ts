@@ -18,6 +18,29 @@ const nextConfig: NextConfig = {
         hostname: 'images.unsplash.com',
       },
     ],
+    formats: ['image/avif', 'image/webp'],
+  },
+
+  /**
+   * Canonical host enforcement. The site currently answers on both ustart.in and
+   * www.ustart.in, which means every page exists at two URLs and they compete with
+   * each other. The sitemap and every canonical tag point at the apex, so www must
+   * redirect there permanently — otherwise the sitemap advertises URLs that differ
+   * from the host visitors actually land on.
+   *
+   * Many hosts (Vercel, Cloudflare, Netlify) can do this at the edge more cheaply
+   * than Next can. If yours already redirects www → apex, this block is redundant
+   * and can be removed — but verify the edge rule exists before deleting it.
+   */
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.ustart.in' }],
+        destination: 'https://ustart.in/:path*',
+        permanent: true,
+      },
+    ];
   },
 };
 

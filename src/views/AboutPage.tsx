@@ -130,9 +130,11 @@ export const AboutPage: React.FC = () => {
       </div>
     </div>
   </div>
+  {/*
   <div className="reveal" style={{ textAlign: "center", marginTop: "40px", position: "relative", zIndex: "2" }}>
-    <a href="career.html#team" className="btn btn-outline" style={{ borderColor: "rgba(255,159,67,0.4)", color: "#fff" }}>👥 Meet the Team</a>
+    <a href="/careers" className="btn btn-outline" style={{ borderColor: "rgba(255,159,67,0.4)", color: "#fff" }}>👥 Meet the Team</a>
   </div>
+  */}
 </section>
 {/* ===== TRUST + FOOD GALLERY ===== */}
 
@@ -173,7 +175,7 @@ export const AboutPage: React.FC = () => {
     </div>
     <div className="trust-card reveal-scale d2">
       <div className="trust-photo">
-        <img src="https://images.unsplash.com/photo-1585032226651-759a68395ec6?auto=format&fit=crop&w=800&q=80" alt="Noodles" />
+        <img src="https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=800&q=80" alt="Chinese Wok Noodles" />
         <span className="badge-caption">🍜 Noodles</span>
       </div>
       <div className="trust-brand-strip">
@@ -336,7 +338,7 @@ export const AboutPage: React.FC = () => {
         <div className="pc-stat"><b>6,000+</b><span>RESTAURANT PARTNERS</span></div>
       </div>
       <p>Order your favourite thalis, pizzas, and burgers with transparent pricing and lightning-fast delivery — every single time.</p>
-      <a href="ustart_final.html#download" className="btn btn-gold btn-lg">🛵 Ride With Us</a>
+      <a href="/careers" className="btn btn-gold btn-lg">🛵 Ride With Us</a>
     </div>
     <div className="premium-card reveal-right">
       <div className="pc-corner tl"></div><div className="pc-corner tr"></div>

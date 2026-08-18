@@ -1,10 +1,12 @@
-import type { Metadata } from 'next';
 import { CareersPage } from '@/views/CareersPage';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Careers',
-  description: 'Be a part of our team. Explore career opportunities at USTART.',
-};
+export const metadata = buildMetadata({
+  title: 'Careers — Jobs in Gurgaon & Delhi',
+  description:
+    'Join the team building fair food delivery in Gurgaon and Delhi. Open roles, how we work, and what we look for at USTART.',
+  path: '/careers',
+});
 
 export default function Page() {
   return <CareersPage />;
