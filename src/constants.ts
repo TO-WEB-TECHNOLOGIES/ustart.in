@@ -18,14 +18,20 @@ export const LEGAL_ENTITY = 'Toweb Technology Private Limited';
 export const SUPPORT_EMAIL = 'support@ustart.in';
 export const PARTNERS_EMAIL = 'partners@ustart.in';
 
-export const PARTNER_URL = 'https://partners.ustart.in/';
+/**
+ * Partner portal. `partners.` (plural) 301s to `partner.` (singular) — link the
+ * final host directly so internal links never hand Googlebot a redirect hop.
+ */
+export const PARTNER_URL = 'https://partner.ustart.in/';
 export const APP_DOWNLOAD_URL = 'https://store.ustart.in';
 
 /** Verified live profiles — used for Organization.sameAs. */
 export const SOCIAL_LINKS = {
   linkedin: 'https://in.linkedin.com/company/ustartin',
   instagram: 'https://www.instagram.com/ustart.in',
-  facebook: 'https://www.facebook.com/profile.php?id=61572376997840',
+  // Canonical form, not the /share/ slug: share links 302 and are not guaranteed
+  // permanent. This is the og:url Facebook itself reports for the page.
+  facebook: 'https://www.facebook.com/people/USTARTin/61593006404697/',
 } as const;
 
 /** Absolute URL helper. Pass a root-relative path, get a canonical absolute URL. */

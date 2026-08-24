@@ -397,6 +397,50 @@ export const articles: Article[] = [
     tilt: '-0.9deg',
     delayClass: 'd1',
   },
+  {
+    id: 'food-delivery-delhi-ncr-guide',
+    title: 'Food Delivery in Delhi NCR: A Simple Guide by USTART',
+    tag: '🏙️ City & Culture',
+    category: 'City & Culture',
+    description:
+      'A simple guide to food delivery in Delhi NCR, covering restaurant choice, clear pricing, local ordering patterns and USTART\'s delivery experience.',
+    targetKeyword: 'food delivery delhi ncr',
+    directAnswer:
+      'Food delivery in Delhi NCR lets customers order meals from local restaurants without travelling, while USTART connects customers with independent restaurants and delivery riders with upfront fee visibility and free delivery on eligible orders above ₹199.',
+    introduction: [
+      'If you are looking for food delivery in Delhi NCR, this guide explains how ordering works and what to check before placing an order. You can choose from restaurants and cuisines near your location, whether you need lunch at work, dinner at home or food for a group.',
+      'USTART is a food delivery marketplace that connects customers with independent restaurants and delivery riders. Customers can discover restaurants, browse menus, review applicable charges and place an order from their home, workplace or another eligible location without travelling to the restaurant.',
+      'Delhi NCR has very different food-ordering patterns across neighbourhoods. A customer working around Cyber City may be ordering during a short weekday lunch window, while someone in Dwarka may be ordering dinner for a family at home. In Hauz Khas and Saket, late-evening ordering can be influenced by cafes, restaurants, entertainment and residential demand.',
+      'That local difference is why choosing a delivery platform is not only about finding food. Customers also need to know which restaurants are available, understand the final order value and consider conditions such as weather, traffic and restaurant operating hours before ordering.',
+    ],
+    keyTakeaways: [
+      'Food delivery connects Delhi NCR customers with nearby restaurants.',
+      'Restaurant availability can change by location and time of day.',
+      'Customers should review the final order value before payment.',
+    ],
+    faq: [
+      {
+        q: 'What is food delivery in Delhi NCR?',
+        a: 'Food delivery allows customers to order meals from restaurants and have them delivered to their home, workplace or another eligible location within the delivery area.',
+      },
+      {
+        q: 'Can I order food online in Gurugram through USTART?',
+        a: 'Yes. USTART serves customers across Gurugram and Delhi, subject to restaurant and delivery availability at the customer\'s location.',
+      },
+      {
+        q: 'Does USTART offer free food delivery?',
+        a: 'USTART offers free delivery on eligible orders above ₹199, subject to applicable terms and availability.',
+      },
+      {
+        q: 'Can weather affect food delivery?',
+        a: 'Yes. Heavy rain and difficult road conditions can affect traffic and delivery conditions. Actual conditions depend on the location, weather and traffic at the time of the order.',
+      },
+    ],
+    publishedAt: '2026-08-24',
+    updatedAt: '2026-08-24',
+    tilt: '0.8deg',
+    delayClass: 'd2',
+  },
 ];
 
 export const ARTICLE_CATEGORIES: ArticleCategory[] = ['Fairness', 'City & Culture', 'Restaurants'];

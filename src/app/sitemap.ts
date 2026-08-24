@@ -17,10 +17,6 @@ import { cuisines } from '@/content/cuisines';
  *    build time makes every URL look freshly modified on every deploy, which is
  *    precisely how a site teaches Google to stop trusting its lastmod values —
  *    Google only honours the signal while it stays verifiably accurate.
- *
- * /nextgen-campus-leaders is intentionally excluded: it is orphaned (linked only
- * from commented-out JSX), and an unlinked URL in a sitemap is a weak signal.
- * Link it from the footer first, then add it here.
  */
 
 /**
@@ -37,6 +33,7 @@ const ROUTE_UPDATED: Record<string, string> = {
   '/late-night-food-delivery': '2026-08-18',
   '/office-lunch-delivery': '2026-08-18',
   '/food-delivery-without-hidden-charges': '2026-08-18',
+  '/nextgen-campus-leaders': '2026-08-18',
   // Legal copy is dated "January 2026" in the page itself; keep this in step with
   // the document's own revision date rather than the deploy date.
   '/terms': '2026-01-19',

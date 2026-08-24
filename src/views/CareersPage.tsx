@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { Header } from '../components/Header';
 import { PageHero } from '../components/PageHero';
 import { Footer } from '../components/Footer';
+import { PARTNER_URL } from '../constants';
 
 export const CareersPage: React.FC = () => {
 
@@ -303,7 +304,7 @@ export const CareersPage: React.FC = () => {
         <div className="pc-stat"><b>100%</b><span>PAYOUT TRANSPARENCY</span></div>
       </div>
       <p>Grow your kitchen with a platform that keeps more money in your pocket and treats you as a true partner, not just a vendor.</p>
-      <a href="http://partners.ustart.in/" className="btn btn-gold btn-lg">🤝 Partner With Us</a>
+      <a href={PARTNER_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold btn-lg">🤝 Partner With Us</a>
     </div>
   </div>
 </section>

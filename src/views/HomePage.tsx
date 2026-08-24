@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { Link } from '../router';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { PARTNER_URL } from '../constants';
 import {
   Accordion,
   AccordionItem,
@@ -334,7 +335,7 @@ export const HomePage: React.FC = () => {
 
     <div className="hero-ctas reveal d3">
       <a href="#download" className="btn btn-solid btn-lg">Feed the Craving</a>
-      <a href="http://partners.ustart.in/" className="btn btn-outline btn-lg">Put Us On the Menu</a>
+      <a href={PARTNER_URL} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">Put Us On the Menu</a>
     </div>
   </div>
 

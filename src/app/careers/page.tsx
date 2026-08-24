@@ -1,5 +1,7 @@
 import { CareersPage } from '@/views/CareersPage';
 import { buildMetadata } from '@/lib/seo';
+import { JsonLd } from '@/components/JsonLd';
+import { graph, breadcrumbSchema } from '@/lib/schema';
 
 export const metadata = buildMetadata({
   title: 'Careers — Jobs in Gurgaon & Delhi',
@@ -9,5 +11,17 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
-  return <CareersPage />;
+  return (
+    <>
+      <JsonLd
+        data={graph(
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Careers', path: '/careers' },
+          ])
+        )}
+      />
+      <CareersPage />
+    </>
+  );
 }

@@ -1,5 +1,7 @@
 import { AboutPage } from '@/views/AboutPage';
 import { buildMetadata } from '@/lib/seo';
+import { JsonLd } from '@/components/JsonLd';
+import { graph, breadcrumbSchema } from '@/lib/schema';
 
 export const metadata = buildMetadata({
   title: 'About Us — Fair Food Delivery in Gurgaon & Delhi',
@@ -9,5 +11,17 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
-  return <AboutPage />;
+  return (
+    <>
+      <JsonLd
+        data={graph(
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'About Us', path: '/about' },
+          ])
+        )}
+      />
+      <AboutPage />
+    </>
+  );
 }

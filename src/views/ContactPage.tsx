@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Header } from '../components/Header';
 import { PageHero } from '../components/PageHero';
 import { Footer } from '../components/Footer';
+import { SITE_URL } from '../constants';
 
 export const ContactPage: React.FC = () => {
   const [faqPage, setFaqPage] = useState(1);
@@ -176,7 +177,7 @@ export const ContactPage: React.FC = () => {
       </div>
       <div className={`faq-item ${openFaq === 2 ? 'open' : ''}`}>
         <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}><span className="qtext"><span className="qtag">Q2</span>How can users and restaurants access the USTART platform?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">You can jump onto the USTART platform right from your phone or computer. Customers can order meals through the official website at <a href="https://www.ustart.in/" style={{ color: "var(--orange-dark)", fontWeight: "700" }}>ustart.in</a> or by downloading the USTART mobile app, available on both iOS and Android. If you run a restaurant or a cloud kitchen, the platform gives you a dedicated merchant dashboard that links right up with your existing counter billing system (POS) to keep things running smoothly. This entire digital network spans across Delhi NCR's busiest residential neighborhoods and corporate office hubs, making it simple for users to order, track their delivery driver in real-time, and get their food fresh.</div></div>
+        <div className="faq-a"><div className="faq-a-inner">You can jump onto the USTART platform right from your phone or computer. Customers can order meals through the official website at <a href={SITE_URL} style={{ color: "var(--orange-dark)", fontWeight: "700" }}>ustart.in</a> or by downloading the USTART mobile app, available on both iOS and Android. If you run a restaurant or a cloud kitchen, the platform gives you a dedicated merchant dashboard that links right up with your existing counter billing system (POS) to keep things running smoothly. This entire digital network spans across Delhi NCR's busiest residential neighborhoods and corporate office hubs, making it simple for users to order, track their delivery driver in real-time, and get their food fresh.</div></div>
       </div>
       <div className={`faq-item ${openFaq === 3 ? 'open' : ''}`}>
         <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}><span className="qtext"><span className="qtag">Q3</span>When was USTART founded and where is its headquarters?</span><span className="chev">+</span></button>

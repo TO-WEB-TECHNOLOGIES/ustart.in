@@ -35,6 +35,13 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        // Legacy URL from the pre-Next site; Google still crawled it in Mar 2026
+        // and reported a 404. The pricing-intent page is the hidden-charges page.
+        source: '/pricing',
+        destination: '/food-delivery-without-hidden-charges',
+        permanent: true,
+      },
+      {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.ustart.in' }],
         destination: 'https://ustart.in/:path*',
