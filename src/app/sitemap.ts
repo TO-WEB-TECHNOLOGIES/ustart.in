@@ -34,6 +34,7 @@ const ROUTE_UPDATED: Record<string, string> = {
   '/office-lunch-delivery': '2026-08-18',
   '/food-delivery-without-hidden-charges': '2026-08-18',
   '/nextgen-campus-leaders': '2026-08-18',
+  '/delete-account': '2026-09-05',
   // Legal copy is dated "January 2026" in the page itself; keep this in step with
   // the document's own revision date rather than the deploy date.
   '/terms': '2026-01-19',
