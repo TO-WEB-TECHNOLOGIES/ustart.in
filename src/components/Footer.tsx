@@ -76,6 +76,9 @@ export const Footer: React.FC = () => {
             <Link to="/terms">Terms of Service</Link>
             <Link to="/terms#privacy-data-protection">Privacy Policy</Link>
             <Link to="/terms#cancellations-refunds">Refunds &amp; Cancellations</Link>
+            {/* Google Play requires the account-deletion URL to be reachable from
+                the site; the reference project links it from the footer too. */}
+            <Link to="/delete-account">Account Deletion</Link>
           </div>
         </div>
       </div>
