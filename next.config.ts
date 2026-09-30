@@ -42,10 +42,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:path*',
+        // /.well-known/* is excluded: Apple Pay domain verification rejects any 3xx,
+        // so the association file must answer 200 on www as well as the apex.
+        source: '/:path((?!\\.well-known/).*)',
         has: [{ type: 'host', value: 'www.ustart.in' }],
-        destination: 'https://ustart.in/:path*',
+        destination: 'https://ustart.in/:path',
         permanent: true,
+      },
+    ];
+  },
+
+  async headers() {
+    return [
+      {
+        // Extensionless file would otherwise be served as application/octet-stream;
+        // Apple requires text/plain.
+        source: '/.well-known/apple-developer-merchantid-domain-association',
+        headers: [
+          { key: 'Content-Type', value: 'text/plain' },
+          { key: 'Cache-Control', value: 'public, max-age=3600' },
+        ],
       },
     ];
   },
