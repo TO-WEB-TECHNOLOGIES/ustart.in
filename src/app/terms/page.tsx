@@ -18,6 +18,7 @@ import GoverningLaw from './users/GoverningLaw';
 import Miscellaneous from './users/Miscellaneous';
 import ContactDetails from './users/ContactDetails';
 import AmendmentsUpdates from './users/Amendments';
+import EliteMembership from './users/EliteMembership';
 import Link from "next/link";
 import Logo from '@/components/Logo';
 
@@ -46,6 +47,7 @@ const SECTIONS: Section[] = [
   { id: 'miscellaneous', label: 'Miscellaneous Provisions' },
   { id: 'amendments-updates', label: 'Amendments, Updates & Modifications' },
   { id: 'contact-grievance', label: 'Contact Details & Grievance Officer' },
+  { id: 'elite-membership', label: 'USTART Elite Membership – Terms & Conditions' },
 ];
 
 const TermsPage: React.FC = () => {
@@ -246,6 +248,9 @@ const TermsPage: React.FC = () => {
 
             {/* 18. Contact Details & Grievance Officer */}
             <ContactDetails />
+
+            {/* 19. USTART Elite Membership – Terms & Conditions */}
+            <EliteMembership />
 
             {/* Footer */}
             <footer className="mt-24 pt-12 border-t border-gray-200">
