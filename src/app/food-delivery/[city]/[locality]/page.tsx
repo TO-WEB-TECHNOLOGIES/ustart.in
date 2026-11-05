@@ -27,7 +27,12 @@ export async function generateMetadata({
 
   return buildMetadata({
     title: `Food Delivery in ${locality.name}, ${city.name}`,
-    description: `Order food in ${locality.name}, ${city.name} at real menu prices — no surge pricing and no hidden checkout fees. Delivery tips and FAQs for ${locality.name}.`,
+    description: (() => {
+      const place = `${locality.name}, ${city.name}${locality.aka?.length ? ` (${locality.aka[0]})` : ''}`;
+      const base = `Order food in ${place} at real menu prices — no surge pricing and no hidden checkout fees.`;
+      const withTips = `${base} Delivery tips and FAQs for ${locality.name}.`;
+      return withTips.length <= 160 ? withTips : base;
+    })(),
     path: `/food-delivery/${city.slug}/${locality.slug}`,
   });
 }
@@ -45,6 +50,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         data={graph(
           breadcrumbSchema([
             { name: 'Home', path: '/' },
+            { name: 'Delhi NCR', path: '/food-delivery' },
             { name: city.name, path: `/food-delivery/${city.slug}` },
             { name: locality.name, path: `/food-delivery/${city.slug}/${locality.slug}` },
           ]),

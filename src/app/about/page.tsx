@@ -4,9 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { graph, breadcrumbSchema } from '@/lib/schema';
 
 export const metadata = buildMetadata({
-  title: 'About Us — Fair Food Delivery in Gurgaon & Delhi',
+  title: 'About Us — Fair Food Delivery in Delhi NCR',
   description:
-    'USTART builds the tech, marketplace and logistics behind fair food delivery in Gurgaon and Delhi. Meet the founders and the reason menu-price parity matters.',
+    'USTART builds the tech, marketplace and logistics behind fair food delivery across Delhi NCR. Meet the founders and the reason menu-price parity matters.',
   path: '/about',
 });
 

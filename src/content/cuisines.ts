@@ -33,7 +33,7 @@ export const cuisines: Cuisine[] = [
     name: 'Biryani',
     heading: 'Biryani Delivery',
     description:
-      'Order biryani in Gurgaon and Delhi at menu prices with no surge pricing and no hidden checkout fees. Live tracking from kitchen to door on USTART.',
+      'Order biryani across Delhi NCR at menu prices with no surge pricing and no hidden checkout fees. Live tracking from kitchen to door on USTART.',
     targetKeyword: 'biryani delivery gurgaon',
     intro: [
       'Biryani is the single most ordered dish on Indian delivery platforms, and it is also one of the least forgiving in transit. A biryani that sits too long steams itself in its own container and arrives with the rice broken down.',
@@ -63,7 +63,7 @@ export const cuisines: Cuisine[] = [
     name: 'Pizza',
     heading: 'Pizza Delivery',
     description:
-      'Order pizza in Gurgaon and Delhi with menu prices that match the restaurant, zero surge pricing and a checkout total with nothing hidden in it.',
+      'Order pizza across Delhi NCR with menu prices that match the restaurant, zero surge pricing and a checkout total with nothing hidden in it.',
     targetKeyword: 'pizza delivery gurgaon',
     intro: [
       'Pizza is the category where delivery economics are most visible to customers, because the same pizza is so often priced differently online than it is in the restaurant.',
@@ -93,11 +93,11 @@ export const cuisines: Cuisine[] = [
     name: 'North Indian',
     heading: 'North Indian Food Delivery',
     description:
-      'Order North Indian food in Gurgaon and Delhi — dal makhani, butter chicken, tandoori breads — at menu prices with no hidden fees or surge charges.',
+      'Order North Indian food across Delhi NCR — dal makhani, butter chicken, tandoori breads — at menu prices with no hidden fees or surge charges.',
     targetKeyword: 'north indian food delivery gurgaon',
     intro: [
       'North Indian is the default delivery cuisine across Delhi NCR and the broadest category on any Indian menu, covering everything from a simple dal and roti to a full tandoori spread.',
-      'It is built for sharing, which is why it dominates family dinner ordering across both Gurgaon and Delhi.',
+      'It is built for sharing, which is why it dominates family dinner ordering across Delhi NCR.',
     ],
     orderingNotes: [
       'Gravies travel well; breads do not. Rotis and naan are best ordered from the closest capable kitchen.',
@@ -119,7 +119,7 @@ export const cuisines: Cuisine[] = [
     name: 'Chinese',
     heading: 'Chinese Food Delivery',
     description:
-      'Order Indo-Chinese food in Gurgaon and Delhi — hakka noodles, chilli paneer, momos and more — with transparent pricing and no surge fees on USTART.',
+      'Order Indo-Chinese food across Delhi NCR — hakka noodles, chilli paneer, momos and more — with transparent pricing and no surge fees on USTART.',
     targetKeyword: 'chinese food delivery gurgaon',
     intro: [
       'Indian Chinese is its own cuisine rather than a regional Chinese one, and it is among the fastest-cooking categories on any delivery menu — most dishes come off the wok in minutes.',
@@ -145,7 +145,7 @@ export const cuisines: Cuisine[] = [
     name: 'Burgers',
     heading: 'Burger Delivery',
     description:
-      'Order burgers in Gurgaon and Delhi at real menu prices — no surge pricing, no platform fee bolted on at checkout. Track your order live on USTART.',
+      'Order burgers across Delhi NCR at real menu prices — no surge pricing, no platform fee bolted on at checkout. Track your order live on USTART.',
     targetKeyword: 'burger delivery gurgaon',
     intro: [
       'Burgers are the most time-sensitive item in mainstream delivery. The bun absorbs moisture from the patty and sauces from the moment it is assembled, so the clock starts before the order even leaves the kitchen.',
@@ -171,7 +171,7 @@ export const cuisines: Cuisine[] = [
     name: 'Momos',
     heading: 'Momos Delivery',
     description:
-      'Order momos in Gurgaon and Delhi — steamed, fried and tandoori — at menu prices with no hidden charges and no surge pricing on USTART.',
+      'Order momos across Delhi NCR — steamed, fried and tandoori — at menu prices with no hidden charges and no surge pricing on USTART.',
     targetKeyword: 'momos delivery gurgaon',
     intro: [
       'Momos are among the most ordered snack items across Delhi NCR and one of the few categories that genuinely spans street stalls and full restaurants at very different price points.',
@@ -197,7 +197,7 @@ export const cuisines: Cuisine[] = [
     name: 'Rolls & Wraps',
     heading: 'Rolls & Wraps Delivery',
     description:
-      'Order kathi rolls and wraps in Gurgaon and Delhi with menu-price parity, no surge charges and live order tracking on USTART.',
+      'Order kathi rolls and wraps across Delhi NCR with menu-price parity, no surge charges and live order tracking on USTART.',
     targetKeyword: 'rolls delivery gurgaon',
     intro: [
       'Rolls are the default single-person meal across Delhi NCR — quick to cook, easy to eat one-handed, and priced for an everyday order rather than an occasion.',
@@ -223,7 +223,7 @@ export const cuisines: Cuisine[] = [
     name: 'South Indian',
     heading: 'South Indian Food Delivery',
     description:
-      'Order dosa, idli and South Indian food in Gurgaon and Delhi at menu prices — no surge pricing, no hidden fees, live tracking on USTART.',
+      'Order dosa, idli and South Indian food across Delhi NCR at menu prices — no surge pricing, no hidden fees, live tracking on USTART.',
     targetKeyword: 'south indian food delivery gurgaon',
     intro: [
       'South Indian is the strongest breakfast category on Indian delivery platforms and one of the few that sees genuine morning demand rather than only lunch and dinner.',
@@ -249,7 +249,7 @@ export const cuisines: Cuisine[] = [
     name: 'Desserts',
     heading: 'Dessert Delivery',
     description:
-      'Order cakes, ice cream and Indian sweets in Gurgaon and Delhi with transparent pricing and no surge fees. Live order tracking on USTART.',
+      'Order cakes, ice cream and Indian sweets across Delhi NCR with transparent pricing and no surge fees. Live order tracking on USTART.',
     targetKeyword: 'dessert delivery gurgaon',
     intro: [
       'Desserts are mostly an add-on category rather than a standalone order, and they are the most temperature-sensitive thing on any delivery menu.',
@@ -275,7 +275,7 @@ export const cuisines: Cuisine[] = [
     name: 'Healthy',
     heading: 'Healthy Food Delivery',
     description:
-      'Order salads, bowls and high-protein meals in Gurgaon and Delhi at menu prices with no hidden charges or surge pricing on USTART.',
+      'Order salads, bowls and high-protein meals across Delhi NCR at menu prices with no hidden charges or surge pricing on USTART.',
     targetKeyword: 'healthy food delivery gurgaon',
     intro: [
       'Healthy eating is one of the fastest-growing delivery categories in the NCR office districts, driven by weekday lunch ordering rather than by evening or weekend demand.',

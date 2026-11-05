@@ -477,6 +477,274 @@ const delhiLocalities: Locality[] = [
   },
 ];
 
+/**
+ * Noida, Ghaziabad and Greater Noida launched as delivery cities on top of the
+ * original Gurugram + Delhi footprint. Same quality gate as above: editorial copy
+ * only, ops fields null until they come from telemetry and the partner DB.
+ */
+const NCR_EAST_UPDATED = '2026-11-05';
+
+const noidaLocalities: Locality[] = [
+  {
+    slug: 'sector-18',
+    name: 'Sector 18',
+    aka: ['Noida Sector 18', 'Atta Market'],
+    intro: [
+      "Sector 18 is Noida's main commercial and shopping district — the market blocks around Atta Market, a run of malls along its edge, and one of the busiest stations on the Blue Line metro.",
+      'It has more restaurants packed into a small footprint than anywhere else in Noida, which makes it both a major source of delivery orders and the kitchen that feeds much of the surrounding residential sectors.',
+    ],
+    whoOrders:
+      'Shoppers, shop staff and office workers through the day, with evening and weekend spikes driven by mall and market footfall rather than by households.',
+    faq: [
+      {
+        q: 'How should I give a delivery address inside the Sector 18 market?',
+        a: 'The market is organised into lettered and numbered blocks with shops on several levels. Block, shop or office number, and floor together are what make an address findable — a shop number on its own repeats across blocks.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+  {
+    slug: 'sector-62',
+    name: 'Sector 62',
+    aka: ['Noida Sector 62'],
+    intro: [
+      "Sector 62 is one of Noida's main institutional and IT districts — a grid of office campuses, technology companies and educational institutes, with paying-guest housing and residential pockets around it.",
+      'It behaves like an office district on weekdays and a student neighbourhood in the evenings, which gives it a longer ordering day than most of Noida.',
+    ],
+    whoOrders:
+      'Weekday office lunch dominates, with team orders well above average. After office hours the demand shifts to students and young professionals in shared housing, ordering later and in smaller baskets.',
+    faq: [
+      {
+        q: 'Can food be delivered inside Sector 62 office campuses?',
+        a: 'Most campuses hand deliveries over at a security gate or reception rather than letting riders inside. Adding the campus or tower name, the gate number and a reachable phone number to the delivery notes avoids most delays.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+  {
+    slug: 'sector-50',
+    name: 'Sector 50',
+    aka: ['Noida Sector 50'],
+    intro: [
+      'Sector 50 is one of central Noida\'s established residential sectors, made up of independent houses and group housing around its own central market, which has grown into a restaurant cluster in its own right.',
+      'Because the market sits inside the sector, a lot of what residents order is cooked within a few minutes of their door.',
+    ],
+    whoOrders:
+      'Family households with steady weekday dinner demand and strong weekend ordering, weighted towards everyday cuisines and repeat orders from familiar neighbourhood kitchens.',
+    faq: [
+      {
+        q: 'Does Sector 50 need a block letter in the address?',
+        a: 'Yes. Sector 50 is divided into lettered blocks and house numbers repeat between them, so the block letter is what tells a rider which lane to take.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+  {
+    slug: 'noida-expressway',
+    name: 'Noida Expressway',
+    aka: ['Noida-Greater Noida Expressway', 'Sector 128', 'Sector 137'],
+    intro: [
+      'The Noida–Greater Noida Expressway corridor is lined with high-rise group housing societies on one side and large IT parks on the other, across sectors such as 128, 135 and 137.',
+      'It is the most vertical part of Noida: a single society can hold thousands of households behind one guarded gate, so delivery is concentrated into a small number of entrances.',
+    ],
+    whoOrders:
+      'Young families and working professionals living in the societies, with heavy weekday dinner and late-evening demand, plus weekday lunch from the IT parks along the corridor.',
+    faq: [
+      {
+        q: 'How do deliveries work in the Expressway high-rise societies?',
+        a: 'Most societies require the rider to register at the main gate and some need an approval from the resident. Adding the society name, tower, flat number and the gate you want used — and approving the entry promptly when the app notifies you — makes the biggest difference to handover time.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+  {
+    slug: 'sector-76',
+    name: 'Sector 76',
+    aka: ['Noida Sector 76'],
+    intro: [
+      'Sector 76 sits in a cluster of group housing sectors in central Noida — mostly large, gated apartment societies built around the Aqua Line metro corridor.',
+      'It is almost entirely residential, so its delivery pattern is set by households rather than offices or shoppers.',
+    ],
+    whoOrders:
+      'Families and working couples in high-rise societies, with demand concentrated on weekday evenings and weekends, and a noticeable share of breakfast and late-night orders.',
+    faq: [
+      {
+        q: 'Should I mention the society name for a Sector 76 delivery?',
+        a: 'Always. Several large societies share the sector, and the society name plus tower number matters more than the sector number for routing a rider to the right gate.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+];
+
+const ghaziabadLocalities: Locality[] = [
+  {
+    slug: 'indirapuram',
+    name: 'Indirapuram',
+    intro: [
+      "Indirapuram is Ghaziabad's largest planned residential area, right on the Delhi and Noida borders — a dense mix of high-rise societies, plotted housing and busy commercial strips around the Shipra Mall area.",
+      'It is organised into named khands rather than numbered sectors, and that naming system is the thing most first-time addresses get wrong.',
+    ],
+    whoOrders:
+      'Residential and family-led, with strong weekday dinner and weekend demand, and a large share of residents who commute to Delhi or Noida and order after getting home.',
+    faq: [
+      {
+        q: 'Why does an Indirapuram address need the khand name?',
+        a: 'Indirapuram is divided into khands such as Niti Khand, Ahinsa Khand and Shakti Khand, and house and society names can recur between them. The khand is the part of the address that decides routing.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+  {
+    slug: 'vaishali',
+    name: 'Vaishali',
+    intro: [
+      'Vaishali is an established residential area of Ghaziabad bordering east Delhi, laid out in numbered sectors and anchored by the Vaishali metro station at the end of the Blue Line branch.',
+      'Its metro connection means a lot of residents work in Delhi, which shapes when and how they order.',
+    ],
+    whoOrders:
+      'Settled households with a strong weekday dinner occasion, plus commuter demand in the evening as people come off the metro.',
+    faq: [
+      {
+        q: 'Is Vaishali addressed by sector?',
+        a: 'Yes. Vaishali is split into numbered sectors and house numbers repeat between them, so the sector number is essential on a delivery address.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+  {
+    slug: 'raj-nagar-extension',
+    name: 'Raj Nagar Extension',
+    aka: ['RNE'],
+    intro: [
+      'Raj Nagar Extension is one of the fastest-growing residential townships in Ghaziabad — a large belt of newer high-rise group housing societies, much of it built in the last decade.',
+      'Because so much of it is new, landmarks are still settling and map pins for individual towers are less reliable than in older parts of the city.',
+    ],
+    whoOrders:
+      'Young families and first-time homeowners in high-rise societies, with demand concentrated on weekday evenings and weekends.',
+    faq: [
+      {
+        q: 'What helps a Raj Nagar Extension delivery arrive on time?',
+        a: 'The society name and tower number are essential, and a pin dropped at the society gate rather than the building itself helps — some towers are newer than the map data around them.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+  {
+    slug: 'crossings-republik',
+    name: 'Crossings Republik',
+    intro: [
+      'Crossings Republik is an integrated township of high-rise residential societies on the Ghaziabad side of the Noida border, with several engineering and management colleges close by.',
+      'It is self-contained in a way most of Ghaziabad is not: residents, students and the township\'s own commercial strip sit inside one large gated development.',
+    ],
+    whoOrders:
+      'A two-sided market: families in the societies ordering dinner, and students from the nearby colleges ordering later at night, in smaller baskets, and more often.',
+    faq: [
+      {
+        q: 'Do Crossings Republik deliveries go to the society gate?',
+        a: 'Most societies in the township route riders through a main security gate. The society name, tower and flat number, and the gate you prefer, are what keep the handover quick.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+];
+
+const greaterNoidaLocalities: Locality[] = [
+  {
+    slug: 'greater-noida-west',
+    name: 'Greater Noida West',
+    aka: ['Noida Extension', 'Gaur City'],
+    intro: [
+      'Greater Noida West — still widely called Noida Extension — is one of the largest clusters of high-rise housing in the NCR, built around Gaur City and the roundabouts at Gaur Chowk and Ek Murti.',
+      'Its density is the defining feature: tens of thousands of households live in towers grouped into societies and, in Gaur City, numbered avenues.',
+    ],
+    whoOrders:
+      'Young families and working professionals, with heavy weekday dinner and late-evening demand and some of the highest order volumes per square kilometre anywhere in Greater Noida.',
+    faq: [
+      {
+        q: 'Is Noida Extension the same as Greater Noida West?',
+        a: 'Yes. Greater Noida West is the official name and Noida Extension is the name most people still use. It falls under the Greater Noida authority rather than Noida. Either name works in the app — your address and pin are what matter.',
+      },
+      {
+        q: 'What should a Gaur City address include?',
+        a: 'Gaur City is split into avenues, and tower names and numbers repeat between them. The avenue number, tower and flat together are what get a rider to the right building.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+  {
+    slug: 'pari-chowk',
+    name: 'Pari Chowk & Alpha',
+    aka: ['Pari Chowk', 'Alpha 1', 'Alpha 2', 'Jagat Farm'],
+    intro: [
+      'Pari Chowk is the central roundabout of Greater Noida, and the sectors around it — Alpha, Beta and Gamma — are among the city\'s oldest planned residential areas, named after Greek letters rather than numbered.',
+      'They are mostly plotted housing with local markets such as Jagat Farm, and are less vertical than the newer society belts.',
+    ],
+    whoOrders:
+      'Settled families with steady weekday dinner and weekend demand, plus traffic from the malls and offices around Pari Chowk itself.',
+    faq: [
+      {
+        q: 'Do Alpha, Beta and Gamma sectors need the number too?',
+        a: 'Yes. Each Greek-letter sector is split into numbered parts — Alpha 1 and Alpha 2, Gamma 1 and Gamma 2 — and house numbers repeat between them. Include both the letter and the number.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+  {
+    slug: 'knowledge-park',
+    name: 'Knowledge Park',
+    intro: [
+      "Knowledge Park is Greater Noida's education district, a series of zones packed with universities, engineering and management colleges, and the hostels and student housing around them.",
+      'It has one of the youngest populations in the NCR, and its ordering pattern looks nothing like the family-led residential sectors around it.',
+    ],
+    whoOrders:
+      'Students ordering late into the night, in smaller and more frequent baskets, with spikes around exam weeks and weekends. Budget-friendly cuisines dominate.',
+    faq: [
+      {
+        q: 'Can food be delivered to a hostel in Knowledge Park?',
+        a: 'Most campuses hand deliveries over at the main gate rather than letting riders into the hostel blocks. Put your college name, gate number and a reachable phone number in the delivery notes and meet the rider at the gate.',
+      },
+    ],
+    avgDeliveryMinutes: null,
+    partnerCount: null,
+    coverage: [],
+    updatedAt: NCR_EAST_UPDATED,
+  },
+];
+
 export const cities: City[] = [
   {
     slug: 'gurgaon',
@@ -525,6 +793,106 @@ export const cities: City[] = [
     ],
     localities: delhiLocalities,
     updatedAt: UPDATED,
+  },
+  {
+    slug: 'noida',
+    name: 'Noida',
+    officialName: 'Noida',
+    state: 'Uttar Pradesh',
+    intro: [
+      'Noida is a planned city of numbered sectors, which makes it one of the easiest places in the NCR to address a delivery — and one of the most varied to deliver in. Market sectors like 18, office districts like 62, settled residential sectors and the high-rise societies along the Expressway each order in a completely different way.',
+      'The pricing works exactly as it does everywhere else on USTART: menu prices that match the restaurant, no surge pricing, and a checkout total with nothing added at the last step.',
+    ],
+    faq: [
+      {
+        q: 'Which areas of Noida does USTART deliver to?',
+        a: 'We deliver across Noida, including the Sector 18 market district, the Sector 62 office and institutional belt, residential sectors such as Sector 50 and Sector 76, and the high-rise societies along the Noida Expressway. Enter your address in the app to see live coverage and the restaurants currently open near you.',
+      },
+      {
+        q: 'Does USTART charge surge pricing in Noida?',
+        a: 'No. We do not apply surge, rain or late-night pricing in Noida or anywhere else. The price you see at checkout is the price you pay.',
+      },
+      {
+        q: 'Do I need the society name for a Noida delivery?',
+        a: 'In the high-rise sectors, yes. Sector numbers get the rider to the right area, but society name and tower number are what get them through the right gate.',
+      },
+    ],
+    localities: noidaLocalities,
+    updatedAt: NCR_EAST_UPDATED,
+  },
+  {
+    slug: 'ghaziabad',
+    name: 'Ghaziabad',
+    officialName: 'Ghaziabad',
+    state: 'Uttar Pradesh',
+    intro: [
+      'Ghaziabad borders both east Delhi and Noida, and the parts of it where food delivery is busiest — Indirapuram, Vaishali, Raj Nagar Extension and Crossings Republik — are largely residential and heavily high-rise. Much of the city commutes to Delhi or Noida, so ordering peaks after people get home.',
+      'USTART works the same way here as in the rest of the NCR: restaurant menu prices, no surge charges, and no fees added at checkout.',
+    ],
+    faq: [
+      {
+        q: 'Which areas of Ghaziabad does USTART deliver to?',
+        a: 'Coverage includes Indirapuram, Vaishali, Raj Nagar Extension and Crossings Republik. Enter your address in the app for live coverage — it reflects the areas and restaurants actually available to you right now.',
+      },
+      {
+        q: 'Are prices in Ghaziabad the same as in the restaurant?',
+        a: 'That is the model. We keep commissions low enough that restaurant partners do not need to inflate their online menus, so the price you pay tracks the price on the restaurant\'s own menu.',
+      },
+    ],
+    localities: ghaziabadLocalities,
+    updatedAt: NCR_EAST_UPDATED,
+  },
+  {
+    slug: 'greater-noida',
+    name: 'Greater Noida',
+    officialName: 'Greater Noida',
+    state: 'Uttar Pradesh',
+    intro: [
+      'Greater Noida is really two delivery markets. Greater Noida West — Noida Extension — is one of the densest clusters of high-rise housing in the country. The original city around Pari Chowk is spread out, plotted and organised into Greek-letter sectors, with a large student population in Knowledge Park.',
+      'Across both, the USTART promise is the same: real menu prices, no surge pricing, and a bill with nothing hidden in it.',
+    ],
+    faq: [
+      {
+        q: 'Does USTART deliver in Noida Extension?',
+        a: 'Yes. Noida Extension (officially Greater Noida West), including Gaur City, is one of our Greater Noida delivery areas, alongside Pari Chowk and the Alpha, Beta and Gamma sectors, and Knowledge Park.',
+      },
+      {
+        q: 'Is food delivery available late at night in Greater Noida?',
+        a: 'Late-night availability depends on which kitchens are still open near you rather than on the area itself. The app shows live restaurant availability, and we never add a late-night surcharge.',
+      },
+    ],
+    localities: greaterNoidaLocalities,
+    updatedAt: NCR_EAST_UPDATED,
+  },
+];
+
+/**
+ * Copy for the /food-delivery Delhi NCR hub. Kept here so the city list and the
+ * hub copy can never drift apart.
+ */
+export const NCR_HUB_UPDATED = NCR_EAST_UPDATED;
+
+export const ncrIntro = [
+  'Delhi NCR is not one food delivery market — it is five cities with completely different addressing systems, ordering habits and peak hours. Gurugram runs on towers and sectors, Delhi on colony blocks and markets, Noida on numbered sectors and Expressway societies, Ghaziabad on khands and townships, and Greater Noida on Greek-letter sectors and the high-rise belt of Noida Extension.',
+  'USTART delivers across all five, with the same promise in each: menu prices that match the restaurant, no surge or rain pricing, and nothing added to the bill at checkout.',
+];
+
+export const ncrFaqs = [
+  {
+    q: 'Which cities in Delhi NCR does USTART deliver to?',
+    a: 'USTART delivers in Gurugram (Gurgaon), Delhi, Noida, Ghaziabad and Greater Noida, including Noida Extension. Enter your address in the app to see live coverage and the restaurants open near you right now.',
+  },
+  {
+    q: 'Is there a food delivery app in Delhi NCR without hidden charges?',
+    a: 'That is what USTART is built for. Menu prices match what the restaurant charges, there is no surge or rain pricing, and the total shown at checkout is the total you pay — across every NCR city we serve.',
+  },
+  {
+    q: 'Are prices different between Gurugram, Delhi, Noida and Ghaziabad?',
+    a: 'Restaurant menu prices are set by each restaurant, so they vary between kitchens. What does not vary is our pricing model: no surge, no hidden checkout fees and no inflated online menus, in any NCR city.',
+  },
+  {
+    q: 'Does USTART deliver to Faridabad?',
+    a: 'Not yet. We currently serve Gurugram, Delhi, Noida, Ghaziabad and Greater Noida. The app will tell you as soon as your area is covered.',
   },
 ];
 

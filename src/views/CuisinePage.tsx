@@ -63,7 +63,7 @@ export const CuisinePage: React.FC<{ cuisine: Cuisine }> = ({ cuisine }) => {
           {cuisine.partnerBrands.length > 0 && (
             <section className="article-intro-section">
               <h2 className="article-subheading">{cuisine.name} Partners on USTART</h2>
-              <p>Brands we partner with for {cuisine.name.toLowerCase()} across Gurgaon and Delhi:</p>
+              <p>Brands we partner with for {cuisine.name.toLowerCase()} across Delhi NCR:</p>
               <div className="locality-grid">
                 {cuisine.partnerBrands.map((brand) => (
                   <div key={brand} className="locality-card locality-card-static">

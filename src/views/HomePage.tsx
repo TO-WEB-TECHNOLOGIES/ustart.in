@@ -782,7 +782,7 @@ export const HomePage: React.FC = () => {
       <AccordionItem value="faq-2">
         <AccordionTrigger qTag="Q2.">Which areas do you deliver to?</AccordionTrigger>
         <AccordionContent>
-          We're serving all of <strong>Gurugram</strong> and are live across <strong>Delhi</strong>, and we're adding new areas as fast as we can. Just drop your location into the app, and it'll tell you instantly whether we're already at your doorstep or on the way soon.
+          We're live across <strong>Delhi NCR</strong>: <Link to="/food-delivery/gurgaon">Gurugram</Link>, <Link to="/food-delivery/delhi">Delhi</Link>, <Link to="/food-delivery/noida">Noida</Link>, <Link to="/food-delivery/ghaziabad">Ghaziabad</Link> and <Link to="/food-delivery/greater-noida">Greater Noida</Link>, and we're adding new areas as fast as we can. Just drop your location into the app, and it'll tell you instantly whether we're already at your doorstep or on the way soon.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="faq-3">
@@ -852,7 +852,7 @@ export const HomePage: React.FC = () => {
     {/* HEADING — together at the top */}
     <div className="dlx-dl-heading dlx-reveal">
       <h2 className="dlx-font-display">STOP FEEDING THE <span className="dlx-hl">FEES.</span><span className="dlx-line2">START FEEDING <span className="dlx-hl">YOURSELF.</span></span></h2>
-      <p className="dlx-sub">Gurgaon and Delhi's fairest food delivery is one tap away. What are you waiting for?</p>
+      <p className="dlx-sub">Delhi NCR's fairest food delivery is one tap away. What are you waiting for?</p>
     </div>
 
     {/* STRUCTURED ROW: copy left · phone center · copy right, none overlapping */}
@@ -913,7 +913,7 @@ export const HomePage: React.FC = () => {
                   <span className="dlx-qr-sub">iOS &amp; Android</span>
                 </a>
 
-                <div className="dlx-screen-footnote"><span className="dlx-dot dlx-pulse-dot"></span>Live in Gurgaon &amp; Delhi</div>
+                <div className="dlx-screen-footnote"><span className="dlx-dot dlx-pulse-dot"></span>Live across Delhi NCR</div>
               </div>
             </div>
           </div>
@@ -936,7 +936,7 @@ export const HomePage: React.FC = () => {
   </div>
 
   <div className="dlx-dl-bottom-strip dlx-reveal dlx-d4">
-    <p>Available on iOS &amp; Android · Gurgaon &amp; Delhi, India</p>
+    <p>Available on iOS &amp; Android · Gurugram, Delhi, Noida, Ghaziabad &amp; Greater Noida</p>
   </div>
 </section>
 

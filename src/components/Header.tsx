@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useRouter } from '../router';
 import { PARTNER_URL } from '../constants';
 
-// The /food-delivery/gurgaon and /food-delivery/delhi city hubs are intentionally
+// The /food-delivery NCR hub and the per-city hubs are intentionally
 // not in the header. They stay linked from the footer's ORDER column, which is what
 // keeps them (and the 20 locality pages hanging off them) crawlable — don't remove
 // those footer links without putting the hubs back somewhere in the nav.

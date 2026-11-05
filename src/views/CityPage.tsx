@@ -3,7 +3,7 @@ import { Header } from '../components/Header';
 import { PageHero } from '../components/PageHero';
 import { Footer } from '../components/Footer';
 import { Link } from '../router';
-import type { City } from '@/content/locations';
+import { cities, type City } from '@/content/locations';
 import { cuisines } from '@/content/cuisines';
 import { articles } from '@/content/blog';
 import { APP_DOWNLOAD_URL } from '@/constants';
@@ -40,6 +40,8 @@ export const CityPage: React.FC<{ city: City }> = ({ city }) => {
           <nav className="article-breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <span aria-hidden="true"> › </span>
+            <Link to="/food-delivery">Delhi NCR</Link>
+            <span aria-hidden="true"> › </span>
             <span>Food Delivery in {city.name}</span>
           </nav>
 
@@ -67,6 +69,25 @@ export const CityPage: React.FC<{ city: City }> = ({ city }) => {
                   <span>Food delivery in {locality.name}</span>
                 </Link>
               ))}
+            </div>
+          </section>
+
+          {/* ===== OTHER NCR CITIES — sideways links between the city hubs ===== */}
+          <section className="article-intro-section">
+            <h2 className="article-subheading">Also Delivering Across Delhi NCR</h2>
+            <p>
+              Ordering for someone in another part of the NCR? USTART works the same way in every
+              city we serve. <Link to="/food-delivery">See all Delhi NCR delivery areas</Link>.
+            </p>
+            <div className="locality-grid">
+              {cities
+                .filter((c) => c.slug !== city.slug)
+                .map((other) => (
+                  <Link key={other.slug} to={`/food-delivery/${other.slug}`} className="locality-card">
+                    <strong>{other.name}</strong>
+                    <span>{other.localities.slice(0, 3).map((l) => l.name).join(' · ')}</span>
+                  </Link>
+                ))}
             </div>
           </section>
 

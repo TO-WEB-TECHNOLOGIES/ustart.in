@@ -35,7 +35,7 @@ export const intentPages: Record<string, IntentPage> = {
     slug: 'food-delivery-without-hidden-charges',
     kicker: '💸 TRANSPARENT PRICING',
     h1: 'Food Delivery Without Hidden Charges',
-    title: 'Food Delivery Without Hidden Charges — Gurgaon & Delhi',
+    title: 'Food Delivery Without Hidden Charges — Delhi NCR',
     description:
       'A ₹199 meal should cost ₹199. How USTART removes platform fees, surge pricing and menu markups so the price you see is the price you pay.',
     targetKeyword: 'food delivery without hidden charges',
@@ -105,9 +105,9 @@ export const intentPages: Record<string, IntentPage> = {
     slug: 'late-night-food-delivery',
     kicker: '🌙 LATE NIGHT',
     h1: 'Late Night Food Delivery',
-    title: 'Late Night Food Delivery in Gurgaon & Delhi',
+    title: 'Late Night Food Delivery in Delhi NCR',
     description:
-      'Order late night food in Gurgaon and Delhi with no midnight surge pricing. Which areas stay active after hours and how to order well at 2am.',
+      'Order late night food in Gurgaon, Delhi, Noida and Ghaziabad with no midnight surge pricing. Which areas stay active after hours and how to order well at 2am.',
     targetKeyword: 'late night food delivery gurgaon',
     lede: 'Late-night ordering is where delivery pricing usually gets worst — demand is high, supply is thin, and surge multipliers do the rest. On USTART the price at 2am is the price at 2pm.',
     sections: [
@@ -129,6 +129,8 @@ export const intentPages: Record<string, IntentPage> = {
           'Udyog Vihar, Gurgaon — night-shift demand from the business estate keeps activity steady.',
           'Hauz Khas, Delhi — the Village runs later than most of south Delhi.',
           'Connaught Place, Delhi — late activity driven by central-Delhi nightlife rather than residents.',
+          'Knowledge Park, Greater Noida — a large student population keeps orders coming well after the residential sectors go quiet.',
+          'Noida Expressway societies — young professionals ordering late after long commutes.',
         ],
       },
       {
@@ -155,7 +157,7 @@ export const intentPages: Record<string, IntentPage> = {
       },
       {
         q: 'Which areas have the best late-night options?',
-        a: 'In Gurgaon, Sector 29 has the most genuinely late-operating kitchens, with DLF Phase 3 and Udyog Vihar also staying active. In Delhi, Hauz Khas and Connaught Place run latest.',
+        a: 'In Gurgaon, Sector 29 has the most genuinely late-operating kitchens, with DLF Phase 3 and Udyog Vihar also staying active. In Delhi, Hauz Khas and Connaught Place run latest. Across Noida and Greater Noida, student-heavy Knowledge Park and the Expressway societies keep the latest demand.',
       },
     ],
     updatedAt: UPDATED,
@@ -165,9 +167,9 @@ export const intentPages: Record<string, IntentPage> = {
     slug: 'office-lunch-delivery',
     kicker: '🏢 WORKDAY LUNCH',
     h1: 'Office Lunch Delivery',
-    title: 'Office & Corporate Lunch Delivery in Gurgaon & Delhi',
+    title: 'Office & Corporate Lunch Delivery in Delhi NCR',
     description:
-      'Office lunch delivery across Cyber City, Udyog Vihar, Connaught Place and Nehru Place — real menu prices, no surge, and tips for ordering for a team.',
+      'Office lunch delivery across Cyber City, Udyog Vihar, Connaught Place, Nehru Place and Noida Sector 62 — real menu prices, no surge, and tips for team orders.',
     targetKeyword: 'office lunch delivery gurgaon',
     lede: 'Weekday lunch between 1pm and 2:30pm is the single busiest delivery window in the NCR, and it is concentrated in a handful of buildings. Here is how to order into that without waiting.',
     sections: [
@@ -187,6 +189,8 @@ export const intentPages: Record<string, IntentPage> = {
           'Golf Course Road, Gurgaon — offices along the commercial stretches of the corridor.',
           'Connaught Place, Delhi — central Delhi corporate lunch, with high team-order volume.',
           'Nehru Place, Delhi — market traders and office workers, with strong repeat ordering.',
+          'Sector 62, Noida — IT campuses and institutes, with heavy team-order volume at lunch.',
+          'Noida Expressway IT parks — weekday lunch from the office campuses along the corridor.',
         ],
       },
       {

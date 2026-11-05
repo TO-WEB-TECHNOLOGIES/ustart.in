@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { cities, getCity } from '@/content/locations';
 import { CityPage } from '@/views/CityPage';
 import { JsonLd } from '@/components/JsonLd';
-import { graph, breadcrumbSchema, faqSchema } from '@/lib/schema';
+import { graph, breadcrumbSchema, faqSchema, cityServiceSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 type Params = { city: string };
@@ -26,7 +26,10 @@ export async function generateMetadata({
 
   return buildMetadata({
     title: `Food Delivery in ${city.name} — No Hidden Charges`,
-    description: `Order food online in ${city.name} at real menu prices. No surge pricing, no fees added at checkout, live order tracking. See the areas USTART delivers to.`,
+    description: `Order food online in ${city.name} at real menu prices, with no surge pricing or checkout fees. Delivering in ${city.localities
+      .slice(0, 2)
+      .map((l) => l.name)
+      .join(', ')} and more.`,
     path: `/food-delivery/${city.slug}`,
   });
 }
@@ -43,8 +46,10 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         data={graph(
           breadcrumbSchema([
             { name: 'Home', path: '/' },
+            { name: 'Delhi NCR', path: '/food-delivery' },
             { name: `Food Delivery in ${city.name}`, path: `/food-delivery/${city.slug}` },
           ]),
+          cityServiceSchema(city),
           faqSchema(city.faq)
         )}
       />

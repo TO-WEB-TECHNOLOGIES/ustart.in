@@ -5,6 +5,7 @@ import { Footer } from '../components/Footer';
 import { Link } from '../router';
 import type { Article } from '@/content/blog';
 import { getRelatedArticles } from '@/content/blog';
+import { cities } from '@/content/locations';
 import { APP_DOWNLOAD_URL } from '@/constants';
 
 /**
@@ -81,20 +82,24 @@ export const ArticlePage: React.FC<{ article: Article }> = ({ article }) => {
 
           {/* Conversion path out of an informational page */}
           <aside className="article-cta">
-            <h2>Ordering in Gurgaon or Delhi?</h2>
+            <h2>Ordering in Delhi NCR?</h2>
             <p>
               USTART shows the real menu price with no surge pricing and nothing added at the last
-              step. See what your bill actually looks like.
+              step, in{' '}
+              {cities.map((city, idx) => (
+                <React.Fragment key={city.slug}>
+                  {idx > 0 && (idx === cities.length - 1 ? ' and ' : ', ')}
+                  <Link to={`/food-delivery/${city.slug}`}>{city.name}</Link>
+                </React.Fragment>
+              ))}
+              .
             </p>
             <div className="article-cta-links">
               <a href={APP_DOWNLOAD_URL} className="btn btn-primary">
                 Get the App
               </a>
-              <Link to="/food-delivery/gurgaon" className="btn btn-outline">
-                Food Delivery in Gurgaon
-              </Link>
-              <Link to="/food-delivery/delhi" className="btn btn-outline">
-                Food Delivery in Delhi
+              <Link to="/food-delivery" className="btn btn-outline">
+                Food Delivery in Delhi NCR
               </Link>
             </div>
           </aside>

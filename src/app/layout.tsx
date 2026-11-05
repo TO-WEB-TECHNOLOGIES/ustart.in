@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   // Without it Next emits relative og:url values, which crawlers cannot follow.
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'USTART — Food Delivery in Gurgaon & Delhi | No Hidden Charges',
+    default: 'USTART — Food Delivery in Delhi NCR | No Hidden Charges',
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    'Order food in Gurgaon and Delhi at real menu prices. No surge pricing, no hidden checkout fees, live order tracking. Download the USTART app.',
+    'Order food across Delhi NCR — Gurugram, Delhi, Noida, Ghaziabad & Greater Noida — at real menu prices. No surge pricing, no hidden checkout fees.',
   applicationName: SITE_NAME,
   referrer: 'origin-when-cross-origin',
   authors: [{ name: SITE_NAME, url: SITE_URL }],

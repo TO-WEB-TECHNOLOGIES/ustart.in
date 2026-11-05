@@ -25,7 +25,7 @@ export async function generateMetadata({
   if (!cuisine) return {};
 
   return buildMetadata({
-    title: `${cuisine.heading} in Gurgaon & Delhi`,
+    title: `${cuisine.heading} in Delhi NCR`,
     description: cuisine.description,
     path: `/order/${cuisine.slug}`,
   });

@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   ...buildMetadata({
     title: 'USTART',
     description:
-      'Order food in Gurgaon and Delhi at real menu prices. No surge pricing, no hidden checkout fees, live order tracking. Download the USTART food delivery app.',
+      'Order food across Delhi NCR — Gurugram, Delhi, Noida, Ghaziabad & Greater Noida — at real menu prices. No surge pricing, no hidden checkout fees.',
     path: '/',
   }),
   title: {
-    absolute: 'Food Delivery in Gurgaon & Delhi — No Hidden Charges | USTART',
+    absolute: 'Food Delivery in Delhi NCR — No Hidden Charges | USTART',
   },
 };
 

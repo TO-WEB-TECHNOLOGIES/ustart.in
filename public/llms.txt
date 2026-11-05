@@ -1,0 +1,35 @@
+# USTART
+
+> USTART is a food delivery app for Delhi NCR — Gurugram (Gurgaon), Delhi, Noida, Ghaziabad and Greater Noida — built on menu-price parity: restaurant menu prices online match the restaurant's own prices, with no surge or rain pricing and no hidden fees added at checkout. Operated by Toweb Technology Private Limited, headquartered in Gurugram, Haryana, India.
+
+## Where USTART delivers
+
+- [Food delivery in Delhi NCR](https://ustart.in/food-delivery): overview of every city and locality served
+- [Food delivery in Gurugram (Gurgaon)](https://ustart.in/food-delivery/gurgaon): Cyber City, Golf Course Road, Sohna Road, DLF Phases, Sector 29, Udyog Vihar and more
+- [Food delivery in Delhi](https://ustart.in/food-delivery/delhi): Connaught Place, Saket, Hauz Khas, Greater Kailash, Lajpat Nagar, Nehru Place, Vasant Kunj, Dwarka
+- [Food delivery in Noida](https://ustart.in/food-delivery/noida): Sector 18, Sector 62, Sector 50, Sector 76, Noida Expressway
+- [Food delivery in Ghaziabad](https://ustart.in/food-delivery/ghaziabad): Indirapuram, Vaishali, Raj Nagar Extension, Crossings Republik
+- [Food delivery in Greater Noida](https://ustart.in/food-delivery/greater-noida): Greater Noida West (Noida Extension, Gaur City), Pari Chowk & Alpha, Knowledge Park
+
+Not currently served: Faridabad.
+
+## Pricing model
+
+- [Food delivery without hidden charges](https://ustart.in/food-delivery-without-hidden-charges): how USTART removes platform fees, surge pricing and menu markups
+- [USTART Elite](https://ustart.in/elite): membership with free delivery on eligible orders
+- [What is menu price parity?](https://ustart.in/blog/what-is-menu-price-parity)
+- [How delivery fees work](https://ustart.in/blog/how-delivery-fees-work)
+
+## Ordering occasions
+
+- [Late night food delivery](https://ustart.in/late-night-food-delivery)
+- [Office lunch delivery](https://ustart.in/office-lunch-delivery)
+
+## Company
+
+- [About USTART](https://ustart.in/about)
+- [Contact and help centre](https://ustart.in/contact)
+- [Blog](https://ustart.in/blog)
+- [Terms](https://ustart.in/terms)
+- Partner your restaurant: https://partner.ustart.in/
+- Download the app (iOS & Android): https://store.ustart.in

@@ -40,6 +40,8 @@ export const LocalityPage: React.FC<{ city: City; locality: Locality }> = ({ cit
           <nav className="article-breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <span aria-hidden="true"> › </span>
+            <Link to="/food-delivery">Delhi NCR</Link>
+            <span aria-hidden="true"> › </span>
             <Link to={`/food-delivery/${city.slug}`}>{city.name}</Link>
             <span aria-hidden="true"> › </span>
             <span>{locality.name}</span>

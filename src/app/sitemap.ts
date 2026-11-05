@@ -24,14 +24,15 @@ import { cuisines } from '@/content/cuisines';
  * you materially change a page — not for typo or styling edits.
  */
 const ROUTE_UPDATED: Record<string, string> = {
-  '/': '2026-08-18',
+  '/': '2026-11-05',
+  '/food-delivery': '2026-11-05',
   '/about': '2026-08-18',
   '/blog': '2026-08-18',
   '/careers': '2026-08-18',
   '/contact': '2026-08-18',
   '/elite': '2026-08-18',
-  '/late-night-food-delivery': '2026-08-18',
-  '/office-lunch-delivery': '2026-08-18',
+  '/late-night-food-delivery': '2026-11-05',
+  '/office-lunch-delivery': '2026-11-05',
   '/food-delivery-without-hidden-charges': '2026-08-18',
   '/nextgen-campus-leaders': '2026-08-18',
   '/delete-account': '2026-09-05',

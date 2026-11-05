@@ -13,6 +13,7 @@ import {
   APP_STORE_URL,
   absoluteUrl,
 } from '@/constants';
+import { cities, type City } from '@/content/locations';
 
 const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -28,7 +29,7 @@ export const organizationSchema = () => ({
     url: absoluteUrl('/Logo_White_Text.png'),
   },
   description:
-    'USTART is a food delivery platform serving Gurugram and Delhi with menu-price parity, no surge pricing and no hidden checkout fees.',
+    'USTART is a food delivery platform serving Delhi NCR — Gurugram, Delhi, Noida, Ghaziabad and Greater Noida — with menu-price parity, no surge pricing and no hidden checkout fees.',
   parentOrganization: {
     '@type': 'Organization',
     name: LEGAL_ENTITY,
@@ -60,6 +61,25 @@ export const websiteSchema = () => ({
   inLanguage: 'en-IN',
 });
 
+const NCR_ID = `${SITE_URL}/#ncr`;
+
+/** The National Capital Region — the parent place every served city sits inside. */
+const NCR_PLACE = {
+  '@type': 'AdministrativeArea',
+  '@id': NCR_ID,
+  name: 'National Capital Region',
+  alternateName: 'Delhi NCR',
+  address: { '@type': 'PostalAddress', addressCountry: 'IN' },
+};
+
+const cityPlace = (city: City) => ({
+  '@type': 'City',
+  name: city.officialName,
+  ...(city.officialName !== city.name ? { alternateName: city.name } : {}),
+  address: { '@type': 'PostalAddress', addressRegion: city.state, addressCountry: 'IN' },
+  containedInPlace: { '@id': NCR_ID },
+});
+
 /**
  * The delivery service itself. `Service` + `areaServed` is a more accurate
  * description than LocalBusiness: per the About page, USTART "doesn't own
@@ -72,10 +92,9 @@ export const deliveryServiceSchema = () => ({
   name: 'USTART Food Delivery',
   serviceType: 'Food delivery',
   provider: { '@id': ORG_ID },
-  areaServed: [
-    { '@type': 'City', name: 'Gurugram', address: { '@type': 'PostalAddress', addressRegion: 'Haryana', addressCountry: 'IN' } },
-    { '@type': 'City', name: 'Delhi', address: { '@type': 'PostalAddress', addressRegion: 'Delhi', addressCountry: 'IN' } },
-  ],
+  // Derived from the city list so a new city can never be live on the site but
+  // missing from the entity graph (or vice versa).
+  areaServed: [NCR_PLACE, ...cities.map(cityPlace)],
   availableChannel: {
     '@type': 'ServiceChannel',
     serviceUrl: SITE_URL,
@@ -128,6 +147,33 @@ export const mobileAppSchemas = () => [
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
   },
 ];
+
+/**
+ * Per-city service node for /food-delivery/[city]. Scopes the site-wide service
+ * to one city so the page carries an explicit "food delivery in {city}" entity.
+ */
+export const cityServiceSchema = (city: City) => ({
+  '@type': 'Service',
+  '@id': `${absoluteUrl(`/food-delivery/${city.slug}`)}/#service`,
+  name: `USTART Food Delivery in ${city.name}`,
+  serviceType: 'Food delivery',
+  url: absoluteUrl(`/food-delivery/${city.slug}`),
+  provider: { '@id': ORG_ID },
+  isRelatedTo: { '@id': `${SITE_URL}/#service` },
+  areaServed: cityPlace(city),
+});
+
+/** ItemList of the city hubs, for the /food-delivery Delhi NCR page. */
+export const cityListSchema = () => ({
+  '@type': 'ItemList',
+  name: 'USTART food delivery cities in Delhi NCR',
+  itemListElement: cities.map((city, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: `Food Delivery in ${city.name}`,
+    url: absoluteUrl(`/food-delivery/${city.slug}`),
+  })),
+});
 
 export interface Crumb {
   name: string;

@@ -15,6 +15,10 @@ import { FacebookIcon, InstagramIcon, LinkedInIcon, GooglePlayIcon, AppleIcon } 
 const FOOTER_SEO_LINKS: Array<{ label: string; to: string }> = [
   { label: 'Food delivery in Gurgaon', to: '/food-delivery/gurgaon' },
   { label: 'Food delivery in Delhi', to: '/food-delivery/delhi' },
+  { label: 'Food delivery in Noida', to: '/food-delivery/noida' },
+  { label: 'Food delivery in Ghaziabad', to: '/food-delivery/ghaziabad' },
+  { label: 'Food delivery in Greater Noida', to: '/food-delivery/greater-noida' },
+  { label: 'Food delivery in Delhi NCR', to: '/food-delivery' },
   { label: 'Food delivery in Cyber City', to: '/food-delivery/gurgaon/cyber-city' },
   { label: 'No hidden charges food delivery', to: '/food-delivery-without-hidden-charges' },
   { label: 'Late night food delivery', to: '/late-night-food-delivery' },
@@ -58,6 +62,9 @@ export const Footer: React.FC = () => {
             <h5>ORDER</h5>
             <Link to="/food-delivery/gurgaon">Food Delivery in Gurgaon</Link>
             <Link to="/food-delivery/delhi">Food Delivery in Delhi</Link>
+            <Link to="/food-delivery/noida">Food Delivery in Noida</Link>
+            <Link to="/food-delivery/ghaziabad">Food Delivery in Ghaziabad</Link>
+            <Link to="/food-delivery/greater-noida">Food Delivery in Greater Noida</Link>
             <Link to="/late-night-food-delivery">Late Night Delivery</Link>
             <Link to="/office-lunch-delivery">Office Lunch Delivery</Link>
             <Link to="/elite">USTART Elite</Link>

@@ -411,6 +411,7 @@ export const articles: Article[] = [
       'If you are looking for food delivery in Delhi NCR, this guide explains how ordering works and what to check before placing an order. You can choose from restaurants and cuisines near your location, whether you need lunch at work, dinner at home or food for a group.',
       'USTART is a food delivery marketplace that connects customers with independent restaurants and delivery riders. Customers can discover restaurants, browse menus, review applicable charges and place an order from their home, workplace or another eligible location without travelling to the restaurant.',
       'Delhi NCR has very different food-ordering patterns across neighbourhoods. A customer working around Cyber City may be ordering during a short weekday lunch window, while someone in Dwarka may be ordering dinner for a family at home. In Hauz Khas and Saket, late-evening ordering can be influenced by cafes, restaurants, entertainment and residential demand.',
+      'East of Delhi the pattern changes again. In Noida, the Sector 18 market and the Sector 62 office belt drive daytime orders while the Expressway societies order late in the evening. Ghaziabad localities such as Indirapuram and Vaishali are largely residential and order after the commute home, and in Greater Noida the high-rise towers of Noida Extension and the students of Knowledge Park keep demand running late.',
       'That local difference is why choosing a delivery platform is not only about finding food. Customers also need to know which restaurants are available, understand the final order value and consider conditions such as weather, traffic and restaurant operating hours before ordering.',
     ],
     keyTakeaways: [
@@ -425,7 +426,7 @@ export const articles: Article[] = [
       },
       {
         q: 'Can I order food online in Gurugram through USTART?',
-        a: 'Yes. USTART serves customers across Gurugram and Delhi, subject to restaurant and delivery availability at the customer\'s location.',
+        a: 'Yes. USTART serves customers across Gurugram, Delhi, Noida, Ghaziabad and Greater Noida, subject to restaurant and delivery availability at the customer\'s location.',
       },
       {
         q: 'Does USTART offer free food delivery?',
@@ -437,7 +438,7 @@ export const articles: Article[] = [
       },
     ],
     publishedAt: '2026-08-24',
-    updatedAt: '2026-08-24',
+    updatedAt: '2026-11-05',
     tilt: '0.8deg',
     delayClass: 'd2',
   },

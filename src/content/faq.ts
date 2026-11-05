@@ -14,7 +14,7 @@ export const homeFaqs = [
   },
   {
     q: 'Which areas do you deliver to?',
-    a: "We're serving all of Gurugram and are live across Delhi, and we're adding new areas as fast as we can. Just drop your location into the app, and it'll tell you instantly whether we're already at your doorstep or on the way soon.",
+    a: "We're live across Delhi NCR: Gurugram, Delhi, Noida, Ghaziabad and Greater Noida, and we're adding new areas as fast as we can. Just drop your location into the app, and it'll tell you instantly whether we're already at your doorstep or on the way soon.",
   },
   {
     q: 'How is USTART better for restaurants?',

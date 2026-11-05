@@ -6,7 +6,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata = buildMetadata({
   title: 'Food Delivery Blog — Fees, Pricing & Gurgaon Insights',
   description:
-    'Straight answers on delivery fees, surge pricing, menu price parity and restaurant economics, plus food delivery trends across Gurgaon and Delhi NCR.',
+    'Straight answers on delivery fees, surge pricing, menu price parity and restaurant economics, plus food delivery trends across Delhi NCR.',
   path: '/blog',
 });
 
