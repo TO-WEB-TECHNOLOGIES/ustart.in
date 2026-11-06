@@ -8,8 +8,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        // Next internals and API routes carry no indexable content.
-        disallow: ['/api/', '/_next/static/chunks/'],
+        // API routes carry no indexable content. /_next/static must stay
+        // crawlable: Google fetches the JS/CSS chunks to render pages.
+        disallow: ['/api/'],
       },
     ],
     sitemap: [

@@ -17,11 +17,12 @@ const DATA_DIR = path.join(process.cwd(), 'src', 'data', 'restaurants');
 const readJson = <T,>(name: string): T => JSON.parse(fs.readFileSync(path.join(DATA_DIR, name), 'utf8')) as T;
 
 /**
- * Rollout switch. Phase A: chain outlets are live but `noindex` while Google
- * indexes the ~1,700 independents. Flip to true after 2–3 weeks of clean
- * indexing in Search Console (phase B).
+ * Chain outlets (McDonald's, KFC, Pizza Hut…) are indexable. Each outlet page is
+ * distinct by location (area, address, map, hours, nearby restaurants), and these
+ * are the brand + area searches people actually make ("McDonald's Millennium City
+ * Centre Gurugram"). Set to false to put every chain outlet back to noindex.
  */
-export const INDEX_CHAIN_OUTLETS = false;
+export const INDEX_CHAIN_OUTLETS = true;
 
 export interface Restaurant {
   /** ONDC provider id — used with bppId for the catalog API. */
