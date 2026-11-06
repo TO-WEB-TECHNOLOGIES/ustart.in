@@ -13,6 +13,11 @@
 
 Not currently served: Faridabad.
 
+## Restaurants
+
+- [All partner restaurants](https://ustart.in/restaurants): every partner outlet in Delhi NCR, with full menus and prices
+- [Restaurants in Delhi](https://ustart.in/restaurants/delhi) · [Gurugram](https://ustart.in/restaurants/gurgaon) · [Noida](https://ustart.in/restaurants/noida) · [Ghaziabad](https://ustart.in/restaurants/ghaziabad) · [Greater Noida](https://ustart.in/restaurants/greater-noida)
+
 ## Pricing model
 
 - [Food delivery without hidden charges](https://ustart.in/food-delivery-without-hidden-charges): how USTART removes platform fees, surge pricing and menu markups

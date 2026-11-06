@@ -18,9 +18,15 @@ const NAV_LINKS = [
 
 export interface HeaderProps {
   variant?: 'light' | 'dark' | 'overlay';
+  /**
+   * Overlay variant only: render the solid (scrolled-past-hero) state from the
+   * first paint. For pages with no hero image under the header — e.g. restaurant
+   * pages — where the transparent state would put white links on a light page.
+   */
+  solid?: boolean;
 }
 
-export const Header: React.FC<HeaderProps> = ({ variant = 'light' }) => {
+export const Header: React.FC<HeaderProps> = ({ variant = 'light', solid: alwaysSolid = false }) => {
   const { pathname } = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -39,8 +45,9 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'light' }) => {
     let frame = 0;
 
     const measure = () => {
-      // .page-hero on sub-pages, .hero on the homepage — no page renders both.
-      const hero = document.querySelector('.page-hero, .hero') as HTMLElement | null;
+      // .page-hero on sub-pages, .hero on the homepage, .rx-band on restaurant
+      // pages — no page renders more than one.
+      const hero = document.querySelector('.page-hero, .hero, .rx-band') as HTMLElement | null;
       const heroHeight = hero?.offsetHeight ?? window.innerHeight * 0.6;
       // Change to solid white when the header passes the hero image segment (heroHeight - navbar height)
       threshold = Math.max(heroHeight - 75, 60);
@@ -78,7 +85,7 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'light' }) => {
   const isOverlay = variant === 'overlay';
   // The mobile panel is opaque, so the bar must adopt its solid treatment
   // whenever the menu is open — otherwise white links land on a transparent bar.
-  const solid = stuck || menuOpen;
+  const solid = alwaysSolid || stuck || menuOpen;
 
   const navClass = isOverlay
     ? `subnav subnav-overlay${scrolled ? ' is-scrolled' : ''}${solid ? ' is-stuck' : ''}`

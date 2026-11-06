@@ -4,6 +4,7 @@ import { PageHero } from '../components/PageHero';
 import { Footer } from '../components/Footer';
 import { Link } from '../router';
 import type { IntentPage } from '@/content/intent-pages';
+import { isIndexed, restaurantPath, restaurants } from '@/lib/restaurants';
 import { cities } from '@/content/locations';
 import { APP_DOWNLOAD_URL } from '@/constants';
 
@@ -58,6 +59,40 @@ export const IntentLandingPage: React.FC<{ page: IntentPage }> = ({ page }) => {
               )}
             </section>
           ))}
+
+          {page.slug === 'late-night-food-delivery' && (
+            <section className="article-intro-section">
+              <h2 className="article-subheading">Late-Night Kitchens on USTART</h2>
+              <p>
+                {restaurants.filter((r) => r.lateNight).length.toLocaleString('en-IN')} partner
+                restaurants across Delhi NCR take orders until 11:30 pm or later. A few in each city:
+              </p>
+              {cities.map((c) => {
+                const late = restaurants.filter((r) => r.city === c.slug && r.lateNight && isIndexed(r));
+                if (late.length === 0) return null;
+                return (
+                  <div key={c.slug} className="rp-area">
+                    <h3>
+                      {c.name}{' '}
+                      <span className="rp-count">
+                        {restaurants.filter((r) => r.city === c.slug && r.lateNight).length} late-night kitchens
+                      </span>
+                    </h3>
+                    <ul className="rp-link-list">
+                      {late.slice(0, 12).map((r) => (
+                        <li key={r.id}>
+                          <Link to={restaurantPath(r)}>
+                            {r.name}
+                            {r.localityName ? `, ${r.localityName}` : ''}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })}
+            </section>
+          )}
 
           <section className="article-faq-section">
             <h2 className="article-subheading">❓ Frequently Asked Questions</h2>

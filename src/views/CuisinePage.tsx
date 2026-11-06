@@ -7,16 +7,21 @@ import type { Cuisine } from '@/content/cuisines';
 import { cuisines } from '@/content/cuisines';
 import { cities } from '@/content/locations';
 import { APP_DOWNLOAD_URL } from '@/constants';
+import { isIndexed, restaurantPath, restaurantsByCuisine } from '@/lib/restaurants';
 
 export const CuisinePage: React.FC<{ cuisine: Cuisine }> = ({ cuisine }) => {
   const others = cuisines.filter((c) => c.slug !== cuisine.slug);
+  // Indexed outlets first, then by menu depth, so the links go to the strongest pages.
+  const cuisineRestaurants = restaurantsByCuisine(cuisine.slug).sort(
+    (a, b) => Number(isIndexed(b)) - Number(isIndexed(a)) || (b.itemCount ?? 0) - (a.itemCount ?? 0)
+  );
 
   return (
     <div className="about-page-wrapper">
       <Header variant="overlay" />
 
       <PageHero
-        kicker={`🍽️ ${cuisine.name.toUpperCase()} · GURGAON & DELHI`}
+        kicker={`🍽️ ${cuisine.name.toUpperCase()} · DELHI NCR`}
         title={<>{cuisine.heading} <span>Done Fairly.</span></>}
         subtitle={`Order ${cuisine.name.toLowerCase()} at real menu prices — no surge pricing, nothing added at checkout.`}
         focal="center 35%"
@@ -93,6 +98,38 @@ export const CuisinePage: React.FC<{ cuisine: Cuisine }> = ({ cuisine }) => {
               ))}
             </div>
           </section>
+
+          {cuisineRestaurants.length > 0 && (
+            <section className="article-intro-section">
+              <h2 className="article-subheading">{cuisine.name} Restaurants Across Delhi NCR</h2>
+              {cities.map((c) => {
+                const inCity = cuisineRestaurants.filter((r) => r.city === c.slug);
+                if (inCity.length === 0) return null;
+                return (
+                  <div key={c.slug} className="rp-area">
+                    <h3>
+                      {cuisine.name} in {c.name} <span className="rp-count">{inCity.length}</span>
+                    </h3>
+                    <ul className="rp-link-list">
+                      {inCity.slice(0, 24).map((r) => (
+                        <li key={r.id}>
+                          <Link to={restaurantPath(r)}>
+                            {r.name}
+                            {r.localityName ? `, ${r.localityName}` : ''}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                    {inCity.length > 24 && (
+                      <p>
+                        <Link to={`/restaurants/${c.slug}`}>See all restaurants in {c.name}</Link>
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            </section>
+          )}
 
           <section className="article-faq-section">
             <h2 className="article-subheading">❓ {cuisine.heading} — FAQs</h2>

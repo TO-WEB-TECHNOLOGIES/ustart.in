@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Manrope } from 'next/font/google';
 import { ScrollReveal } from '@/components/ScrollReveal';
+import { RouteLoader } from '@/components/RouteLoader';
 import { JsonLd } from '@/components/JsonLd';
 import {
   graph,
@@ -63,7 +64,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-IN" className={manrope.variable}>
-      <body className={`${manrope.className} antialiased`}>
+      {/* suppressHydrationWarning: browser extensions (e.g. ColorZilla's
+          cz-shortcut-listen) add attributes to <body> before React hydrates.
+          Applies to this element's own attributes only, not its children. */}
+      <body className={`${manrope.className} antialiased`} suppressHydrationWarning>
         {/* Site-wide entity graph. Page-level nodes (Article, FAQPage,
             BreadcrumbList) reference these by @id rather than redeclaring them. */}
         <JsonLd
@@ -76,6 +80,8 @@ export default function RootLayout({
         />
         <ScrollReveal />
         {children}
+        {/* Food loader overlay while a city / restaurant / brand page loads. */}
+        <RouteLoader />
       </body>
     </html>
   );

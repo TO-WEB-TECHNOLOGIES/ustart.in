@@ -11,6 +11,7 @@ import {
   SOCIAL_LINKS,
   PLAY_STORE_URL,
   APP_STORE_URL,
+  APP_DOWNLOAD_URL,
   absoluteUrl,
 } from '@/constants';
 import { cities, type City } from '@/content/locations';
@@ -229,4 +230,151 @@ export const articleSchema = (article: {
 export const graph = (...nodes: Array<object | object[]>) => ({
   '@context': 'https://schema.org',
   '@graph': nodes.flat(),
+});
+
+/* ── Restaurant pages ─────────────────────────────────────────────────────── */
+
+interface RestaurantForSchema {
+  name: string;
+  city: string;
+  slug: string;
+  address: string;
+  pincode: string | null;
+  localityName: string | null;
+  lat: number;
+  lon: number;
+  image: string | null;
+  hours: Record<string, Array<[string, string]>>;
+}
+
+/** Structural subset of the fetched menu (src/lib/catalog.ts) the schema needs. */
+interface MenuForSchema {
+  groups: Array<{ title: string; dishes: Array<{ name: string; price: number; inStock: boolean; veg: boolean | null; description: string | null }> }>;
+}
+
+const SCHEMA_DAYS: Record<string, string> = {
+  '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday', '4': 'Thursday',
+  '5': 'Friday', '6': 'Saturday', '7': 'Sunday',
+};
+
+const CITY_REGION: Record<string, { locality: string; region: string }> = {
+  delhi: { locality: 'New Delhi', region: 'Delhi' },
+  gurgaon: { locality: 'Gurugram', region: 'Haryana' },
+  noida: { locality: 'Noida', region: 'Uttar Pradesh' },
+  ghaziabad: { locality: 'Ghaziabad', region: 'Uttar Pradesh' },
+  'greater-noida': { locality: 'Greater Noida', region: 'Uttar Pradesh' },
+};
+
+/**
+ * Structured data carries a representative sample of the menu, not all of it:
+ * the visible page lists every dish, and hundreds of MenuItems in JSON-LD (which
+ * App Router serialises a second time into the RSC payload) only add weight.
+ */
+const MENU_SCHEMA_ITEMS = 60;
+
+function sampleMenu(menu: MenuForSchema) {
+  // Round-robin across sections so every section is represented; in-stock only.
+  // In stock and with a real price — customisable dishes report 0 until options are chosen.
+  const queues = menu.groups.map((g) => ({ title: g.title, dishes: g.dishes.filter((d) => d.inStock && d.price > 0) }));
+  const picked = new Map<string, MenuForSchema['groups'][number]['dishes']>();
+  let left = MENU_SCHEMA_ITEMS;
+  for (let i = 0; left > 0; i++) {
+    let any = false;
+    for (const q of queues) {
+      if (left === 0) break;
+      const dish = q.dishes[i];
+      if (!dish) continue;
+      any = true;
+      left--;
+      picked.set(q.title, [...(picked.get(q.title) ?? []), dish]);
+    }
+    if (!any) break;
+  }
+  return [...picked.entries()];
+}
+
+/**
+ * One partner outlet. No aggregateRating: there is no review data, and a rating
+ * not visible on the page would breach Google's structured-data policy. Menu
+ * prices come straight from the catalog API at render time.
+ */
+export const restaurantSchema = (
+  r: RestaurantForSchema,
+  menu: MenuForSchema | null,
+  opts: { cuisineNames: string[]; brandName?: string }
+) => {
+  const url = absoluteUrl(`/restaurants/${r.city}/${r.slug}`);
+  const region = CITY_REGION[r.city];
+  return {
+    '@type': 'Restaurant',
+    '@id': `${url}/#restaurant`,
+    name: r.name,
+    url,
+    ...(r.image ? { image: r.image } : {}),
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: r.address,
+      addressLocality: r.localityName ? `${r.localityName}, ${region.locality}` : region.locality,
+      addressRegion: region.region,
+      ...(r.pincode ? { postalCode: r.pincode } : {}),
+      addressCountry: 'IN',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: r.lat, longitude: r.lon },
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${r.lat},${r.lon}`,
+    ...(opts.cuisineNames.length ? { servesCuisine: opts.cuisineNames } : {}),
+    currenciesAccepted: 'INR',
+    // A window that closes "earlier" than it opens runs past midnight, which
+    // schema.org expresses exactly that way; an all-day window is 00:00–23:59.
+    openingHoursSpecification: Object.entries(r.hours).flatMap(([day, windows]) =>
+      windows.map(([opens, closes]) => ({
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: `https://schema.org/${SCHEMA_DAYS[day]}`,
+        opens,
+        closes: closes === '24:00' ? '23:59' : closes,
+      }))
+    ),
+    ...(opts.brandName ? { brand: { '@type': 'Brand', name: opts.brandName } } : {}),
+    ...(menu && menu.groups.length
+      ? {
+          hasMenu: {
+            '@type': 'Menu',
+            '@id': `${url}/#menu`,
+            hasMenuSection: sampleMenu(menu).map(([title, dishes]) => ({
+              '@type': 'MenuSection',
+              name: title,
+              hasMenuItem: dishes.map((d) => ({
+                '@type': 'MenuItem',
+                name: d.name,
+                ...(d.veg ? { suitableForDiet: 'https://schema.org/VegetarianDiet' } : {}),
+                offers: { '@type': 'Offer', price: d.price.toFixed(2), priceCurrency: 'INR' },
+              })),
+            })),
+          },
+        }
+      : {}),
+    potentialAction: {
+      '@type': 'OrderAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: APP_DOWNLOAD_URL,
+        actionPlatform: ['https://schema.org/AndroidPlatform', 'https://schema.org/IOSPlatform'],
+      },
+    },
+  };
+};
+
+/** ItemList of outlet pages (city lists, brand pages, locality lists). */
+export const restaurantListSchema = (
+  name: string,
+  items: Array<{ name: string; path: string }>
+) => ({
+  '@type': 'ItemList',
+  name,
+  numberOfItems: items.length,
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    url: absoluteUrl(item.path),
+  })),
 });

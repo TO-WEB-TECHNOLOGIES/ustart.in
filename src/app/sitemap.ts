@@ -3,6 +3,7 @@ import { SITE_URL } from '@/constants';
 import { articles } from '@/content/blog';
 import { cities } from '@/content/locations';
 import { cuisines } from '@/content/cuisines';
+import { brands, isBrandIndexed, SNAPSHOT_DATE } from '@/lib/restaurants';
 
 /**
  * Sitemap for ustart.in — served at /sitemap.xml and declared in robots.ts.
@@ -69,5 +70,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: cuisine.updatedAt,
   }));
 
-  return [...staticRoutes, ...blogRoutes, ...cityRoutes, ...localityRoutes, ...cuisineRoutes];
+  // Restaurant listing pages. The outlet pages themselves are in the per-city
+  // sitemaps at /restaurants/sitemap/{city}.xml (see src/app/restaurants/sitemap.ts).
+  const restaurantListRoutes = [
+    { url: `${SITE_URL}/restaurants`, lastModified: SNAPSHOT_DATE },
+    ...cities.map((city) => ({ url: `${SITE_URL}/restaurants/${city.slug}`, lastModified: SNAPSHOT_DATE })),
+    ...brands.filter(isBrandIndexed).map((brand) => ({ url: `${SITE_URL}/brands/${brand.slug}`, lastModified: SNAPSHOT_DATE })),
+  ];
+
+  return [
+    ...staticRoutes,
+    ...blogRoutes,
+    ...cityRoutes,
+    ...localityRoutes,
+    ...cuisineRoutes,
+    ...restaurantListRoutes,
+  ];
 }

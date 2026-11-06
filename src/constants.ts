@@ -37,3 +37,13 @@ export const SOCIAL_LINKS = {
 /** Absolute URL helper. Pass a root-relative path, get a canonical absolute URL. */
 export const absoluteUrl = (path = '/') =>
   `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`.replace(/\/$/, '') || SITE_URL;
+
+/**
+ * ONDC catalog API (the Ustart BFF). Restaurant pages fetch their menus from it
+ * on the server — never in the browser — so the full menu is in the HTML that
+ * search engines index. Override per environment with CATALOG_API_BASE.
+ */
+export const CATALOG_API_BASE = (process.env.CATALOG_API_BASE || 'https://api-ondc.ustart.in/api/v1/').replace(/\/?$/, '/');
+
+/** How long a rendered restaurant page (and its menu fetch) is cached, in seconds. */
+export const MENU_REVALIDATE_SECONDS = 86400;

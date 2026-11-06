@@ -6,6 +6,7 @@ import { Link } from '../router';
 import type { City, Locality } from '@/content/locations';
 import { cuisines } from '@/content/cuisines';
 import { APP_DOWNLOAD_URL } from '@/constants';
+import { restaurantsInLocality, restaurantPath } from '@/lib/restaurants';
 
 /**
  * Locality page.
@@ -18,6 +19,11 @@ import { APP_DOWNLOAD_URL } from '@/constants';
  */
 export const LocalityPage: React.FC<{ city: City; locality: Locality }> = ({ city, locality }) => {
   const siblings = city.localities.filter((l) => l.slug !== locality.slug).slice(0, 6);
+  // Partner outlets from the partner-DB snapshot — real data, so the quality gate
+  // in locations.ts is satisfied for this block.
+  const localRestaurants = restaurantsInLocality(city.slug, locality.slug).sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
   const hasOpsData =
     locality.avgDeliveryMinutes !== null ||
     locality.partnerCount !== null ||
@@ -92,6 +98,22 @@ export const LocalityPage: React.FC<{ city: City; locality: Locality }> = ({ cit
               ))}
             </div>
           </section>
+
+          {localRestaurants.length > 0 && (
+            <section className="article-intro-section">
+              <h2 className="article-subheading">
+                {localRestaurants.length} Restaurants Delivering in {locality.name}
+              </h2>
+              <p>Every restaurant below has its full menu and prices on USTART.</p>
+              <ul className="rp-link-list">
+                {localRestaurants.map((r) => (
+                  <li key={r.id}>
+                    <Link to={restaurantPath(r)}>{r.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <section className="article-faq-section">
             <h2 className="article-subheading">

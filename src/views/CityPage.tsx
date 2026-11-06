@@ -7,6 +7,7 @@ import { cities, type City } from '@/content/locations';
 import { cuisines } from '@/content/cuisines';
 import { articles } from '@/content/blog';
 import { APP_DOWNLOAD_URL } from '@/constants';
+import { brands, getRestaurantBySlug, restaurantsInCity } from '@/lib/restaurants';
 
 /**
  * City hub. This is the parent in the city → locality hierarchy, and its main job
@@ -22,6 +23,13 @@ export const CityPage: React.FC<{ city: City }> = ({ city }) => {
         a.targetKeyword.toLowerCase().includes(city.slug)
     )
     .slice(0, 3);
+
+  const cityRestaurants = restaurantsInCity(city.slug);
+  const cityBrands = brands
+    .map((b) => ({ b, n: b.outlets.filter((slug) => getRestaurantBySlug(slug)?.city === city.slug).length }))
+    .filter(({ n }) => n > 0)
+    .sort((x, y) => y.n - x.n)
+    .slice(0, 12);
 
   return (
     <div className="about-page-wrapper">
@@ -71,6 +79,29 @@ export const CityPage: React.FC<{ city: City }> = ({ city }) => {
               ))}
             </div>
           </section>
+
+          {/* ===== RESTAURANTS — partner snapshot ===== */}
+          {cityRestaurants.length > 0 && (
+            <section className="article-intro-section">
+              <h2 className="article-subheading">
+                {cityRestaurants.length.toLocaleString('en-IN')} Restaurants in {city.name}
+              </h2>
+              <p>
+                Every partner restaurant in {city.name} has its full menu and prices on USTART.{' '}
+                <Link to={`/restaurants/${city.slug}`}>Browse all restaurants in {city.name}</Link>.
+              </p>
+              {cityBrands.length > 0 && (
+                <div className="locality-grid">
+                  {cityBrands.map(({ b, n }) => (
+                    <Link key={b.slug} to={`/brands/${b.slug}`} className="locality-card">
+                      <strong>{b.name}</strong>
+                      <span>{n} outlets in {city.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </section>
+          )}
 
           {/* ===== OTHER NCR CITIES — sideways links between the city hubs ===== */}
           <section className="article-intro-section">

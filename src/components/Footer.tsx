@@ -65,6 +65,7 @@ export const Footer: React.FC = () => {
             <Link to="/food-delivery/noida">Food Delivery in Noida</Link>
             <Link to="/food-delivery/ghaziabad">Food Delivery in Ghaziabad</Link>
             <Link to="/food-delivery/greater-noida">Food Delivery in Greater Noida</Link>
+            <Link to="/restaurants">All Restaurants</Link>
             <Link to="/late-night-food-delivery">Late Night Delivery</Link>
             <Link to="/office-lunch-delivery">Office Lunch Delivery</Link>
             <Link to="/elite">USTART Elite</Link>
