@@ -5,13 +5,13 @@ import { restaurants, isIndexed, restaurantPath, SNAPSHOT_DATE } from '@/lib/res
 
 /**
  * One sitemap per city: /restaurants/sitemap/{city}.xml. Only outlets that are
- * indexable (and, during rollout phase A, not chain outlets) are listed — a
+ * indexable (and, during rollout phase A, not chain outlets) are listed - a
  * sitemap full of noindex URLs is a contradiction Google reports as an error.
  * lastModified is the data snapshot date, never the build time.
  */
 /**
  * Next writes image URLs into the XML verbatim, so a raw `&` breaks the whole
- * file — escape it. Google search thumbnails (encrypted-tbn*.gstatic.com) are
+ * file - escape it. Google search thumbnails (encrypted-tbn*.gstatic.com) are
  * hotlinked previews, not the outlet's own photo, so they are left out.
  */
 function sitemapImage(url: string | null): string | null {

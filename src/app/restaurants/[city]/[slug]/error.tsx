@@ -10,7 +10,7 @@ import { AppDownloadBlock } from '@/components/AppDownloadPrompt';
  */
 export default function RestaurantError({ reset }: { error: Error; reset: () => void }) {
   useEffect(() => {
-    // Retry once after a short pause — most API blips are transient.
+    // Retry once after a short pause - most API blips are transient.
     const t = setTimeout(reset, 4000);
     return () => clearTimeout(t);
   }, [reset]);

@@ -25,7 +25,7 @@ export async function generateMetadata({
   if (!city) return {};
 
   return buildMetadata({
-    title: `Food Delivery in ${city.name} — No Hidden Charges`,
+    title: `Food Delivery in ${city.name}: No Hidden Charges`,
     description: `Order food online in ${city.name} at real menu prices, with no surge pricing or checkout fees. Delivering in ${city.localities
       .slice(0, 2)
       .map((l) => l.name)

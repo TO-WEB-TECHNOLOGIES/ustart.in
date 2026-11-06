@@ -1,6 +1,6 @@
 # USTART
 
-> USTART is a food delivery app for Delhi NCR — Gurugram (Gurgaon), Delhi, Noida, Ghaziabad and Greater Noida — built on menu-price parity: restaurant menu prices online match the restaurant's own prices, with no surge or rain pricing and no hidden fees added at checkout. Operated by Toweb Technology Private Limited, headquartered in Gurugram, Haryana, India.
+> USTART is a food delivery app for Delhi NCR (Gurugram/Gurgaon, Delhi, Noida, Ghaziabad and Greater Noida), built on menu-price parity: restaurant menu prices online match the restaurant's own prices, with no surge or rain pricing and no hidden fees added at checkout. Operated by Toweb Technology Private Limited, headquartered in Gurugram, Haryana, India.
 
 ## Where USTART delivers
 

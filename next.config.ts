@@ -67,6 +67,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        // Pre-launch placeholder page, removed in the src/ restructure. Google
+        // still had it indexed and reported a 404.
+        source: '/coming-soon',
+        destination: '/',
+        permanent: true,
+      },
+      {
         // /.well-known/* is excluded: Apple Pay domain verification rejects any 3xx,
         // so the association file must answer 200 on www as well as the apex.
         source: '/:path((?!\\.well-known/).*)',
@@ -79,6 +86,12 @@ const nextConfig: NextConfig = {
 
   async headers() {
     return [
+      {
+        // A JSON config file for installable-app support, not a page. Stops it
+        // appearing in Search Console as "Crawled - currently not indexed".
+        source: '/manifest.webmanifest',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+      },
       {
         // Extensionless file would otherwise be served as application/octet-stream;
         // Apple requires text/plain.

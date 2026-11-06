@@ -3,7 +3,7 @@
  * scripts/restaurants/build_data.py from the partner sheet.
  *
  * The index holds only restaurant-level facts (name, area, hours, cuisines…).
- * Menus are fetched per page from the catalog API — see src/lib/catalog.ts.
+ * Menus are fetched per page from the catalog API - see src/lib/catalog.ts.
  *
  * Never import this module from a 'use client' file: it reads from disk.
  */
@@ -25,7 +25,7 @@ const readJson = <T,>(name: string): T => JSON.parse(fs.readFileSync(path.join(D
 export const INDEX_CHAIN_OUTLETS = true;
 
 export interface Restaurant {
-  /** ONDC provider id — used with bppId for the catalog API. */
+  /** ONDC provider id - used with bppId for the catalog API. */
   id: string;
   /** ONDC seller app (BPP) subscriber id. */
   bppId: string;
@@ -90,7 +90,7 @@ export const isIndexed = (r: Restaurant) => r.indexable && (!r.chain || INDEX_CH
 
 /**
  * A brand page is worth indexing only if at least one of its outlets has a real
- * menu — otherwise it is a list of empty pages (24 brands today, mostly outlets
+ * menu - otherwise it is a list of empty pages (24 brands today, mostly outlets
  * whose catalog the API returns empty).
  */
 export const isBrandIndexed = (b: Brand) =>

@@ -6,7 +6,7 @@ import { PARTNER_URL } from '../constants';
 
 // The /food-delivery NCR hub and the per-city hubs are intentionally
 // not in the header. They stay linked from the footer's ORDER column, which is what
-// keeps them (and the 20 locality pages hanging off them) crawlable — don't remove
+// keeps them (and the 20 locality pages hanging off them) crawlable - don't remove
 // those footer links without putting the hubs back somewhere in the nav.
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
@@ -20,8 +20,8 @@ export interface HeaderProps {
   variant?: 'light' | 'dark' | 'overlay';
   /**
    * Overlay variant only: render the solid (scrolled-past-hero) state from the
-   * first paint. For pages with no hero image under the header — e.g. restaurant
-   * pages — where the transparent state would put white links on a light page.
+   * first paint. For pages with no hero image under the header - e.g. restaurant
+   * pages - where the transparent state would put white links on a light page.
    */
   solid?: boolean;
 }
@@ -46,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'light', solid: always
 
     const measure = () => {
       // .page-hero on sub-pages, .hero on the homepage, .rx-band on restaurant
-      // pages — no page renders more than one.
+      // pages - no page renders more than one.
       const hero = document.querySelector('.page-hero, .hero, .rx-band') as HTMLElement | null;
       const heroHeight = hero?.offsetHeight ?? window.innerHeight * 0.6;
       // Change to solid white when the header passes the hero image segment (heroHeight - navbar height)
@@ -84,7 +84,7 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'light', solid: always
 
   const isOverlay = variant === 'overlay';
   // The mobile panel is opaque, so the bar must adopt its solid treatment
-  // whenever the menu is open — otherwise white links land on a transparent bar.
+  // whenever the menu is open - otherwise white links land on a transparent bar.
   const solid = alwaysSolid || stuck || menuOpen;
 
   const navClass = isOverlay
@@ -96,9 +96,9 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'light', solid: always
   return (
     <nav className={navClass}>
       <div className="subnav-inner">
-        <Link to="/" className="logo" aria-label="USTART — home">
+        <Link to="/" className="logo" aria-label="USTART home">
           {/* The wordmark is painted via CSS mask, so its colour is a variable
-              (--logo-ink) rather than a second image. Logo_Blue.png is misnamed —
+              (--logo-ink) rather than a second image. Logo_Blue.png is misnamed - 
               it is the same near-white artwork as Logo_White_Text.png. */}
           <span className="logo-mark" role="img" aria-label="USTART" />
           <span className="case-label">food, fairly delivered</span>

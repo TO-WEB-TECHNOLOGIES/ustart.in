@@ -122,7 +122,7 @@ export function MenuBrowser({
     );
     const grouped = groupDishes(categories, visible, { separateUnavailable: true });
     // Hold the unavailable section back until the whole menu has loaded, so it is
-    // always the very end of the page — never sitting above dishes still to come.
+    // always the very end of the page - never sitting above dishes still to come.
     return hasMore ? grouped.filter((g) => g.id !== UNAVAILABLE_ID) : grouped;
   }, [dishes, categories, veg, inStock, query, hasMore]);
 
@@ -235,7 +235,7 @@ export function MenuBrowser({
             </div>
           ) : (
             <p className="rx-empty">
-              <strong>Menu temporarily unavailable.</strong> This restaurant&apos;s menu isn&apos;t showing right now — please check back
+              <strong>Menu temporarily unavailable.</strong> This restaurant&apos;s menu isn&apos;t showing right now. Please check back
               soon.
             </p>
           ))}
@@ -306,7 +306,7 @@ function DishRow({ d }: { d: Dish }) {
           {d.recommended && <span className="rx-badge">Recommended</span>}
         </div>
         <h4 className="rx-dish-name">{d.name}</h4>
-        {/* Customisable dishes come back from the catalog with price 0 — the real
+        {/* Customisable dishes come back from the catalog with price 0 - the real
             price depends on the options picked in the app. */}
         {d.price > 0 ? (
           <p className="rx-dish-price">{fmtInr(d.price)}</p>

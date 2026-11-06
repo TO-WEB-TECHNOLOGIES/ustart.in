@@ -9,7 +9,7 @@ import { cities } from '@/content/locations';
 import { APP_DOWNLOAD_URL } from '@/constants';
 
 /**
- * Single article view. Server component on purpose — the body copy must be in the
+ * Single article view. Server component on purpose - the body copy must be in the
  * initial HTML so crawlers see it without executing JavaScript.
  */
 export const ArticlePage: React.FC<{ article: Article }> = ({ article }) => {
@@ -29,7 +29,7 @@ export const ArticlePage: React.FC<{ article: Article }> = ({ article }) => {
 
       <article className="blog-listing-section">
         <div className="wrap article-body">
-          {/* Breadcrumb — mirrors the BreadcrumbList JSON-LD on this page */}
+          {/* Breadcrumb - mirrors the BreadcrumbList JSON-LD on this page */}
           <nav className="article-breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <span aria-hidden="true"> › </span>

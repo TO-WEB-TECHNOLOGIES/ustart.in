@@ -48,7 +48,7 @@ export const RestaurantsOverview: React.FC = () => {
       <PageHero
         kicker="🍽️ DELHI NCR · RESTAURANTS"
         title={<>Restaurants on <span>USTART</span></>}
-        subtitle={`${restaurants.length.toLocaleString('en-IN')} restaurants across Delhi NCR — full menus, real prices, nothing hidden at checkout.`}
+        subtitle={`${restaurants.length.toLocaleString('en-IN')} restaurants across Delhi NCR: full menus, real prices, nothing hidden at checkout.`}
         focal="center 30%"
         tint="rgba(255,159,67,0.18)"
       />

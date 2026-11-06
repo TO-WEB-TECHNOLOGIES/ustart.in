@@ -13,7 +13,7 @@ import { getRestaurant, getBrand, isIndexed, restaurantPath, SNAPSHOT_DATE } fro
 type Params = { city: string; slug: string };
 
 /**
- * Rendering model — on-demand ISR:
+ * Rendering model - on-demand ISR:
  * - Nothing is prerendered at build (empty generateStaticParams), so builds stay
  *   fast and never hit the catalog API.
  * - The first request for a restaurant renders it on the server, fetching the
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const menu = await fetchMenuPageSafe(r.id, r.bppId, 1);
   const area = r.localityName ?? getCity(r.city)?.name ?? '';
   const title =
-    [`${r.name}, ${area} — Menu & Order Online`, `${r.name}, ${area} Menu`, `${r.name} Menu`].find(
+    [`${r.name}, ${area}: Menu & Order Online`, `${r.name}, ${area} Menu`, `${r.name} Menu`].find(
       (t) => t.length <= MAX_TITLE
     ) ?? r.name.slice(0, MAX_TITLE);
 
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const description = [
     `Full ${r.name} menu with prices in ${area}, ${getCity(r.city)?.name}.`,
     facts.length ? `${facts.join(' · ')}.` : '',
-    'Order on USTART — no hidden charges.',
+    'Order on USTART: no hidden charges.',
   ]
     .filter(Boolean)
     .join(' ')
@@ -75,7 +75,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const r = getRestaurant(city, slug);
   if (!r) notFound();
 
-  // Page 1 only (up to 100 dishes) — the rest loads on scroll via /api/menu.
+  // Page 1 only (up to 100 dishes) - the rest loads on scroll via /api/menu.
   // Throws on API failure: during ISR revalidation that keeps the last good page
   // in the cache; on a first render the error is not cached and is retried.
   const menu = await fetchMenuPage(r.id, r.bppId, 1);

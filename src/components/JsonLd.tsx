@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * Renders a JSON-LD block. Server component by design — structured data must be
+ * Renders a JSON-LD block. Server component by design - structured data must be
  * in the initial HTML payload, since Google will not reliably pick it up if it
  * only appears after client-side hydration.
  *

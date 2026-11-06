@@ -53,7 +53,7 @@ export const isUnavailable = (d: Dish) => !d.inStock || !d.available;
  * dishes go after them under "More Dishes". With separateUnavailable, dishes
  * that are out of stock or outside their serving window are pulled out into a
  * final "Currently unavailable" section. Dishes keep the restaurant's own order
- * (API rank) — no re-sorting, so loading a later page never reshuffles dishes the
+ * (API rank) - no re-sorting, so loading a later page never reshuffles dishes the
  * visitor has already scrolled past.
  */
 export function groupDishes(

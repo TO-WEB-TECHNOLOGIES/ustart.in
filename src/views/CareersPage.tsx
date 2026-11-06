@@ -277,7 +277,7 @@ export const CareersPage: React.FC = () => {
   <div className="premium-cta-head reveal">
     <span className="sec-kicker">🧭 WAYS TO WORK WITH US</span>
     <h2 className="font-display" style={{ marginTop: "16px" }}>Two Roads Into <span style={{ color: "var(--orange)" }}>The USTART Family.</span></h2>
-    <p style={{ fontFamily: "'Manrope',sans-serif", color: "var(--slate)", marginTop: "10px" }}>Whether you're craving a ride or a partnership — there's a seat at this table.</p>
+    <p style={{ fontFamily: "'Manrope',sans-serif", color: "var(--slate)", marginTop: "10px" }}>Whether you're craving a ride or a partnership, there's a seat at this table.</p>
   </div>
   <div className="premium-cta-grid">
     <div className="premium-card reveal-left">
@@ -290,7 +290,7 @@ export const CareersPage: React.FC = () => {
         <div className="pc-stat"><b>100+</b><span>ORDERS DELIVERED</span></div>
         <div className="pc-stat"><b>6,000+</b><span>RESTAURANT PARTNERS</span></div>
       </div>
-      <p>Earn on your own schedule with transparent payouts, fair incentives, and zero hidden deductions — every single trip.</p>
+      <p>Earn on your own schedule with transparent payouts, fair incentives, and zero hidden deductions, every single trip.</p>
       <a href="/contact" className="btn btn-gold btn-lg">🛵 Ride With Us</a>
     </div>
     <div className="premium-card reveal-right">

@@ -28,7 +28,7 @@ export function RouteLoader() {
   const [state, setState] = useState<{ variant: LoaderVariant; label: string } | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // A new pathname means the destination page has rendered — hide the loader.
+  // A new pathname means the destination page has rendered - hide the loader.
   useEffect(() => {
     setState(null);
     if (timer.current) clearTimeout(timer.current);

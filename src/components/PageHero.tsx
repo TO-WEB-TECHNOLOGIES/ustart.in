@@ -8,7 +8,7 @@ export interface PageHeroProps {
   /** JSX so each page can place its own <span> accent */
   title: React.ReactNode;
   subtitle?: React.ReactNode;
-  /** background-position — each page crops the shared photo differently */
+  /** background-position - each page crops the shared photo differently */
   focal?: string;
   /** colour of the soft glow at the bottom of the hero */
   tint?: string;
@@ -77,7 +77,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
       <div className="hero-orb hero-orb-2"></div>
       <div className="hero-orb hero-orb-3"></div>
 
-      {/* Doodles — a reduced set of the homepage's, kept clear of the centred text */}
+      {/* Doodles - a reduced set of the homepage's, kept clear of the centred text */}
 
       {/* 8-point asterisk */}
       <svg className="doodle-arrow" style={{ top: '22%', right: '11%', width: '36px', opacity: 0.2, animation: 'doodleWobble 5.5s ease-in-out infinite' }} viewBox="0 0 40 40" fill="none">

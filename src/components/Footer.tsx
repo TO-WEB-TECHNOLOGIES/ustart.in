@@ -9,7 +9,7 @@ import { FacebookIcon, InstagramIcon, LinkedInIcon, GooglePlayIcon, AppleIcon } 
  * This used to be a single run-on string of keywords ("Food delivery in Gurugram ·
  * No hidden charges food delivery · ..."). Keyword-stuffed prose with no links is a
  * spam signal and passes no equity. Now that each of those terms has a real page,
- * they are links — which both helps users and distributes crawl depth to the
+ * they are links - which both helps users and distributes crawl depth to the
  * locality and intent pages that have few other inbound links.
  */
 const FOOTER_SEO_LINKS: Array<{ label: string; to: string }> = [
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
           </div>
           <div className="col">
             <h5>LEGAL</h5>
-            {/* All three are sections of the single /terms document — the anchor ids
+            {/* All three are sections of the single /terms document - the anchor ids
                 come from src/app/terms/users/*.tsx. Deep-linking beats three separate
                 thin pages, and it matches how the live site linked privacy. */}
             <Link to="/terms">Terms of Service</Link>
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
             <span className="ft"><small>DOWNLOAD ON THE</small><strong>App Store</strong></span>
           </a>
         </div>
-        {/* These must stay in sync with Organization.sameAs in src/lib/schema.ts —
+        {/* These must stay in sync with Organization.sameAs in src/lib/schema.ts - 
             Google cross-checks the profiles a site links to against the ones it
             claims in structured data. No X/Twitter link: there is no live profile. */}
         <div className="footer-social">

@@ -8,7 +8,7 @@ import { articles } from '@/content/blog';
 import { APP_DOWNLOAD_URL } from '@/constants';
 
 /**
- * Delhi NCR hub at /food-delivery — the top of the city → locality hierarchy.
+ * Delhi NCR hub at /food-delivery - the top of the city → locality hierarchy.
  * Targets the region-level query ("food delivery in Delhi NCR") and passes link
  * equity down to every city hub, which in turn feeds the locality pages.
  */
@@ -24,7 +24,7 @@ export const NcrHubPage: React.FC = () => {
       <PageHero
         kicker="📍 NOW SERVING · DELHI NCR"
         title={<>Food Delivery in <span>Delhi NCR</span></>}
-        subtitle="Gurugram, Delhi, Noida, Ghaziabad and Greater Noida — real menu prices, no surge pricing, and nothing added at checkout."
+        subtitle="Gurugram, Delhi, Noida, Ghaziabad and Greater Noida: real menu prices, no surge pricing, and nothing added at checkout."
         focal="center 30%"
         tint="rgba(255,159,67,0.18)"
       />
@@ -43,7 +43,7 @@ export const NcrHubPage: React.FC = () => {
             ))}
           </section>
 
-          {/* ===== CITIES — each card links the city hub plus its top localities ===== */}
+          {/* ===== CITIES - each card links the city hub plus its top localities ===== */}
           {cities.map((city) => (
             <section key={city.slug} className="article-intro-section">
               <h2 className="article-subheading">
@@ -75,7 +75,7 @@ export const NcrHubPage: React.FC = () => {
           </section>
 
           <section className="article-faq-section">
-            <h2 className="article-subheading">❓ Food Delivery in Delhi NCR — FAQs</h2>
+            <h2 className="article-subheading">❓ Food Delivery in Delhi NCR: FAQs</h2>
             <div className="article-faq-list">
               {ncrFaqs.map((item, idx) => (
                 <div key={idx} className="article-faq-item">

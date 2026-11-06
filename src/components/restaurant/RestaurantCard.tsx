@@ -1,7 +1,7 @@
 import React from 'react';
 import NextLink from 'next/link';
 
-/** Compact, serialisable card data — built on the server by toCard() in src/lib/restaurants.ts. */
+/** Compact, serialisable card data - built on the server by toCard() in src/lib/restaurants.ts. */
 export interface CardData {
   slug: string;
   path: string;
@@ -50,7 +50,7 @@ export function RestaurantCard({ c, priority = false }: { c: CardData; priority?
 /* ── Compact wire format for long lists ───────────────────────────────────────
  * A city page passes thousands of cards from the server to <RestaurantBrowser>.
  * Sent as objects, every card repeats its field names, its full path and a long
- * image URL — over half of a large page's weight. This format sends short rows
+ * image URL - over half of a large page's weight. This format sends short rows
  * and one shared image table instead (~54% smaller for Delhi).
  */
 /** [city/slug, name, area, cuisines, flags (1 = pure veg, 2 = late night), image index or -1] */

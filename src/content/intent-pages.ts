@@ -1,5 +1,5 @@
 /**
- * Standalone landing pages for high-intent, non-geographic queries — the
+ * Standalone landing pages for high-intent, non-geographic queries - the
  * "differentiator" and "occasion" keyword clusters.
  *
  * These are USTART's strongest SEO wedge. Head terms like "food delivery gurgaon"
@@ -35,11 +35,11 @@ export const intentPages: Record<string, IntentPage> = {
     slug: 'food-delivery-without-hidden-charges',
     kicker: '💸 TRANSPARENT PRICING',
     h1: 'Food Delivery Without Hidden Charges',
-    title: 'Food Delivery Without Hidden Charges — Delhi NCR',
+    title: 'Food Delivery Without Hidden Charges in Delhi NCR',
     description:
       'A ₹199 meal should cost ₹199. How USTART removes platform fees, surge pricing and menu markups so the price you see is the price you pay.',
     targetKeyword: 'food delivery without hidden charges',
-    lede: 'You see a meal for ₹199, add it to your cart, and the total reaches ₹299. This page explains exactly where that gap comes from — and what we removed to close it.',
+    lede: 'You see a meal for ₹199, add it to your cart, and the total reaches ₹299. This page explains exactly where that gap comes from, and what we removed to close it.',
     sections: [
       {
         heading: 'Where the extra ₹100 usually comes from',
@@ -47,11 +47,11 @@ export const intentPages: Record<string, IntentPage> = {
           'The gap between a menu price and a checkout total is rarely one big charge. It is an accumulation of small ones, each individually defensible and collectively substantial.',
         ],
         bullets: [
-          'Menu markup — the restaurant raised its online price to absorb a platform commission.',
-          'Platform or convenience fee — charged by the app, not the restaurant.',
-          'Delivery fee — variable by distance, demand and weather.',
-          'Surge or rain fee — a demand-based multiplier applied at peak times.',
-          'Packaging charge — set by the restaurant, often revealed late in the flow.',
+          'Menu markup: the restaurant raised its online price to absorb a platform commission.',
+          'Platform or convenience fee: charged by the app, not the restaurant.',
+          'Delivery fee: variable by distance, demand and weather.',
+          'Surge or rain fee: a demand-based multiplier applied at peak times.',
+          'Packaging charge: set by the restaurant, often revealed late in the flow.',
         ],
       },
       {
@@ -64,11 +64,11 @@ export const intentPages: Record<string, IntentPage> = {
       {
         heading: 'What USTART does differently',
         paragraphs: [
-          'We keep partner commissions low enough that restaurants do not need to run a separate, higher online menu to stay profitable. That is the mechanism — everything else follows from it.',
+          'We keep partner commissions low enough that restaurants do not need to run a separate, higher online menu to stay profitable. That is the mechanism: everything else follows from it.',
         ],
         bullets: [
           'Menu-price parity: online prices track what the restaurant charges offline.',
-          'No surge pricing, ever — not at peak hours, not in the rain, not at midnight.',
+          'No surge pricing, ever. Not at peak hours, not in the rain, not at midnight.',
           'No platform or convenience fee added at checkout.',
           'Any charge that does apply is shown in the breakdown before you pay, not after.',
         ],
@@ -109,7 +109,7 @@ export const intentPages: Record<string, IntentPage> = {
     description:
       'Order late night food in Gurgaon, Delhi, Noida and Ghaziabad with no midnight surge pricing. Which areas stay active after hours and how to order well at 2am.',
     targetKeyword: 'late night food delivery gurgaon',
-    lede: 'Late-night ordering is where delivery pricing usually gets worst — demand is high, supply is thin, and surge multipliers do the rest. On USTART the price at 2am is the price at 2pm.',
+    lede: 'Late-night ordering is where delivery pricing usually gets worst: demand is high, supply is thin, and surge multipliers do the rest. On USTART the price at 2am is the price at 2pm.',
     sections: [
       {
         heading: 'No midnight markup',
@@ -124,13 +124,13 @@ export const intentPages: Record<string, IntentPage> = {
           'Late-night availability is uneven across the NCR, and it tracks where people are awake rather than where people live.',
         ],
         bullets: [
-          'Sector 29, Gurgaon — the highest concentration of genuinely late-operating kitchens in the city.',
-          'DLF Phase 3, Gurgaon — a large resident population of young professionals who eat late.',
-          'Udyog Vihar, Gurgaon — night-shift demand from the business estate keeps activity steady.',
-          'Hauz Khas, Delhi — the Village runs later than most of south Delhi.',
-          'Connaught Place, Delhi — late activity driven by central-Delhi nightlife rather than residents.',
-          'Knowledge Park, Greater Noida — a large student population keeps orders coming well after the residential sectors go quiet.',
-          'Noida Expressway societies — young professionals ordering late after long commutes.',
+          'Sector 29, Gurgaon: the highest concentration of genuinely late-operating kitchens in the city.',
+          'DLF Phase 3, Gurgaon: a large resident population of young professionals who eat late.',
+          'Udyog Vihar, Gurgaon: night-shift demand from the business estate keeps activity steady.',
+          'Hauz Khas, Delhi: the Village runs later than most of south Delhi.',
+          'Connaught Place, Delhi: late activity driven by central-Delhi nightlife rather than residents.',
+          'Knowledge Park, Greater Noida: a large student population keeps orders coming well after the residential sectors go quiet.',
+          'Noida Expressway societies: young professionals ordering late after long commutes.',
         ],
       },
       {
@@ -139,7 +139,7 @@ export const intentPages: Record<string, IntentPage> = {
           'A few things matter more at 2am than they do at lunch, mostly because there is less margin for error in the system.',
         ],
         bullets: [
-          'The app shows live restaurant availability — what you see open is genuinely accepting orders.',
+          'The app shows live restaurant availability: what you see open is genuinely accepting orders.',
           'Kitchen options narrow as the night goes on, so ordering earlier in the window gives you more choice.',
           'Gate and building access is harder at night. A reachable phone number in the delivery notes matters more than usual.',
           'Rolls, biryani and North Indian gravies hold up better over a longer late-night route than fried food does.',
@@ -169,14 +169,14 @@ export const intentPages: Record<string, IntentPage> = {
     h1: 'Office Lunch Delivery',
     title: 'Office & Corporate Lunch Delivery in Delhi NCR',
     description:
-      'Office lunch delivery across Cyber City, Udyog Vihar, Connaught Place, Nehru Place and Noida Sector 62 — real menu prices, no surge, and tips for team orders.',
+      'Office lunch delivery across Cyber City, Udyog Vihar, Connaught Place, Nehru Place and Noida Sector 62: real menu prices, no surge, and tips for team orders.',
     targetKeyword: 'office lunch delivery gurgaon',
     lede: 'Weekday lunch between 1pm and 2:30pm is the single busiest delivery window in the NCR, and it is concentrated in a handful of buildings. Here is how to order into that without waiting.',
     sections: [
       {
         heading: 'Why the lunch peak is different',
         paragraphs: [
-          'Most delivery demand is spread across a city. Office lunch is not — it originates from a small number of towers, all at once, within a ninety-minute window.',
+          'Most delivery demand is spread across a city. Office lunch is not: it originates from a small number of towers, all at once, within a ninety-minute window.',
           'That concentration is what makes lunch feel slower than dinner even when the kitchens are faster. The bottleneck is rarely the cooking; it is the number of simultaneous orders leaving the same few restaurants for the same few buildings.',
         ],
       },
@@ -184,13 +184,13 @@ export const intentPages: Record<string, IntentPage> = {
         heading: 'The business districts we serve',
         paragraphs: ['Coverage is deepest where the weekday lunch demand actually is.'],
         bullets: [
-          'Cyber City, Gurgaon — the densest office lunch market in the NCR.',
-          'Udyog Vihar, Gurgaon — shift patterns mean lunch demand runs wider than the standard window.',
-          'Golf Course Road, Gurgaon — offices along the commercial stretches of the corridor.',
-          'Connaught Place, Delhi — central Delhi corporate lunch, with high team-order volume.',
-          'Nehru Place, Delhi — market traders and office workers, with strong repeat ordering.',
-          'Sector 62, Noida — IT campuses and institutes, with heavy team-order volume at lunch.',
-          'Noida Expressway IT parks — weekday lunch from the office campuses along the corridor.',
+          'Cyber City, Gurgaon: the densest office lunch market in the NCR.',
+          'Udyog Vihar, Gurgaon: shift patterns mean lunch demand runs wider than the standard window.',
+          'Golf Course Road, Gurgaon: offices along the commercial stretches of the corridor.',
+          'Connaught Place, Delhi: central Delhi corporate lunch, with high team-order volume.',
+          'Nehru Place, Delhi: market traders and office workers, with strong repeat ordering.',
+          'Sector 62, Noida: IT campuses and institutes, with heavy team-order volume at lunch.',
+          'Noida Expressway IT parks: weekday lunch from the office campuses along the corridor.',
         ],
       },
       {
@@ -202,7 +202,7 @@ export const intentPages: Record<string, IntentPage> = {
           'Order before 12:45pm. The 1pm–2:30pm peak is when every other office orders too.',
           'Include the tower name and floor. Most Cyber City and CP buildings hand over at a reception desk, not at your seat.',
           'Consolidate into one order rather than several. One rider, one handover, one arrival time.',
-          'Choose gravy-based or rice dishes for larger orders — they hold temperature far better across a slow handover than fried food.',
+          'Choose gravy-based or rice dishes for larger orders: they hold temperature far better across a slow handover than fried food.',
         ],
       },
     ],
@@ -227,7 +227,7 @@ export const intentPages: Record<string, IntentPage> = {
     slug: 'elite',
     kicker: '⭐ MEMBERSHIP',
     h1: 'USTART Elite Membership',
-    title: 'Elite — Free Delivery Membership',
+    title: 'Elite: Free Delivery Membership',
     description:
       'USTART Elite gives free delivery on qualifying orders, extra savings at select restaurants and priority handling. How it works and when it pays for itself.',
     targetKeyword: 'food delivery membership gurgaon',
@@ -254,7 +254,7 @@ export const intentPages: Record<string, IntentPage> = {
       {
         heading: 'How Elite sits alongside our pricing',
         paragraphs: [
-          'Elite reduces delivery cost on top of pricing that is already transparent. It is not a way to buy back savings that were removed by a fee — there is no platform fee or surge pricing on USTART regardless of whether you are a member.',
+          'Elite reduces delivery cost on top of pricing that is already transparent. It is not a way to buy back savings that were removed by a fee: there is no platform fee or surge pricing on USTART regardless of whether you are a member.',
           'That is a deliberate difference. A membership that mainly exists to waive charges the platform invented is a worse deal than it looks.',
         ],
       },

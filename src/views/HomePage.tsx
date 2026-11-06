@@ -235,7 +235,7 @@ export const HomePage: React.FC = () => {
   <div className="hero-orb hero-orb-2"></div>
   <div className="hero-orb hero-orb-3"></div>
 
-  {/* ══════ HERO DOODLES — expanded ══════ */}
+  {/* ══════ HERO DOODLES - expanded ══════ */}
 
   {/* 1. Curved arrow top-left (draw-on) */}
   <svg className="doodle-arrow" style={{'top': '20%', 'left': '10%', 'width': '88px', 'transform': 'rotate(-28deg)', 'opacity': '0.22'} as React.CSSProperties} viewBox="0 0 80 40" fill="none">
@@ -379,7 +379,7 @@ export const HomePage: React.FC = () => {
       <div className="sv-splash sv-sp1" aria-hidden="true"></div>
       <div className="sv-splash sv-sp2" aria-hidden="true"></div>
       <h2><span className="sv-font-display">HOW WE'RE</span><br /><span className="sv-font-display sv-hl">RAISING THE BAR.</span></h2>
-      <p>Ordering food shouldn't feel like getting played. Fair prices, happy restaurants, food that shows up hot — that's the whole personality.</p>
+      <p>Ordering food shouldn't feel like getting played. Fair prices, happy restaurants, food that shows up hot: that's the whole personality.</p>
 
       {/* VERIFIED STAMP */}
       <div className="sv-verified-stamp-wrap" id="verifiedStamp" aria-label="USTART Verified">
@@ -408,7 +408,7 @@ export const HomePage: React.FC = () => {
 
     <div className="sv-bills-row">
 
-      {/* BILL 1 — CUSTOMERS */}
+      {/* BILL 1 - CUSTOMERS */}
       <div className="sv-bill sv-b1 sv-reveal-tilt sv-d1" style={{'--r': '-1deg'} as React.CSSProperties}>
         <div className="sv-bill-head">
           <div className="sv-row1"><span className="sv-no">KOT #001</span></div>
@@ -439,7 +439,7 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* BILL 2 — RESTAURANTS */}
+      {/* BILL 2 - RESTAURANTS */}
       <div className="sv-bill sv-b2 sv-reveal-tilt sv-d2" style={{'--r': '0.7deg'} as React.CSSProperties}>
         <div className="sv-bill-head">
           <div className="sv-row1"><span className="sv-no">KOT #002</span></div>
@@ -475,7 +475,7 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* BILL 3 — BEYOND THE PLATE */}
+      {/* BILL 3 - BEYOND THE PLATE */}
       <div className="sv-bill sv-b3 sv-reveal-tilt sv-d3" style={{'--r': '-0.6deg'} as React.CSSProperties}>
         <div className="sv-bill-head">
           <div className="sv-row1"><span className="sv-no">KOT #003</span></div>
@@ -806,7 +806,7 @@ export const HomePage: React.FC = () => {
       <AccordionItem value="faq-6">
         <AccordionTrigger qTag="Q6.">How do I become a restaurant or delivery partner?</AccordionTrigger>
         <AccordionContent>
-          Easy — just tap "Put Us on the Menu" at the top of the page, or head to the Partner section in the footer. Fill in a few details, and our team will reach out to get you onboarded and set up fast.
+          Easy, just tap "Put Us on the Menu" at the top of the page, or head to the Partner section in the footer. Fill in a few details, and our team will reach out to get you onboarded and set up fast.
         </AccordionContent>
       </AccordionItem>
     </Accordion>
@@ -820,7 +820,7 @@ export const HomePage: React.FC = () => {
 
 
 
-{/* ===== NEXTGEN CAMPUS LEADERS — HOME PAGE BANNER (links to full program page) ===== */}
+{/* ===== NEXTGEN CAMPUS LEADERS - HOME PAGE BANNER (links to full program page) ===== */}
 
 
 
@@ -849,7 +849,7 @@ export const HomePage: React.FC = () => {
 
   <div className="dlx-download-inner">
 
-    {/* HEADING — together at the top */}
+    {/* HEADING - together at the top */}
     <div className="dlx-dl-heading dlx-reveal">
       <h2 className="dlx-font-display">STOP FEEDING THE <span className="dlx-hl">FEES.</span><span className="dlx-line2">START FEEDING <span className="dlx-hl">YOURSELF.</span></span></h2>
       <p className="dlx-sub">Delhi NCR's fairest food delivery is one tap away. What are you waiting for?</p>

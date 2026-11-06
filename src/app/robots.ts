@@ -18,6 +18,5 @@ export default function robots(): MetadataRoute.Robots {
       // Per-city restaurant sitemaps (src/app/restaurants/sitemap.ts).
       ...cities.map((city) => `${SITE_URL}/restaurants/sitemap/${city.slug}.xml`),
     ],
-    host: SITE_URL,
   };
 }

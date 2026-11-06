@@ -8,7 +8,7 @@ import './delete-account.css';
  * Metadata for /delete-account lives here rather than in page.tsx.
  *
  * page.tsx was copied across verbatim from the ustart.in reference project and
- * is a `'use client'` component, which cannot export `metadata` — without this
+ * is a `'use client'` component, which cannot export `metadata` - without this
  * layout the route would silently inherit the root layout's homepage title. A
  * layout is the standard way to attach metadata to a client page while leaving
  * the page file untouched; /terms does the same.

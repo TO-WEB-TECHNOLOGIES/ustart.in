@@ -59,7 +59,7 @@ export const CityPage: React.FC<{ city: City }> = ({ city }) => {
             ))}
           </section>
 
-          {/* ===== LOCALITIES — the internal-linking core of this page ===== */}
+          {/* ===== LOCALITIES - the internal-linking core of this page ===== */}
           <section className="article-intro-section">
             <h2 className="article-subheading">Areas We Deliver To in {city.name}</h2>
             <p>
@@ -80,7 +80,7 @@ export const CityPage: React.FC<{ city: City }> = ({ city }) => {
             </div>
           </section>
 
-          {/* ===== RESTAURANTS — partner snapshot ===== */}
+          {/* ===== RESTAURANTS - partner snapshot ===== */}
           {cityRestaurants.length > 0 && (
             <section className="article-intro-section">
               <h2 className="article-subheading">
@@ -103,7 +103,7 @@ export const CityPage: React.FC<{ city: City }> = ({ city }) => {
             </section>
           )}
 
-          {/* ===== OTHER NCR CITIES — sideways links between the city hubs ===== */}
+          {/* ===== OTHER NCR CITIES - sideways links between the city hubs ===== */}
           <section className="article-intro-section">
             <h2 className="article-subheading">Also Delivering Across Delhi NCR</h2>
             <p>
@@ -136,7 +136,7 @@ export const CityPage: React.FC<{ city: City }> = ({ city }) => {
           </section>
 
           <section className="article-faq-section">
-            <h2 className="article-subheading">❓ Food Delivery in {city.name} — FAQs</h2>
+            <h2 className="article-subheading">❓ Food Delivery in {city.name}: FAQs</h2>
             <div className="article-faq-list">
               {city.faq.map((item, idx) => (
                 <div key={idx} className="article-faq-item">

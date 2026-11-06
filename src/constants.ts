@@ -1,12 +1,12 @@
 export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=in.toweb.ustart.users';
 
-// India storefront only. The /us/ path 404s — the app is not published to the
+// India storefront only. The /us/ path 404s - the app is not published to the
 // US store, so a /us/ link is a dead end for both users and crawlers.
 export const APP_STORE_URL = 'https://apps.apple.com/in/app/id6780561961';
 
 /**
- * Canonical origin. Every absolute URL the site emits — canonicals, Open Graph,
- * JSON-LD @id values, sitemap <loc> entries — is built from this. The apex is
+ * Canonical origin. Every absolute URL the site emits - canonicals, Open Graph,
+ * JSON-LD @id values, sitemap <loc> entries - is built from this. The apex is
  * canonical; www must 301 here (see next.config.ts) or the sitemap will contain
  * URLs that redirect, which Google treats as a soft error.
  */
@@ -19,13 +19,13 @@ export const SUPPORT_EMAIL = 'support@ustart.in';
 export const PARTNERS_EMAIL = 'partners@ustart.in';
 
 /**
- * Partner portal. `partners.` (plural) 301s to `partner.` (singular) — link the
+ * Partner portal. `partners.` (plural) 301s to `partner.` (singular) - link the
  * final host directly so internal links never hand Googlebot a redirect hop.
  */
 export const PARTNER_URL = 'https://partner.ustart.in/';
 export const APP_DOWNLOAD_URL = 'https://store.ustart.in';
 
-/** Verified live profiles — used for Organization.sameAs. */
+/** Verified live profiles - used for Organization.sameAs. */
 export const SOCIAL_LINKS = {
   linkedin: 'https://in.linkedin.com/company/ustartin',
   instagram: 'https://www.instagram.com/ustart.in',
@@ -40,7 +40,7 @@ export const absoluteUrl = (path = '/') =>
 
 /**
  * ONDC catalog API (the Ustart BFF). Restaurant pages fetch their menus from it
- * on the server — never in the browser — so the full menu is in the HTML that
+ * on the server - never in the browser - so the full menu is in the HTML that
  * search engines index. Override per environment with CATALOG_API_BASE.
  */
 export const CATALOG_API_BASE = (process.env.CATALOG_API_BASE || 'https://api-ondc.ustart.in/api/v1/').replace(/\/?$/, '/');

@@ -3,7 +3,7 @@
  *
  * Google's structured-data policy requires markup to match user-visible content.
  * If you edit the accordion copy in HomePage.tsx or ContactPage.tsx, edit the
- * matching entry here too — markup that describes content the page does not show
+ * matching entry here too - markup that describes content the page does not show
  * is a policy violation, not just a mismatch.
  */
 

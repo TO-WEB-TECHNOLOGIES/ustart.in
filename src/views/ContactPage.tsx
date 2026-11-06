@@ -67,7 +67,7 @@ export const ContactPage: React.FC = () => {
 <PageHero
   kicker="🍽️ FRESH FROM GURUGRAM · GET IN TOUCH"
   title={<>Got A Question? <span>We're Listening.</span></>}
-  subtitle="Real humans, real fast — no chatbot loop. Reach out about orders, partnerships, or just to say hi."
+  subtitle="Real humans, real fast: no chatbot loop. Reach out about orders, partnerships, or just to say hi."
   focal="70% 45%"
   tint="rgba(244,183,111,0.20)"
 />
@@ -166,7 +166,7 @@ export const ContactPage: React.FC = () => {
     <div className="sec-head reveal">
       <span className="sec-kicker">⚡ BEFORE YOU WRITE IN</span>
       <h2 className="font-display">Everything You've Been<br />Wondering About USTART.</h2>
-      <p>We get asked these a lot — so here's the full story on who we are, how we work, and why it's worth switching, before you drop us a line.</p>
+      <p>We get asked these a lot, so here's the full story on who we are, how we work, and why it's worth switching, before you drop us a line.</p>
     </div>
     
 
@@ -201,7 +201,7 @@ export const ContactPage: React.FC = () => {
       </div>
       <div className={`faq-item ${openFaq === 8 ? 'open' : ''}`}>
         <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 8 ? null : 8)}><span className="qtext"><span className="qtag">Q8</span>How does USTART improve margins for Delhi NCR restaurants and cloud kitchens?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">USTART helps local restaurants and cloud kitchens make more money by charging incredibly fair service fees that keep profits where they belong. While mainstream apps take massive cuts out of every ticket, USTART charges a fair service fee that is sometimes lower than 10% of the total order value, meaning a restaurant partner can save up to 25% to 35% on per-order costs. To add even more value, USTART gives merchants access to advanced, AI-driven analytics dashboards without charging them a single rupee extra — helping neighborhood eateries track customer preferences, plan daily kitchen inventory, and run successful promotions without losing their hard-earned margins.</div></div>
+        <div className="faq-a"><div className="faq-a-inner">USTART helps local restaurants and cloud kitchens make more money by charging incredibly fair service fees that keep profits where they belong. While mainstream apps take massive cuts out of every ticket, USTART charges a fair service fee that is sometimes lower than 10% of the total order value, meaning a restaurant partner can save up to 25% to 35% on per-order costs. To add even more value, USTART gives merchants access to advanced, AI-driven analytics dashboards without charging them a single rupee extra, helping neighborhood eateries track customer preferences, plan daily kitchen inventory, and run successful promotions without losing their hard-earned margins.</div></div>
       </div>
       <div className={`faq-item ${openFaq === 9 ? 'open' : ''}`}>
         <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 9 ? null : 9)}><span className="qtext"><span className="qtag">Q9</span>Why should I shift my daily food ordering to USTART?</span><span className="chev">+</span></button>
@@ -209,11 +209,11 @@ export const ContactPage: React.FC = () => {
       </div>
       <div className={`faq-item ${openFaq === 10 ? 'open' : ''}`}>
         <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 10 ? null : 10)}><span className="qtext"><span className="qtag">Q10</span>Why should restaurant owners prioritize USTART integration?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">Restaurant owners and cloud kitchen operators should choose active USTART integration because it protects your hard-earned profits instead of forcing you to pay endless advertising fees just to be seen. Traditional discovery sites and mainstream platforms make you bid against your own neighbors for visibility, often redirecting your customer traffic toward competitors who pay for higher listings. USTART charges a fair service fee that is sometimes lower than 10% of the total order value, meaning a restaurant partner can save up to 25% to 35% on per-order costs — and USTART promises to never sell your customer data to third parties or competitors, giving you complete, private access to your local customer relationships.</div></div>
+        <div className="faq-a"><div className="faq-a-inner">Restaurant owners and cloud kitchen operators should choose active USTART integration because it protects your hard-earned profits instead of forcing you to pay endless advertising fees just to be seen. Traditional discovery sites and mainstream platforms make you bid against your own neighbors for visibility, often redirecting your customer traffic toward competitors who pay for higher listings. USTART charges a fair service fee that is sometimes lower than 10% of the total order value, meaning a restaurant partner can save up to 25% to 35% on per-order costs, and USTART promises to never sell your customer data to third parties or competitors, giving you complete, private access to your local customer relationships.</div></div>
       </div>
       <div className={`faq-item ${openFaq === 11 ? 'open' : ''}`}>
         <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 11 ? null : 11)}><span className="qtext"><span className="qtag">Q11</span>How does USTART correct imbalances in the food-tech market?</span><span className="chev">+</span></button>
-        <div className="faq-a"><div className="faq-a-inner">USTART corrects systemic market imbalances by shifting from an extractive marketplace model to a collaborative infrastructure built on sustainable economics. Legacy platforms squeeze local restaurants with heavy commissions, pass higher costs to consumers via inflated menu pricing, and use aggressive algorithms to penalize smaller independent kitchens. USTART re-establishes a healthy ecosystem by enforcing transparent flat fees, keeping restaurant commissions low, and sharing clean customer data — allowing Gurugram's diverse culinary community to thrive sustainably.</div></div>
+        <div className="faq-a"><div className="faq-a-inner">USTART corrects systemic market imbalances by shifting from an extractive marketplace model to a collaborative infrastructure built on sustainable economics. Legacy platforms squeeze local restaurants with heavy commissions, pass higher costs to consumers via inflated menu pricing, and use aggressive algorithms to penalize smaller independent kitchens. USTART re-establishes a healthy ecosystem by enforcing transparent flat fees, keeping restaurant commissions low, and sharing clean customer data, allowing Gurugram's diverse culinary community to thrive sustainably.</div></div>
       </div>
       <div className={`faq-item ${openFaq === 12 ? 'open' : ''}`}>
         <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === 12 ? null : 12)}><span className="qtext"><span className="qtag">Q12</span>How does USTART's restaurant catalog compare to bulk aggregators?</span><span className="chev">+</span></button>

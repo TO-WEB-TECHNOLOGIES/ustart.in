@@ -30,21 +30,21 @@ export const metadata: Metadata = {
   // Without it Next emits relative og:url values, which crawlers cannot follow.
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'USTART — Food Delivery in Delhi NCR | No Hidden Charges',
+    default: 'USTART: Food Delivery in Delhi NCR | No Hidden Charges',
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    'Order food across Delhi NCR — Gurugram, Delhi, Noida, Ghaziabad & Greater Noida — at real menu prices. No surge pricing, no hidden checkout fees.',
+    'Order food across Delhi NCR (Gurugram, Delhi, Noida, Ghaziabad & Greater Noida) at real menu prices. No surge pricing, no hidden checkout fees.',
   applicationName: SITE_NAME,
   referrer: 'origin-when-cross-origin',
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
   formatDetection: { telephone: false, address: false, email: false },
-  icons: {
-    icon: '/favicon.svg',
-    apple: '/favicon.svg',
-  },
+  // Icons come from the file conventions in this folder: favicon.ico (48x48,
+  // the one Google Search shows), icon.png and apple-icon.png. Google needs a
+  // square raster favicon at a multiple of 48px; the previous SVG-only setup
+  // gave search results the generic globe.
   manifest: '/manifest.webmanifest',
   openGraph: {
     type: 'website',

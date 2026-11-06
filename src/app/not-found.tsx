@@ -7,12 +7,12 @@ import { Link } from '@/router';
  * 404 page.
  *
  * Next returns a real HTTP 404 for this route automatically, which is what actually
- * keeps it out of the index — the noindex below is belt-and-braces for the case
+ * keeps it out of the index - the noindex below is belt-and-braces for the case
  * where something soft-renders this component at a 200.
  *
  * Deliberately a server component. The reference implementation was `'use client'`
  * only to run a scroll listener whose state was never read, and to inject a Font
- * Awesome stylesheet from a CDN at runtime — which blocks render, shifts layout when
+ * Awesome stylesheet from a CDN at runtime - which blocks render, shifts layout when
  * it lands, and leaves every icon invisible until JS executes. The icons here are
  * inline SVG instead, so they are painted in the first frame with no network cost.
  */
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: 'Page Not Found',
 };
 
-/** Recovery paths — a 404 should always offer a way back into the site. */
+/** Recovery paths - a 404 should always offer a way back into the site. */
 const DESTINATIONS = [
   { to: '/food-delivery/gurgaon', label: 'Food delivery in Gurgaon' },
   { to: '/food-delivery/delhi', label: 'Food delivery in Delhi' },
@@ -44,7 +44,7 @@ export default function NotFound() {
           <div className="nf-graphic">
             <span className="nf-digit">4</span>
 
-            {/* The "0" — a donut. Inline SVG so it needs no icon font. */}
+            {/* The "0" - a donut. Inline SVG so it needs no icon font. */}
             <svg
               className="nf-donut"
               viewBox="0 0 100 100"
@@ -70,7 +70,7 @@ export default function NotFound() {
           <h1 className="nf-title">Order Not Found</h1>
 
           <p className="nf-copy">
-            This page is off the menu. It may have been removed or renamed — or it went out for a
+            This page is off the menu. It may have been removed or renamed, or it went out for a
             delivery and never came back.
           </p>
 

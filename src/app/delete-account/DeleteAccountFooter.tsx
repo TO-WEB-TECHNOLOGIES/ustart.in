@@ -5,7 +5,7 @@ import Logo from "@/components/Logo";
  *
  * This is the ustart.in reference project's site footer, copied so the page
  * renders exactly as it does there. It is NOT the same component as
- * src/components/Footer.tsx — this project's marketing footer is a different
+ * src/components/Footer.tsx - this project's marketing footer is a different
  * design (paper/navy columns, store buttons, SEO link row) and swapping it in
  * would change the page. Keeping this file inside the route segment means the
  * two never get confused for one another.

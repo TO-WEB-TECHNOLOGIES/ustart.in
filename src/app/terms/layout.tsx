@@ -8,7 +8,7 @@ import './terms.css';
  * Metadata for /terms lives here rather than in page.tsx.
  *
  * page.tsx was copied across verbatim and is a `'use client'` component, which
- * cannot export `metadata` — without this layout the route silently inherited the
+ * cannot export `metadata` - without this layout the route silently inherited the
  * root layout's homepage title, giving the terms page a "Food Delivery in Gurgaon
  * & Delhi" title that duplicates the homepage's. A layout is the standard way to
  * attach metadata to a client page while leaving the page file untouched.

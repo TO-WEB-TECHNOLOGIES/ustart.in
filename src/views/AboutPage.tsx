@@ -70,8 +70,8 @@ export const AboutPage: React.FC = () => {
     <div className="story-text reveal-left">
       <span className="sec-kicker">🍳 WHO WE ARE</span>
       <h2 className="font-display" style={{ fontSize: "clamp(1.7rem,3.4vw,2.4rem)", color: "var(--navy)", margin: "16px 0 18px" }}>A Platform Built Around The Table.</h2>
-      <p><strong>USTART doesn't own restaurants or cook the food</strong> — we build the tech, marketplace, and logistics that connect customers, restaurant partners, and delivery riders in one seamless ecosystem.</p>
-      <p>Restaurants stay independent and focus on what they do best. We handle discovery, payments, and delivery — bringing demand and supply together with transparent, fair terms for everyone at the table.</p>
+      <p><strong>USTART doesn't own restaurants or cook the food</strong>: we build the tech, marketplace, and logistics that connect customers, restaurant partners, and delivery riders in one seamless ecosystem.</p>
+      <p>Restaurants stay independent and focus on what they do best. We handle discovery, payments, and delivery: bringing demand and supply together with transparent, fair terms for everyone at the table.</p>
       <div className="story-img-wrap reveal d2" style={{ marginTop: "24px", borderRadius: "16px", overflow: "hidden", boxShadow: "var(--soft-shadow)" }}>
         <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=80" alt="Delicious Indian food spread" style={{ width: "100%", height: "220px", objectFit: "cover", display: "block" }} />
       </div>
@@ -96,7 +96,7 @@ export const AboutPage: React.FC = () => {
           <MapPin size={22} strokeWidth={2.2} />
         </div>
         <h4>Made in Gurugram</h4>
-        <p>Built for this city first — by people who order from here too.</p>
+        <p>Built for this city first, by people who order from here too.</p>
       </div>
     </div>
   </div>
@@ -107,7 +107,7 @@ export const AboutPage: React.FC = () => {
   <div className="founders-head reveal">
     <span className="sec-kicker">👨‍🍳 THE FOUNDERS</span>
     <h2 className="font-display">Meet the Co-Founders.</h2>
-    <p>Two BML Munjal University graduates who decided the food delivery industry needed a rewrite — and started cooking one up themselves.</p>
+    <p>Two BML Munjal University graduates who decided the food delivery industry needed a rewrite, and started cooking one up themselves.</p>
   </div>
   <div className="founders-grid">
     <div className="founder-card reveal-left">
@@ -293,7 +293,7 @@ export const AboutPage: React.FC = () => {
         <Handshake size={26} strokeWidth={2.2} />
       </div>
       <h4>Fairness</h4>
-      <p>For customers, restaurants, and delivery partners alike — built on trust.</p>
+      <p>For customers, restaurants, and delivery partners alike, built on trust.</p>
     </div>
     <div className="value-item reveal-pop d3">
       <span className="num-tag">03</span>
@@ -321,7 +321,7 @@ export const AboutPage: React.FC = () => {
   <div className="premium-cta-head reveal">
     <span className="stamp" style={{ position: "static", display: "inline-block" }}>🔥 FRESH & READY</span>
     <h2 className="font-display" style={{ marginTop: "16px" }}>Hungry To Build Something <span style={{ color: "var(--orange)" }}>Delicious With Us?</span></h2>
-    <p style={{ fontFamily: "'Manrope',sans-serif", color: "var(--slate)", marginTop: "10px" }}>Whether you're craving a ride or a partnership — there's a seat at this table.</p>
+    <p style={{ fontFamily: "'Manrope',sans-serif", color: "var(--slate)", marginTop: "10px" }}>Whether you're craving a ride or a partnership, there's a seat at this table.</p>
   </div>
   <div className="premium-cta-grid">
     <div className="premium-card reveal-left">
@@ -334,7 +334,7 @@ export const AboutPage: React.FC = () => {
         <div className="pc-stat"><b>100+</b><span>ORDERS DELIVERED</span></div>
         <div className="pc-stat"><b>6,000+</b><span>RESTAURANT PARTNERS</span></div>
       </div>
-      <p>Order your favourite thalis, pizzas, and burgers with transparent pricing and lightning-fast delivery — every single time.</p>
+      <p>Order your favourite thalis, pizzas, and burgers with transparent pricing and lightning-fast delivery, every single time.</p>
       <a href="/careers" className="btn btn-gold btn-lg">🛵 Ride With Us</a>
     </div>
     <div className="premium-card reveal-right">

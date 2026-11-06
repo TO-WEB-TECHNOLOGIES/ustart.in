@@ -6,7 +6,7 @@ import { cuisines } from '@/content/cuisines';
 import { brands, isBrandIndexed, SNAPSHOT_DATE } from '@/lib/restaurants';
 
 /**
- * Sitemap for ustart.in — served at /sitemap.xml and declared in robots.ts.
+ * Sitemap for ustart.in - served at /sitemap.xml and declared in robots.ts.
  *
  * Two deliberate omissions:
  *
@@ -16,13 +16,13 @@ import { brands, isBrandIndexed, SNAPSHOT_DATE } from '@/lib/restaurants';
  * 2. No `new Date()` anywhere. Every lastModified traces to an `updatedAt` field
  *    on a content record or to the ROUTE_UPDATED map below. Deriving lastmod from
  *    build time makes every URL look freshly modified on every deploy, which is
- *    precisely how a site teaches Google to stop trusting its lastmod values —
+ *    precisely how a site teaches Google to stop trusting its lastmod values - 
  *    Google only honours the signal while it stays verifiably accurate.
  */
 
 /**
  * Last significant content change per static route. Update the date by hand when
- * you materially change a page — not for typo or styling edits.
+ * you materially change a page - not for typo or styling edits.
  */
 const ROUTE_UPDATED: Record<string, string> = {
   '/': '2026-11-05',

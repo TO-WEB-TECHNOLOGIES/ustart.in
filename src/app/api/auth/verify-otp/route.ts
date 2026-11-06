@@ -24,7 +24,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid or expired OTP.' }, { status: 401 });
     }
 
-    // Correct OTP — consume it (one-time use) and issue mock tokens.
+    // Correct OTP - consume it (one-time use) and issue mock tokens.
     otpStore.delete(digitsOnly);
 
     return NextResponse.json(

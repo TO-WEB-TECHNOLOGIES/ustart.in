@@ -8,7 +8,7 @@ export const ORDER_PROMPT_MESSAGE = 'To place an order, download the USTART app 
 
 /**
  * Download card: a direct button (what works on a phone) and a QR code for
- * store.ustart.in (what works on a desktop — scan with your phone). CSS puts the
+ * store.ustart.in (what works on a desktop - scan with your phone). CSS puts the
  * button first on mobile and the QR first on desktop. Server-rendered, so it is
  * in the page HTML.
  */
@@ -86,7 +86,7 @@ export const AppDownloadPrompt: React.FC<{ restaurantName: string }> = ({ restau
     return () => document.removeEventListener('click', onClick);
   }, []);
 
-  // Desktop: grow from the trigger — point transform-origin at it.
+  // Desktop: grow from the trigger - point transform-origin at it.
   useLayoutEffect(() => {
     const panel = panelRef.current;
     if (!panel || !origin) return;

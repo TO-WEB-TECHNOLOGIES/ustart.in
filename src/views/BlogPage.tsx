@@ -13,7 +13,7 @@ import { articles, ARTICLE_CATEGORIES } from '@/content/blog';
  * Article bodies used to live in this file and render only inside a client-side
  * modal behind `<a href="#">`, which meant they had no URLs and were completely
  * invisible to search engines. Content now lives in src/content/blog.ts and every
- * card is a real <Link> to /blog/[slug] — that routing is what makes the writing
+ * card is a real <Link> to /blog/[slug] - that routing is what makes the writing
  * indexable, so please don't reintroduce the modal pattern here.
  */
 export const BlogPage: React.FC = () => {
@@ -56,7 +56,7 @@ export const BlogPage: React.FC = () => {
   /**
    * Every article card is rendered into the DOM and the overflow is hidden with a
    * class, rather than sliced out of the array. Slicing meant the articles past the
-   * ninth had no crawlable <a> anywhere on the site — the "View More" button is
+   * ninth had no crawlable <a> anywhere on the site - the "View More" button is
    * client-side, so a crawler never reached them. Keep the links in the HTML.
    */
   const isCollapsed = activeCategory === 'All' && !blogExpanded;
@@ -72,7 +72,7 @@ export const BlogPage: React.FC = () => {
       <PageHero
         kicker="🍽️ FRESH FROM GURUGRAM · THE USTART BLOG"
         title={<>Food, Fairness & <span>Everything In Between.</span></>}
-        subtitle="Straight answers on delivery fees, restaurant economics, and the fair way to order food — no fine print, no fluff."
+        subtitle="Straight answers on delivery fees, restaurant economics, and the fair way to order food: no fine print, no fluff."
         focal="center 25%"
         tint="rgba(83,153,135,0.20)"
       />
@@ -88,7 +88,7 @@ export const BlogPage: React.FC = () => {
           <div className="featured-post reveal-scale">
             <div className="featured-post-inner">
               <div className="featured-post-visual">
-                {/* Previously an <img src="receipt_bill.png"> — that file has never
+                {/* Previously an <img src="receipt_bill.png"> - that file has never
                     existed in /public and resolved to a 404 at /blog/receipt_bill.png. */}
                 <div className="featured-post-answer">
                   <span className="direct-answer-badge"><span>⚡</span> Direct Answer</span>

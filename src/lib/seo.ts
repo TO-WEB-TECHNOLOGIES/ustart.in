@@ -16,7 +16,7 @@ export interface PageSeo {
 
 /**
  * Single source of truth for per-page metadata. Every page gets an explicit
- * self-referencing canonical — without one, query-string and trailing-slash
+ * self-referencing canonical - without one, query-string and trailing-slash
  * variants of the same page compete with each other for the same rankings.
  *
  * `title` is passed as a plain string so the root layout's '%s | USTART'

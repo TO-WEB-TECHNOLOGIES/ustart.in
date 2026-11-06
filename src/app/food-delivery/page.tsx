@@ -6,9 +6,9 @@ import { ncrFaqs } from '@/content/locations';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Food Delivery in Delhi NCR — Gurugram, Delhi, Noida',
+  title: 'Food Delivery in Delhi NCR: Gurugram, Delhi, Noida',
   description:
-    'Order food online across Delhi NCR — Gurugram, Delhi, Noida, Ghaziabad and Greater Noida — at real menu prices. No surge pricing, no hidden checkout fees.',
+    'Order food online across Delhi NCR (Gurugram, Delhi, Noida, Ghaziabad and Greater Noida) at real menu prices. No surge pricing, no hidden checkout fees.',
   path: '/food-delivery',
 });
 

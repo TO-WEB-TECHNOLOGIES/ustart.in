@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!c) return {};
   const count = restaurantsInCity(city).length;
   return buildMetadata({
-    title: `Restaurants in ${c.name} — ${count.toLocaleString('en-IN')} Menus`,
+    title: `Restaurants in ${c.name}: ${count.toLocaleString('en-IN')} Menus`,
     description: `Browse ${count.toLocaleString('en-IN')} restaurants delivering in ${c.name} on USTART, by area. Full menus with prices, no surge pricing, no hidden charges.`,
     path: `/restaurants/${city}`,
   });

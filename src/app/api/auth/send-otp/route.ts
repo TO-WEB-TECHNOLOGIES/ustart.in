@@ -86,7 +86,7 @@ export async function POST(request: Request) {
     entry.lastSentAt = now;
     rateLimitStore.set(digitsOnly, entry);
 
-    // No real SMS/Telegram gateway is wired up in this mock — log the code server-side.
+    // No real SMS/Telegram gateway is wired up in this mock - log the code server-side.
     console.log(`[send-otp] OTP for ${digitsOnly} via ${deliveryChannel}: ${otp}`);
 
     // DEV ONLY: expose the OTP so the flow is testable locally.

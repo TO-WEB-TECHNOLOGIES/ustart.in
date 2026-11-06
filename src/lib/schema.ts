@@ -27,10 +27,10 @@ export const organizationSchema = () => ({
   url: SITE_URL,
   logo: {
     '@type': 'ImageObject',
-    url: absoluteUrl('/Logo_White_Text.png'),
+    url: absoluteUrl('/icon-512.png'),
   },
   description:
-    'USTART is a food delivery platform serving Delhi NCR — Gurugram, Delhi, Noida, Ghaziabad and Greater Noida — with menu-price parity, no surge pricing and no hidden checkout fees.',
+    'USTART is a food delivery platform serving Delhi NCR (Gurugram, Delhi, Noida, Ghaziabad and Greater Noida) with menu-price parity, no surge pricing and no hidden checkout fees.',
   parentOrganization: {
     '@type': 'Organization',
     name: LEGAL_ENTITY,
@@ -56,15 +56,18 @@ export const organizationSchema = () => ({
 export const websiteSchema = () => ({
   '@type': 'WebSite',
   '@id': WEBSITE_ID,
-  url: SITE_URL,
+  url: `${SITE_URL}/`,
+  // Google picks the search-result site name from this node on the home page.
+  // alternateName is its fallback if it does not accept `name`.
   name: SITE_NAME,
+  alternateName: ['USTART Food Delivery', 'USTART App'],
   publisher: { '@id': ORG_ID },
   inLanguage: 'en-IN',
 });
 
 const NCR_ID = `${SITE_URL}/#ncr`;
 
-/** The National Capital Region — the parent place every served city sits inside. */
+/** The National Capital Region - the parent place every served city sits inside. */
 const NCR_PLACE = {
   '@type': 'AdministrativeArea',
   '@id': NCR_ID,
@@ -115,7 +118,7 @@ export const deliveryServiceSchema = () => ({
  * causes ALL structured data on the affected pages to be ignored.
  *
  * To enable once you have a real Play Console rating count, add to the Android
- * object below — and make sure the same figures are visible in the page copy:
+ * object below - and make sure the same figures are visible in the page copy:
  *
  *   aggregateRating: {
  *     '@type': 'AggregateRating',
@@ -193,8 +196,8 @@ export const breadcrumbSchema = (crumbs: Crumb[]) => ({
 
 /**
  * NOTE: Google turned off FAQ rich results for the vast majority of sites on
- * 7 May 2026. This markup is still worth emitting — it helps entity extraction
- * and AI-search surfaces — but it will not render an accordion in Search, so do
+ * 7 May 2026. This markup is still worth emitting - it helps entity extraction
+ * and AI-search surfaces - but it will not render an accordion in Search, so do
  * not forecast CTR gains from it.
  */
 export const faqSchema = (faqs: Array<{ q: string; a: string }>) => ({
@@ -274,7 +277,7 @@ const MENU_SCHEMA_ITEMS = 60;
 
 function sampleMenu(menu: MenuForSchema) {
   // Round-robin across sections so every section is represented; in-stock only.
-  // In stock and with a real price — customisable dishes report 0 until options are chosen.
+  // In stock and with a real price - customisable dishes report 0 until options are chosen.
   const queues = menu.groups.map((g) => ({ title: g.title, dishes: g.dishes.filter((d) => d.inStock && d.price > 0) }));
   const picked = new Map<string, MenuForSchema['groups'][number]['dishes']>();
   let left = MENU_SCHEMA_ITEMS;

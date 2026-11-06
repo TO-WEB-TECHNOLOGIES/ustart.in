@@ -22,14 +22,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const max = 60 - ' | USTART'.length;
   const title =
     [
-      `${b.name} in Delhi NCR — ${n} Outlets, Menu & Order`,
-      `${b.name} — ${n} Outlets in Delhi NCR`,
+      `${b.name} in Delhi NCR: ${n} Outlets, Menu & Order`,
+      `${b.name}: ${n} Outlets in Delhi NCR`,
       `${b.name} Outlets in Delhi NCR`,
       `${b.name} Outlets & Menu`,
     ].find((t) => t.length <= max) ?? b.name.slice(0, max);
   return buildMetadata({
     title,
-    description: `Order from ${n} ${b.name} outlets across Delhi NCR on USTART. Find your nearest outlet, see the full menu with prices — no hidden charges.`.slice(0, 160),
+    description: `Order from ${n} ${b.name} outlets across Delhi NCR on USTART. Find your nearest outlet, see the full menu with prices: no hidden charges.`.slice(0, 160),
     path: `/brands/${brand}`,
     noindex: !isBrandIndexed(b),
   });

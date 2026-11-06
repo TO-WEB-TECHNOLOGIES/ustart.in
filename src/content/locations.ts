@@ -1,7 +1,7 @@
 /**
  * City + locality data behind /food-delivery/[city] and /food-delivery/[city]/[locality].
  *
- * ── QUALITY GATE — READ BEFORE ADDING A LOCALITY ──────────────────────────────
+ * ── QUALITY GATE - READ BEFORE ADDING A LOCALITY ──────────────────────────────
  * Location pages that only swap a place name are the single most common cause of
  * programmatic-SEO penalties: Google classifies them as doorway pages and filters
  * them out of the index. Every locality here must carry genuinely unique content.
@@ -15,7 +15,7 @@
  *
  * They are typed `| null` on purpose. A page renders those blocks ONLY when the
  * value is non-null, so an unfilled locality degrades to honest editorial content
- * instead of publishing an invented delivery time. Fill them from ops data — do
+ * instead of publishing an invented delivery time. Fill them from ops data - do
  * not guess. An invented "25 min average" is a claim you can be held to.
  * ─────────────────────────────────────────────────────────────────────────────
  */
@@ -27,15 +27,15 @@ export interface Locality {
   aka?: string[];
   /** 1–2 paragraphs of genuinely locality-specific editorial. Required. */
   intro: string[];
-  /** Who orders here and when — the demand pattern that makes this locality distinct. */
+  /** Who orders here and when - the demand pattern that makes this locality distinct. */
   whoOrders: string;
   /** Locality-specific FAQ. At least one entry that is not generic. */
   faq: Array<{ q: string; a: string }>;
-  /** OPS DATA — see file header. Null until sourced from real telemetry. */
+  /** OPS DATA - see file header. Null until sourced from real telemetry. */
   avgDeliveryMinutes: number | null;
-  /** OPS DATA — see file header. Null until sourced from the partner DB. */
+  /** OPS DATA - see file header. Null until sourced from the partner DB. */
   partnerCount: number | null;
-  /** OPS DATA — sectors / sub-areas actually covered. Empty until confirmed. */
+  /** OPS DATA - sectors / sub-areas actually covered. Empty until confirmed. */
   coverage: string[];
   updatedAt: string;
 }
@@ -60,11 +60,11 @@ const gurgaonLocalities: Locality[] = [
     name: 'Cyber City',
     aka: ['DLF Cyber City', 'Cyber Hub'],
     intro: [
-      'DLF Cyber City is the densest concentration of office workers anywhere in Gurgaon — a cluster of Grade A towers around Sectors 24 and 25 housing tens of thousands of professionals across technology, consulting and financial services firms.',
+      'DLF Cyber City is the densest concentration of office workers anywhere in Gurgaon: a cluster of Grade A towers around Sectors 24 and 25 housing tens of thousands of professionals across technology, consulting and financial services firms.',
       'The adjoining Cyber Hub is one of the busiest restaurant precincts in the NCR, which means the area is unusual: it has enormous delivery demand and enormous restaurant supply sitting within a few hundred metres of each other.',
     ],
     whoOrders:
-      'Demand here is sharply peaked rather than spread out. Weekday lunch between 1pm and 2:30pm dominates, driven by desk workers and team orders, with a second evening peak from people working late. Weekend volume drops sharply as the towers empty out — the opposite pattern to a residential locality.',
+      'Demand here is sharply peaked rather than spread out. Weekday lunch between 1pm and 2:30pm dominates, driven by desk workers and team orders, with a second evening peak from people working late. Weekend volume drops sharply as the towers empty out: the opposite pattern to a residential locality.',
     faq: [
       {
         q: 'Can food be delivered inside Cyber City office towers?',
@@ -93,7 +93,7 @@ const gurgaonLocalities: Locality[] = [
     faq: [
       {
         q: 'Is late-night food delivery available in Sector 29?',
-        a: 'Sector 29 has more genuinely late-operating kitchens than most of Gurgaon, so it is one of the better areas for a post-10pm order. Which specific restaurants are still accepting orders changes through the night — the app shows live availability rather than listing closed kitchens.',
+        a: 'Sector 29 has more genuinely late-operating kitchens than most of Gurgaon, so it is one of the better areas for a post-10pm order. Which specific restaurants are still accepting orders changes through the night: the app shows live availability rather than listing closed kitchens.',
       },
       {
         q: 'Why are Sector 29 orders often larger?',
@@ -109,7 +109,7 @@ const gurgaonLocalities: Locality[] = [
     slug: 'dlf-phase-1',
     name: 'DLF Phase 1',
     intro: [
-      'DLF Phase 1 is one of the oldest planned colonies in Gurgaon — low-rise, largely independent housing on wide tree-lined roads, bordering Golf Course Road on one side and the older city on the other.',
+      'DLF Phase 1 is one of the oldest planned colonies in Gurgaon: low-rise, largely independent housing on wide tree-lined roads, bordering Golf Course Road on one side and the older city on the other.',
       'It is residential in a way the newer high-rise sectors are not: fewer units per square kilometre, more families who have lived in the same house for decades, and a street pattern of individual gates rather than a single tower lobby.',
     ],
     whoOrders:
@@ -129,7 +129,7 @@ const gurgaonLocalities: Locality[] = [
     slug: 'dlf-phase-2',
     name: 'DLF Phase 2',
     intro: [
-      'DLF Phase 2 sits directly alongside the Cyber City corridor, which gives it a mixed character that neither the pure office districts nor the pure residential colonies share — housing, small commercial strips and office overflow in the same few blocks.',
+      'DLF Phase 2 sits directly alongside the Cyber City corridor, which gives it a mixed character that neither the pure office districts nor the pure residential colonies share: housing, small commercial strips and office overflow in the same few blocks.',
       'Its position next to one of the densest restaurant clusters in the city means short delivery distances to a wide range of kitchens.',
     ],
     whoOrders:
@@ -170,7 +170,7 @@ const gurgaonLocalities: Locality[] = [
     name: 'Golf Course Road',
     intro: [
       'Golf Course Road is the premium residential and commercial spine of Gurgaon, running past high-rise condominium developments, Grade A offices and retail between Sector 42 and Sector 56.',
-      'The corridor is vertical in a way most of Gurgaon is not — a single address can hold hundreds of households, which concentrates delivery volume into a small number of building entrances.',
+      'The corridor is vertical in a way most of Gurgaon is not: a single address can hold hundreds of households, which concentrates delivery volume into a small number of building entrances.',
     ],
     whoOrders:
       'A mix of high-rise residential dinner demand and weekday office lunch from the commercial stretches. Average order values run above the city average, and premium and health-oriented cuisines over-index here.',
@@ -218,7 +218,7 @@ const gurgaonLocalities: Locality[] = [
     faq: [
       {
         q: 'Can food be delivered to the MG Road malls?',
-        a: 'Mall addresses generally require a specific handover point — a gate number or entrance — because the buildings are large and have multiple access points. Naming the entrance rather than just the mall speeds up the handover considerably.',
+        a: 'Mall addresses generally require a specific handover point (a gate number or entrance) because the buildings are large and have multiple access points. Naming the entrance rather than just the mall speeds up the handover considerably.',
       },
     ],
     avgDeliveryMinutes: null,
@@ -242,7 +242,7 @@ const gurgaonLocalities: Locality[] = [
       },
       {
         q: 'How should I address a delivery to a Udyog Vihar plot?',
-        a: 'Phase and plot number both matter — the five phases are separate grids and a plot number alone is ambiguous across them.',
+        a: 'Phase and plot number both matter: the five phases are separate grids and a plot number alone is ambiguous across them.',
       },
     ],
     avgDeliveryMinutes: null,
@@ -262,7 +262,7 @@ const gurgaonLocalities: Locality[] = [
     faq: [
       {
         q: 'Do I need to specify a block in Sushant Lok?',
-        a: 'Yes — the township is divided into phases and blocks, and house numbers repeat across them, so a block reference is essential for a first-time delivery to your address.',
+        a: 'Yes: the township is divided into phases and blocks, and house numbers repeat across them, so a block reference is essential for a first-time delivery to your address.',
       },
     ],
     avgDeliveryMinutes: null,
@@ -295,7 +295,7 @@ const gurgaonLocalities: Locality[] = [
     name: 'Palam Vihar',
     intro: [
       'Palam Vihar is a large planned residential township in western Gurgaon, closer to the Delhi border and Dwarka than to the Cyber City corridor, organised into numbered blocks with its own markets and schools.',
-      'Its distance from the central restaurant clusters makes it a genuinely different delivery problem from central Gurgaon — the constraint is route distance, not restaurant supply.',
+      'Its distance from the central restaurant clusters makes it a genuinely different delivery problem from central Gurgaon: the constraint is route distance, not restaurant supply.',
     ],
     whoOrders:
       'Residential and family-led, weighted to evenings and weekends, with demand for everyday cuisines rather than the premium end of the market.',
@@ -318,7 +318,7 @@ const delhiLocalities: Locality[] = [
     name: 'Connaught Place',
     aka: ['CP', 'Rajiv Chowk'],
     intro: [
-      "Connaught Place is central Delhi's primary business and retail district — a Georgian colonnade of concentric circles housing corporate offices, restaurants and shops, and one of the busiest metro interchanges in the country.",
+      "Connaught Place is central Delhi's primary business and retail district: a Georgian colonnade of concentric circles housing corporate offices, restaurants and shops, and one of the busiest metro interchanges in the country.",
       'It is overwhelmingly a workplace and destination district rather than a residential one, so its delivery demand is generated by people who are there for the day, not people who live there.',
     ],
     whoOrders:
@@ -339,7 +339,7 @@ const delhiLocalities: Locality[] = [
     name: 'Saket',
     intro: [
       'Saket combines a large established residential area in south Delhi with one of the city\'s densest mall clusters, giving it both a resident population and heavy destination footfall.',
-      'The mix means it behaves like two markets at once — settled households in the surrounding blocks, and a transient retail and cinema crowd around the malls.',
+      'The mix means it behaves like two markets at once: settled households in the surrounding blocks, and a transient retail and cinema crowd around the malls.',
     ],
     whoOrders:
       'Steady household dinner demand through the week, overlaid with sharp weekend spikes from the retail and cinema footfall around the mall cluster.',
@@ -419,14 +419,14 @@ const delhiLocalities: Locality[] = [
     name: 'Nehru Place',
     intro: [
       'Nehru Place is south Delhi\'s main commercial and technology district, best known as one of the largest computer and electronics markets in the country, surrounded by office towers.',
-      'It is a weekday commercial district almost exclusively — the market and offices define its rhythm, and it empties out on Sundays.',
+      'It is a weekday commercial district almost exclusively: the market and offices define its rhythm, and it empties out on Sundays.',
     ],
     whoOrders:
       'Concentrated weekday lunch demand from market traders and office workers, with a high share of repeat orders and bulk orders for shops and teams. Sunday volume falls away sharply as the market closes.',
     faq: [
       {
         q: 'How should shop deliveries in the Nehru Place market be addressed?',
-        a: 'The market is a dense grid of numbered shops across multiple blocks and levels. Block, shop number and floor together are what make a delivery findable — a shop number alone repeats across blocks.',
+        a: 'The market is a dense grid of numbered shops across multiple blocks and levels. Block, shop number and floor together are what make a delivery findable: a shop number alone repeats across blocks.',
       },
     ],
     avgDeliveryMinutes: null,
@@ -447,7 +447,7 @@ const delhiLocalities: Locality[] = [
     faq: [
       {
         q: 'Is GK-1 different from GK-2 for delivery?',
-        a: 'They are separate colonies with independent block lettering and their own markets. Specifying GK-1 or GK-2 alongside the block letter is what prevents a misroute — the block letters overlap between them.',
+        a: 'They are separate colonies with independent block lettering and their own markets. Specifying GK-1 or GK-2 alongside the block letter is what prevents a misroute: the block letters overlap between them.',
       },
     ],
     avgDeliveryMinutes: null,
@@ -490,7 +490,7 @@ const noidaLocalities: Locality[] = [
     name: 'Sector 18',
     aka: ['Noida Sector 18', 'Atta Market'],
     intro: [
-      "Sector 18 is Noida's main commercial and shopping district — the market blocks around Atta Market, a run of malls along its edge, and one of the busiest stations on the Blue Line metro.",
+      "Sector 18 is Noida's main commercial and shopping district: the market blocks around Atta Market, a run of malls along its edge, and one of the busiest stations on the Blue Line metro.",
       'It has more restaurants packed into a small footprint than anywhere else in Noida, which makes it both a major source of delivery orders and the kitchen that feeds much of the surrounding residential sectors.',
     ],
     whoOrders:
@@ -498,7 +498,7 @@ const noidaLocalities: Locality[] = [
     faq: [
       {
         q: 'How should I give a delivery address inside the Sector 18 market?',
-        a: 'The market is organised into lettered and numbered blocks with shops on several levels. Block, shop or office number, and floor together are what make an address findable — a shop number on its own repeats across blocks.',
+        a: 'The market is organised into lettered and numbered blocks with shops on several levels. Block, shop or office number, and floor together are what make an address findable: a shop number on its own repeats across blocks.',
       },
     ],
     avgDeliveryMinutes: null,
@@ -511,7 +511,7 @@ const noidaLocalities: Locality[] = [
     name: 'Sector 62',
     aka: ['Noida Sector 62'],
     intro: [
-      "Sector 62 is one of Noida's main institutional and IT districts — a grid of office campuses, technology companies and educational institutes, with paying-guest housing and residential pockets around it.",
+      "Sector 62 is one of Noida's main institutional and IT districts: a grid of office campuses, technology companies and educational institutes, with paying-guest housing and residential pockets around it.",
       'It behaves like an office district on weekdays and a student neighbourhood in the evenings, which gives it a longer ordering day than most of Noida.',
     ],
     whoOrders:
@@ -561,7 +561,7 @@ const noidaLocalities: Locality[] = [
     faq: [
       {
         q: 'How do deliveries work in the Expressway high-rise societies?',
-        a: 'Most societies require the rider to register at the main gate and some need an approval from the resident. Adding the society name, tower, flat number and the gate you want used — and approving the entry promptly when the app notifies you — makes the biggest difference to handover time.',
+        a: 'Most societies require the rider to register at the main gate and some need an approval from the resident. Adding the society name, tower, flat number and the gate you want used, and approving the entry promptly when the app notifies you, makes the biggest difference to handover time.',
       },
     ],
     avgDeliveryMinutes: null,
@@ -574,7 +574,7 @@ const noidaLocalities: Locality[] = [
     name: 'Sector 76',
     aka: ['Noida Sector 76'],
     intro: [
-      'Sector 76 sits in a cluster of group housing sectors in central Noida — mostly large, gated apartment societies built around the Aqua Line metro corridor.',
+      'Sector 76 sits in a cluster of group housing sectors in central Noida: mostly large, gated apartment societies built around the Aqua Line metro corridor.',
       'It is almost entirely residential, so its delivery pattern is set by households rather than offices or shoppers.',
     ],
     whoOrders:
@@ -597,7 +597,7 @@ const ghaziabadLocalities: Locality[] = [
     slug: 'indirapuram',
     name: 'Indirapuram',
     intro: [
-      "Indirapuram is Ghaziabad's largest planned residential area, right on the Delhi and Noida borders — a dense mix of high-rise societies, plotted housing and busy commercial strips around the Shipra Mall area.",
+      "Indirapuram is Ghaziabad's largest planned residential area, right on the Delhi and Noida borders: a dense mix of high-rise societies, plotted housing and busy commercial strips around the Shipra Mall area.",
       'It is organised into named khands rather than numbered sectors, and that naming system is the thing most first-time addresses get wrong.',
     ],
     whoOrders:
@@ -638,7 +638,7 @@ const ghaziabadLocalities: Locality[] = [
     name: 'Raj Nagar Extension',
     aka: ['RNE'],
     intro: [
-      'Raj Nagar Extension is one of the fastest-growing residential townships in Ghaziabad — a large belt of newer high-rise group housing societies, much of it built in the last decade.',
+      'Raj Nagar Extension is one of the fastest-growing residential townships in Ghaziabad: a large belt of newer high-rise group housing societies, much of it built in the last decade.',
       'Because so much of it is new, landmarks are still settling and map pins for individual towers are less reliable than in older parts of the city.',
     ],
     whoOrders:
@@ -646,7 +646,7 @@ const ghaziabadLocalities: Locality[] = [
     faq: [
       {
         q: 'What helps a Raj Nagar Extension delivery arrive on time?',
-        a: 'The society name and tower number are essential, and a pin dropped at the society gate rather than the building itself helps — some towers are newer than the map data around them.',
+        a: 'The society name and tower number are essential, and a pin dropped at the society gate rather than the building itself helps: some towers are newer than the map data around them.',
       },
     ],
     avgDeliveryMinutes: null,
@@ -682,7 +682,7 @@ const greaterNoidaLocalities: Locality[] = [
     name: 'Greater Noida West',
     aka: ['Noida Extension', 'Gaur City'],
     intro: [
-      'Greater Noida West — still widely called Noida Extension — is one of the largest clusters of high-rise housing in the NCR, built around Gaur City and the roundabouts at Gaur Chowk and Ek Murti.',
+      'Greater Noida West (still widely called Noida Extension) is one of the largest clusters of high-rise housing in the NCR, built around Gaur City and the roundabouts at Gaur Chowk and Ek Murti.',
       'Its density is the defining feature: tens of thousands of households live in towers grouped into societies and, in Gaur City, numbered avenues.',
     ],
     whoOrders:
@@ -690,7 +690,7 @@ const greaterNoidaLocalities: Locality[] = [
     faq: [
       {
         q: 'Is Noida Extension the same as Greater Noida West?',
-        a: 'Yes. Greater Noida West is the official name and Noida Extension is the name most people still use. It falls under the Greater Noida authority rather than Noida. Either name works in the app — your address and pin are what matter.',
+        a: 'Yes. Greater Noida West is the official name and Noida Extension is the name most people still use. It falls under the Greater Noida authority rather than Noida. Either name works in the app: your address and pin are what matter.',
       },
       {
         q: 'What should a Gaur City address include?',
@@ -707,7 +707,7 @@ const greaterNoidaLocalities: Locality[] = [
     name: 'Pari Chowk & Alpha',
     aka: ['Pari Chowk', 'Alpha 1', 'Alpha 2', 'Jagat Farm'],
     intro: [
-      'Pari Chowk is the central roundabout of Greater Noida, and the sectors around it — Alpha, Beta and Gamma — are among the city\'s oldest planned residential areas, named after Greek letters rather than numbered.',
+      'Pari Chowk is the central roundabout of Greater Noida, and the sectors around it (Alpha, Beta and Gamma) are among the city\'s oldest planned residential areas, named after Greek letters rather than numbered.',
       'They are mostly plotted housing with local markets such as Jagat Farm, and are less vertical than the newer society belts.',
     ],
     whoOrders:
@@ -715,7 +715,7 @@ const greaterNoidaLocalities: Locality[] = [
     faq: [
       {
         q: 'Do Alpha, Beta and Gamma sectors need the number too?',
-        a: 'Yes. Each Greek-letter sector is split into numbered parts — Alpha 1 and Alpha 2, Gamma 1 and Gamma 2 — and house numbers repeat between them. Include both the letter and the number.',
+        a: 'Yes. Each Greek-letter sector is split into numbered parts (Alpha 1 and Alpha 2, Gamma 1 and Gamma 2) and house numbers repeat between them. Include both the letter and the number.',
       },
     ],
     avgDeliveryMinutes: null,
@@ -778,13 +778,13 @@ export const cities: City[] = [
     officialName: 'New Delhi',
     state: 'Delhi',
     intro: [
-      'Delhi is a genuinely different delivery market from Gurugram — older, denser, and organised around colony markets and block grids rather than tower lobbies and sector numbers. An address that would be unambiguous in Gurugram is often not in Delhi.',
+      'Delhi is a genuinely different delivery market from Gurugram: older, denser, and organised around colony markets and block grids rather than tower lobbies and sector numbers. An address that would be unambiguous in Gurugram is often not in Delhi.',
       'What does not change is the pricing model. Menu prices matching the restaurant, no surge charges, and a checkout total with nothing bolted on to it work the same way here as they do in Gurugram.',
     ],
     faq: [
       {
         q: 'Which areas of Delhi does USTART deliver to?',
-        a: 'Coverage is strongest across south and central Delhi, including Connaught Place, Saket, Hauz Khas, Greater Kailash, Lajpat Nagar, Nehru Place, Vasant Kunj and Dwarka. Enter your address in the app for live coverage — it reflects the areas and restaurants actually available to you right now.',
+        a: 'Coverage is strongest across south and central Delhi, including Connaught Place, Saket, Hauz Khas, Greater Kailash, Lajpat Nagar, Nehru Place, Vasant Kunj and Dwarka. Enter your address in the app for live coverage: it reflects the areas and restaurants actually available to you right now.',
       },
       {
         q: 'Why does my Delhi address need a block or pocket number?',
@@ -800,7 +800,7 @@ export const cities: City[] = [
     officialName: 'Noida',
     state: 'Uttar Pradesh',
     intro: [
-      'Noida is a planned city of numbered sectors, which makes it one of the easiest places in the NCR to address a delivery — and one of the most varied to deliver in. Market sectors like 18, office districts like 62, settled residential sectors and the high-rise societies along the Expressway each order in a completely different way.',
+      'Noida is a planned city of numbered sectors, which makes it one of the easiest places in the NCR to address a delivery, and one of the most varied to deliver in. Market sectors like 18, office districts like 62, settled residential sectors and the high-rise societies along the Expressway each order in a completely different way.',
       'The pricing works exactly as it does everywhere else on USTART: menu prices that match the restaurant, no surge pricing, and a checkout total with nothing added at the last step.',
     ],
     faq: [
@@ -826,13 +826,13 @@ export const cities: City[] = [
     officialName: 'Ghaziabad',
     state: 'Uttar Pradesh',
     intro: [
-      'Ghaziabad borders both east Delhi and Noida, and the parts of it where food delivery is busiest — Indirapuram, Vaishali, Raj Nagar Extension and Crossings Republik — are largely residential and heavily high-rise. Much of the city commutes to Delhi or Noida, so ordering peaks after people get home.',
+      'Ghaziabad borders both east Delhi and Noida, and the parts of it where food delivery is busiest (Indirapuram, Vaishali, Raj Nagar Extension and Crossings Republik) are largely residential and heavily high-rise. Much of the city commutes to Delhi or Noida, so ordering peaks after people get home.',
       'USTART works the same way here as in the rest of the NCR: restaurant menu prices, no surge charges, and no fees added at checkout.',
     ],
     faq: [
       {
         q: 'Which areas of Ghaziabad does USTART deliver to?',
-        a: 'Coverage includes Indirapuram, Vaishali, Raj Nagar Extension and Crossings Republik. Enter your address in the app for live coverage — it reflects the areas and restaurants actually available to you right now.',
+        a: 'Coverage includes Indirapuram, Vaishali, Raj Nagar Extension and Crossings Republik. Enter your address in the app for live coverage: it reflects the areas and restaurants actually available to you right now.',
       },
       {
         q: 'Are prices in Ghaziabad the same as in the restaurant?',
@@ -848,7 +848,7 @@ export const cities: City[] = [
     officialName: 'Greater Noida',
     state: 'Uttar Pradesh',
     intro: [
-      'Greater Noida is really two delivery markets. Greater Noida West — Noida Extension — is one of the densest clusters of high-rise housing in the country. The original city around Pari Chowk is spread out, plotted and organised into Greek-letter sectors, with a large student population in Knowledge Park.',
+      'Greater Noida is really two delivery markets. Greater Noida West (Noida Extension) is one of the densest clusters of high-rise housing in the country. The original city around Pari Chowk is spread out, plotted and organised into Greek-letter sectors, with a large student population in Knowledge Park.',
       'Across both, the USTART promise is the same: real menu prices, no surge pricing, and a bill with nothing hidden in it.',
     ],
     faq: [
@@ -873,7 +873,7 @@ export const cities: City[] = [
 export const NCR_HUB_UPDATED = NCR_EAST_UPDATED;
 
 export const ncrIntro = [
-  'Delhi NCR is not one food delivery market — it is five cities with completely different addressing systems, ordering habits and peak hours. Gurugram runs on towers and sectors, Delhi on colony blocks and markets, Noida on numbered sectors and Expressway societies, Ghaziabad on khands and townships, and Greater Noida on Greek-letter sectors and the high-rise belt of Noida Extension.',
+  'Delhi NCR is not one food delivery market: it is five cities with completely different addressing systems, ordering habits and peak hours. Gurugram runs on towers and sectors, Delhi on colony blocks and markets, Noida on numbered sectors and Expressway societies, Ghaziabad on khands and townships, and Greater Noida on Greek-letter sectors and the high-rise belt of Noida Extension.',
   'USTART delivers across all five, with the same promise in each: menu prices that match the restaurant, no surge or rain pricing, and nothing added to the bill at checkout.',
 ];
 
@@ -884,7 +884,7 @@ export const ncrFaqs = [
   },
   {
     q: 'Is there a food delivery app in Delhi NCR without hidden charges?',
-    a: 'That is what USTART is built for. Menu prices match what the restaurant charges, there is no surge or rain pricing, and the total shown at checkout is the total you pay — across every NCR city we serve.',
+    a: 'That is what USTART is built for. Menu prices match what the restaurant charges, there is no surge or rain pricing, and the total shown at checkout is the total you pay, across every NCR city we serve.',
   },
   {
     q: 'Are prices different between Gurugram, Delhi, Noida and Ghaziabad?',
@@ -901,7 +901,7 @@ export const getCity = (slug: string): City | undefined => cities.find((c) => c.
 export const getLocality = (citySlug: string, localitySlug: string): Locality | undefined =>
   getCity(citySlug)?.localities.find((l) => l.slug === localitySlug);
 
-/** Flat [city, locality] pairs — used by generateStaticParams and the sitemap. */
+/** Flat [city, locality] pairs - used by generateStaticParams and the sitemap. */
 export const allLocalityPaths = cities.flatMap((city) =>
   city.localities.map((locality) => ({ city: city.slug, locality: locality.slug }))
 );

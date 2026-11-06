@@ -29,7 +29,7 @@ export async function generateMetadata({
     title: `Food Delivery in ${locality.name}, ${city.name}`,
     description: (() => {
       const place = `${locality.name}, ${city.name}${locality.aka?.length ? ` (${locality.aka[0]})` : ''}`;
-      const base = `Order food in ${place} at real menu prices — no surge pricing and no hidden checkout fees.`;
+      const base = `Order food in ${place} at real menu prices: no surge pricing and no hidden checkout fees.`;
       const withTips = `${base} Delivery tips and FAQs for ${locality.name}.`;
       return withTips.length <= 160 ? withTips : base;
     })(),

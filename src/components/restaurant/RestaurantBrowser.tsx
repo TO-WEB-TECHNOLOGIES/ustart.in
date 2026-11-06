@@ -14,7 +14,7 @@ const groupDomId = (key: string) => `rl-${key.toLowerCase().replace(/[^a-z0-9]+/
 /**
  * Photo cards are rendered up front for roughly this many restaurants; later
  * groups start as plain name links and upgrade to cards as they approach the
- * viewport. Delhi has 2,400+ outlets — full cards for all of them made a 3 MB page.
+ * viewport. Delhi has 2,400+ outlets - full cards for all of them made a 3 MB page.
  */
 const EAGER_CARDS = 180;
 

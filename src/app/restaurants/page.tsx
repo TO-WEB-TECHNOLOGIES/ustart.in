@@ -8,7 +8,7 @@ import { restaurants } from '@/lib/restaurants';
 const total = restaurants.length.toLocaleString('en-IN');
 
 export const metadata: Metadata = buildMetadata({
-  title: `Restaurants in Delhi NCR — ${total} Menus on USTART`,
+  title: `Restaurants in Delhi NCR: ${total} Menus on USTART`,
   description: `Browse ${total} restaurants across Delhi, Gurugram, Noida, Ghaziabad and Greater Noida. Full menus with prices, no surge pricing, no hidden charges.`,
   path: '/restaurants',
 });

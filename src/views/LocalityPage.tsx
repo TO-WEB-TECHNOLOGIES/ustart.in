@@ -19,7 +19,7 @@ import { restaurantsInLocality, restaurantPath } from '@/lib/restaurants';
  */
 export const LocalityPage: React.FC<{ city: City; locality: Locality }> = ({ city, locality }) => {
   const siblings = city.localities.filter((l) => l.slug !== locality.slug).slice(0, 6);
-  // Partner outlets from the partner-DB snapshot — real data, so the quality gate
+  // Partner outlets from the partner-DB snapshot - real data, so the quality gate
   // in locations.ts is satisfied for this block.
   const localRestaurants = restaurantsInLocality(city.slug, locality.slug).sort((a, b) =>
     a.name.localeCompare(b.name)
@@ -36,7 +36,7 @@ export const LocalityPage: React.FC<{ city: City; locality: Locality }> = ({ cit
       <PageHero
         kicker={`📍 ${city.name.toUpperCase()} · ${locality.name.toUpperCase()}`}
         title={<>Food Delivery in <span>{locality.name}</span></>}
-        subtitle={`Order in ${locality.name} at real menu prices — no surge pricing, no fees added at checkout.`}
+        subtitle={`Order in ${locality.name} at real menu prices: no surge pricing, no fees added at checkout.`}
         focal="center 30%"
         tint="rgba(255,159,67,0.18)"
       />
@@ -117,7 +117,7 @@ export const LocalityPage: React.FC<{ city: City; locality: Locality }> = ({ cit
 
           <section className="article-faq-section">
             <h2 className="article-subheading">
-              ❓ Ordering in {locality.name} — FAQs
+              ❓ Ordering in {locality.name}: FAQs
             </h2>
             <div className="article-faq-list">
               {locality.faq.map((item, idx) => (

@@ -3,7 +3,7 @@
  * (`app/blog/[slug]/page.tsx`, `app/sitemap.ts`) can import it without pulling
  * in the `'use client'` boundary.
  *
- * `id` doubles as the URL slug — keep it kebab-case, lowercase, and STABLE.
+ * `id` doubles as the URL slug - keep it kebab-case, lowercase, and STABLE.
  * Changing an id changes the article's URL and drops whatever ranking it holds;
  * if one must change, add a 301 in next.config.ts.
  */
@@ -11,7 +11,7 @@
 export type ArticleCategory = 'Fairness' | 'City & Culture' | 'Restaurants';
 
 export interface Article {
-  /** URL slug. Stable — see file header. */
+  /** URL slug. Stable - see file header. */
   id: string;
   title: string;
   tag: string;
@@ -25,15 +25,15 @@ export interface Article {
   keyTakeaways: string[];
   faq?: Array<{ q: string; a: string }>;
   /**
-   * First publication date (W3C). These 13 articles were unreachable — locked
-   * behind a client-side modal with no URL — until the /blog/[slug] routes
+   * First publication date (W3C). These 13 articles were unreachable - locked
+   * behind a client-side modal with no URL - until the /blog/[slug] routes
    * shipped, so this is their genuine first-publish date.
    */
   publishedAt: string;
   /**
    * Last significant content change. Bump this by hand when you materially edit
    * an article; it feeds <lastmod> in the sitemap. Do NOT bump it for typo or
-   * styling changes — Google stops trusting lastmod when it can't be verified
+   * styling changes - Google stops trusting lastmod when it can't be verified
    * against real content changes.
    */
   updatedAt: string;
@@ -51,7 +51,7 @@ export const articles: Article[] = [
     tag: '🛵 Fairness',
     category: 'Fairness',
     description:
-      'How food delivery fees are actually calculated — distance, demand, weather and rider availability — and why your charge changes between orders.',
+      'How food delivery fees are actually calculated (distance, demand, weather and rider availability) and why your charge changes between orders.',
     targetKeyword: 'how delivery fees work',
     directAnswer:
       'Delivery fees are usually calculated based on factors such as distance, demand, traffic conditions, weather, and delivery partner availability.',
@@ -136,7 +136,7 @@ export const articles: Article[] = [
     tag: '🌧️ Fairness',
     category: 'Fairness',
     description:
-      'Why food delivery costs more when it rains or at peak meal times — what rain fees and surge pricing are, when they apply, and how to order around them.',
+      'Why food delivery costs more when it rains or at peak meal times: what rain fees and surge pricing are, when they apply, and how to order around them.',
     targetKeyword: 'surge pricing food delivery',
     directAnswer:
       'Rain fees and surge pricing are temporary charges applied when delivery demand is high or operating conditions become more challenging.',
@@ -160,7 +160,7 @@ export const articles: Article[] = [
     tag: '🎟️ Fairness',
     category: 'Fairness',
     description:
-      'Free delivery, discounts, priority service — but do food delivery memberships pay for themselves? How to work out the break-even for your ordering habits.',
+      'Free delivery, discounts, priority service. But do food delivery memberships pay for themselves? How to work out the break-even for your ordering habits.',
     targetKeyword: 'food delivery membership worth it',
     directAnswer:
       'Food delivery memberships can provide value for frequent users by offering benefits such as free delivery, discounts, and exclusive offers.',
@@ -184,7 +184,7 @@ export const articles: Article[] = [
     tag: '💰 Fairness',
     category: 'Fairness',
     description:
-      'Practical ways to cut your food delivery bill — comparing prices, avoiding peak hours, using offers well, and understanding how platform fees stack up.',
+      'Practical ways to cut your food delivery bill: comparing prices, avoiding peak hours, using offers well, and understanding how platform fees stack up.',
     targetKeyword: 'save money ordering food online',
     directAnswer:
       'Customers can save money on food delivery by comparing prices, avoiding peak hours, using offers strategically, and understanding fee structures.',
@@ -207,7 +207,7 @@ export const articles: Article[] = [
     tag: '🏢 City & Culture',
     category: 'City & Culture',
     description:
-      'What Cyber City professionals actually want from lunch delivery — speed, fair pricing and reliability — and how to order well on a packed workday.',
+      'What Cyber City professionals actually want from lunch delivery (speed, fair pricing and reliability) and how to order well on a packed workday.',
     targetKeyword: 'lunch delivery cyber city gurgaon',
     directAnswer:
       'Working professionals in Cyber City Gurgaon often prioritize fast delivery, affordable meals, reliable service, and healthy food options during busy workdays.',
@@ -231,7 +231,7 @@ export const articles: Article[] = [
     tag: '📈 City & Culture',
     category: 'City & Culture',
     description:
-      "The trends reshaping Gurgaon's food delivery market in 2026 — cloud kitchens, transparent pricing, and customers who have stopped accepting hidden fees.",
+      "The trends reshaping Gurgaon's food delivery market in 2026: cloud kitchens, transparent pricing, and customers who have stopped accepting hidden fees.",
     targetKeyword: 'food delivery trends gurgaon',
     directAnswer:
       'Food delivery trends in Gurgaon are being driven by changing consumer expectations, technology adoption, cloud kitchens, and demand for transparent pricing.',
@@ -314,7 +314,7 @@ export const articles: Article[] = [
     tag: '🍽️ City & Culture',
     category: 'City & Culture',
     description:
-      'How Delhi NCR orders food — office lunches, family dinners, late-night cravings — and the factors that decide which app people actually open.',
+      'How Delhi NCR orders food (office lunches, family dinners, late-night cravings) and the factors that decide which app people actually open.',
     targetKeyword: 'food ordering habits delhi ncr',
     directAnswer:
       'Consumers in Delhi NCR primarily prioritize convenience, affordability, delivery speed, food quality, and discounts when ordering food online.',
@@ -373,7 +373,7 @@ export const articles: Article[] = [
     tag: '📊 Restaurants',
     category: 'Restaurants',
     description:
-      'The same dish often costs more online than in the restaurant. Commissions, packaging and marketing costs explain the gap — here is how the economics work.',
+      'The same dish often costs more online than in the restaurant. Commissions, packaging and marketing costs explain the gap: here is how the economics work.',
     targetKeyword: 'why food costs more online than restaurant',
     directAnswer:
       'Restaurants often increase online menu prices to offset commissions, packaging expenses, promotional costs, and other operational fees associated with food delivery platforms.',

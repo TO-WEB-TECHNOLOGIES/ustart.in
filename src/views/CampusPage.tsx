@@ -34,7 +34,7 @@ export const CampusPage: React.FC = () => {
   <div className="nextgen-header wrap">
     <div className="nextgen-kicker"><span className="ng-dot"></span>&nbsp;USTART NEXTGEN · FOUNDING BATCH OPEN</div>
     <h2 className="nextgen-title">USTART <span className="ng-accent">NextGen Campus</span><br />Leaders Program</h2>
-    <p className="nextgen-sub">Become a Creator. Build a Community. Lead the Next Generation — from your campus.</p>
+    <p className="nextgen-sub">Become a Creator. Build a Community. Lead the Next Generation, from your campus.</p>
   </div>
 
   <div className="ng-pathway reveal">
@@ -112,11 +112,11 @@ export const CampusPage: React.FC = () => {
   <h2>Frequently Asked <span>Questions</span></h2>
   <div className={`ng-faq-item ${openFaq === 1 ? 'open' : ''}`}>
     <div className="ng-faq-q" onClick={() => setOpenFaq(openFaq === 1 ? null : 1)} style={{ cursor: 'pointer' }}><span>Is there any cost to join?</span><span className="plus">+</span></div>
-    <div className="ng-faq-a"><p>None — the program is completely free to join, always.</p></div>
+    <div className="ng-faq-a"><p>None. The program is completely free to join, always.</p></div>
   </div>
   <div className={`ng-faq-item ${openFaq === 2 ? 'open' : ''}`}>
     <div className="ng-faq-q" onClick={() => setOpenFaq(openFaq === 2 ? null : 2)} style={{ cursor: 'pointer' }}><span>Do I need prior marketing experience?</span><span className="plus">+</span></div>
-    <div className="ng-faq-a"><p>No experience needed — just enthusiasm, creativity, and drive.</p></div>
+    <div className="ng-faq-a"><p>No experience needed: just enthusiasm, creativity, and drive.</p></div>
   </div>
   <div className={`ng-faq-item ${openFaq === 3 ? 'open' : ''}`}>
     <div className="ng-faq-q" onClick={() => setOpenFaq(openFaq === 3 ? null : 3)} style={{ cursor: 'pointer' }}><span>What do I actually get out of it?</span><span className="plus">+</span></div>
@@ -133,7 +133,7 @@ export const CampusPage: React.FC = () => {
     <div className="ng-founding-badge">⚡ Founding Batch</div>
     <div className="ng-cta-text">
       <h3>Ready to Lead the<br />Next Generation?</h3>
-      <p>No experience needed — just enthusiasm, creativity, and drive.</p>
+      <p>No experience needed: just enthusiasm, creativity, and drive.</p>
     </div>
     <div className="ng-cta-btns">
       <a href="#" className="btn-ng-primary">🎓 Apply Now →</a>

@@ -23,7 +23,7 @@ export const CuisinePage: React.FC<{ cuisine: Cuisine }> = ({ cuisine }) => {
       <PageHero
         kicker={`🍽️ ${cuisine.name.toUpperCase()} · DELHI NCR`}
         title={<>{cuisine.heading} <span>Done Fairly.</span></>}
-        subtitle={`Order ${cuisine.name.toLowerCase()} at real menu prices — no surge pricing, nothing added at checkout.`}
+        subtitle={`Order ${cuisine.name.toLowerCase()} at real menu prices: no surge pricing, nothing added at checkout.`}
         focal="center 35%"
         tint="rgba(255,159,67,0.18)"
       />
@@ -132,7 +132,7 @@ export const CuisinePage: React.FC<{ cuisine: Cuisine }> = ({ cuisine }) => {
           )}
 
           <section className="article-faq-section">
-            <h2 className="article-subheading">❓ {cuisine.heading} — FAQs</h2>
+            <h2 className="article-subheading">❓ {cuisine.heading}: FAQs</h2>
             <div className="article-faq-list">
               {cuisine.faq.map((item, idx) => (
                 <div key={idx} className="article-faq-item">
